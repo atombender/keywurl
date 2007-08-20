@@ -301,8 +301,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = KEYWURL_SAFARI_3_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_PREPROCESS = YES;
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
+					"MAX_BUNDLE_VERSION=522",
+					"MIN_BUNDLE_VERSION=522",
+				);
 				OTHER_LDFLAGS = (
 					"-undefined",
 					define_a_way,
@@ -317,8 +323,14 @@
 			buildSettings = {
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = KEYWURL_SAFARI_3_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_PREPROCESS = YES;
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
+					"MAX_BUNDLE_VERSION=522",
+					"MIN_BUNDLE_VERSION=522",
+				);
 				OTHER_LDFLAGS = (
 					"-undefined",
 					define_a_way,
@@ -328,6 +340,46 @@
 			};
 			name = Release;
 		};
+		FAF7F8AF0C7921CE00A289A7 /* Release (Safari 2.0) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = Keywurl;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = "Release (Safari 2.0)";
+		};
+		FAF7F8B00C7921CE00A289A7 /* Release (Safari 2.0) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = KEYWURL_SAFARI_3_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_PREPROCESS = YES;
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
+					"MAX_BUNDLE_VERSION=412",
+					"MIN_BUNDLE_VERSION=412",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					define_a_way,
+				);
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = "Release (Safari 2.0)";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -336,6 +388,7 @@
 			buildConfigurations = (
 				1DEB913B08733D840010E9CD /* Debug */,
 				1DEB913C08733D840010E9CD /* Release */,
+				FAF7F8AF0C7921CE00A289A7 /* Release (Safari 2.0) */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -345,6 +398,7 @@
 			buildConfigurations = (
 				1DEB913F08733D840010E9CD /* Debug */,
 				1DEB914008733D840010E9CD /* Release */,
+				FAF7F8B00C7921CE00A289A7 /* Release (Safari 2.0) */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
