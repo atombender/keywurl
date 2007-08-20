@@ -10,6 +10,7 @@ static KeywurlPlugin* plugin = nil;
     KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
     NSClassFromString(@"BrowserWindowController");
     [[KeywurlBrowserWindowController class] poseAsClass: [BrowserWindowController class]];
+	//[NSBundle loadNibNamed: @"KeywurlPreferences" owner: plugin];
     NSLog(@"Keywurl installed");
 }
 
@@ -22,11 +23,16 @@ static KeywurlPlugin* plugin = nil;
 
 - (id) init { 
     fKeywordMapper = [[KeywordMapper alloc] init];
+    fLoaded = YES;
     return self;
 }
 
 - (KeywordMapper*) keywordMapper {
     return fKeywordMapper;
+}
+
+- (BOOL) isLoaded {
+    return fLoaded;
 }
 
 @end

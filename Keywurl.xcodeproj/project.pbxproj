@@ -12,7 +12,30 @@
 		FA53C8990C7376F900EC5ABE /* KeywurlPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FA53C8980C7376F900EC5ABE /* KeywurlPlugin.m */; };
 		FA87B6AB0C78C7730085F985 /* KeywordMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B6A80C78C7730085F985 /* KeywordMapper.m */; };
 		FA87B6AC0C78C7730085F985 /* KeywurlBrowserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B6AA0C78C7730085F985 /* KeywurlBrowserWindowController.m */; };
+		FA87B6FE0C78D6AE0085F985 /* KeywurlPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B6FC0C78D6AE0085F985 /* KeywurlPreferences.m */; };
+		FA87B7010C78D6C20085F985 /* KeywurlPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA87B6FF0C78D6C20085F985 /* KeywurlPreferences.nib */; };
+		FA87B70F0C78D74C0085F985 /* NSPreferences+Keywurl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B70E0C78D74C0085F985 /* NSPreferences+Keywurl.m */; };
+		FA87B7240C78DCAE0085F985 /* Keywurl.png in Resources */ = {isa = PBXBuildFile; fileRef = FA87B7230C78DCAE0085F985 /* Keywurl.png */; };
+		FA87B7280C78DCF00085F985 /* Keywurl.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA87B7270C78DCF00085F985 /* Keywurl.icns */; };
+		FAF7F8430C78E74600A289A7 /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F8410C78E74600A289A7 /* Add.tiff */; };
+		FAF7F8440C78E74600A289A7 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F8420C78E74600A289A7 /* Remove.tiff */; };
+		FAF7F8500C78F1A100A289A7 /* KeywordMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF7F84F0C78F1A100A289A7 /* KeywordMapping.m */; };
+		FAF7F89E0C7909F700A289A7 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F89D0C7909F700A289A7 /* Readme.rtf */; };
+		FAF7F89F0C790A0000A289A7 /* Readme.rtf in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAF7F89D0C7909F700A289A7 /* Readme.rtf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FAF7F8860C7907D600A289A7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				FAF7F89F0C790A0000A289A7 /* Readme.rtf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -30,6 +53,19 @@
 		FA87B6A80C78C7730085F985 /* KeywordMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordMapper.m; sourceTree = "<group>"; };
 		FA87B6A90C78C7730085F985 /* KeywurlBrowserWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlBrowserWindowController.h; sourceTree = "<group>"; };
 		FA87B6AA0C78C7730085F985 /* KeywurlBrowserWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlBrowserWindowController.m; sourceTree = "<group>"; };
+		FA87B6FB0C78D6AE0085F985 /* KeywurlPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlPreferences.h; sourceTree = "<group>"; };
+		FA87B6FC0C78D6AE0085F985 /* KeywurlPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlPreferences.m; sourceTree = "<group>"; };
+		FA87B6FD0C78D6AE0085F985 /* NSPreferenceModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferenceModule.h; sourceTree = "<group>"; };
+		FA87B7000C78D6C20085F985 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/KeywurlPreferences.nib; sourceTree = "<group>"; };
+		FA87B70D0C78D74C0085F985 /* NSPreferences+Keywurl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPreferences+Keywurl.h"; sourceTree = "<group>"; };
+		FA87B70E0C78D74C0085F985 /* NSPreferences+Keywurl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPreferences+Keywurl.m"; sourceTree = "<group>"; };
+		FA87B7230C78DCAE0085F985 /* Keywurl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Keywurl.png; sourceTree = "<group>"; };
+		FA87B7270C78DCF00085F985 /* Keywurl.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Keywurl.icns; sourceTree = "<group>"; };
+		FAF7F8410C78E74600A289A7 /* Add.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Add.tiff; sourceTree = "<group>"; };
+		FAF7F8420C78E74600A289A7 /* Remove.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Remove.tiff; sourceTree = "<group>"; };
+		FAF7F84E0C78F1A100A289A7 /* KeywordMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordMapping.h; sourceTree = "<group>"; };
+		FAF7F84F0C78F1A100A289A7 /* KeywordMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordMapping.m; sourceTree = "<group>"; };
+		FAF7F89D0C7909F700A289A7 /* Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +104,11 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAF7F8410C78E74600A289A7 /* Add.tiff */,
+				FAF7F8420C78E74600A289A7 /* Remove.tiff */,
+				FA87B7270C78DCF00085F985 /* Keywurl.icns */,
+				FA87B7230C78DCAE0085F985 /* Keywurl.png */,
+				FA87B6FF0C78D6C20085F985 /* KeywurlPreferences.nib */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 			);
@@ -77,6 +118,13 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FAF7F84E0C78F1A100A289A7 /* KeywordMapping.h */,
+				FAF7F84F0C78F1A100A289A7 /* KeywordMapping.m */,
+				FA87B70D0C78D74C0085F985 /* NSPreferences+Keywurl.h */,
+				FA87B70E0C78D74C0085F985 /* NSPreferences+Keywurl.m */,
+				FA87B6FB0C78D6AE0085F985 /* KeywurlPreferences.h */,
+				FA87B6FC0C78D6AE0085F985 /* KeywurlPreferences.m */,
+				FA87B6FD0C78D6AE0085F985 /* NSPreferenceModule.h */,
 				FA87B6A70C78C7730085F985 /* KeywordMapper.h */,
 				FA87B6A80C78C7730085F985 /* KeywordMapper.m */,
 				FA87B6A90C78C7730085F985 /* KeywurlBrowserWindowController.h */,
@@ -117,6 +165,7 @@
 		32C88E010371C26100C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FAF7F89D0C7909F700A289A7 /* Readme.rtf */,
 				32DBCF630370AF2F00C91783 /* Keywurl_Prefix.pch */,
 			);
 			name = "Other Sources";
@@ -129,6 +178,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "Keywurl" */;
 			buildPhases = (
+				FAF7F8860C7907D600A289A7 /* CopyFiles */,
 				8D5B49AF048680CD000E48DA /* Resources */,
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
@@ -164,6 +214,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				FA87B7010C78D6C20085F985 /* KeywurlPreferences.nib in Resources */,
+				FA87B7240C78DCAE0085F985 /* Keywurl.png in Resources */,
+				FA87B7280C78DCF00085F985 /* Keywurl.icns in Resources */,
+				FAF7F8430C78E74600A289A7 /* Add.tiff in Resources */,
+				FAF7F8440C78E74600A289A7 /* Remove.tiff in Resources */,
+				FAF7F89E0C7909F700A289A7 /* Readme.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +233,9 @@
 				FA53C8990C7376F900EC5ABE /* KeywurlPlugin.m in Sources */,
 				FA87B6AB0C78C7730085F985 /* KeywordMapper.m in Sources */,
 				FA87B6AC0C78C7730085F985 /* KeywurlBrowserWindowController.m in Sources */,
+				FA87B6FE0C78D6AE0085F985 /* KeywurlPreferences.m in Sources */,
+				FA87B70F0C78D74C0085F985 /* NSPreferences+Keywurl.m in Sources */,
+				FAF7F8500C78F1A100A289A7 /* KeywordMapping.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +248,14 @@
 				089C167EFE841241C02AAC07 /* English */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA87B6FF0C78D6C20085F985 /* KeywurlPreferences.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA87B7000C78D6C20085F985 /* English */,
+			);
+			name = KeywurlPreferences.nib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -233,6 +300,7 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = (
@@ -247,6 +315,8 @@
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = (
