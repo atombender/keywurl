@@ -48,29 +48,44 @@
 
 - (NSString*) mapKeywordInput: (NSString*) input {
     input = [input stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    NSString* keyword = nil;
+    NSString* query = nil;
     NSRange spaceRange = [input rangeOfString: @" "];
-    if (spaceRange.location == NSNotFound) {
-        spaceRange.location = [input length];
-    }         
-    NSString* keyword = [input substringToIndex: spaceRange.location];
-    id output = [cache objectForKey: keyword];
-    if (output) {
-        output = [output mutableCopy];
-        NSString* value = [input substringFromIndex: spaceRange.location + 1];
-        value = [value stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    if (spaceRange.location != NSNotFound) {
+        keyword = [input substringToIndex: spaceRange.location];
+        query = [input substringFromIndex: spaceRange.location + 1];
+        query = [query stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    } else {
+        keyword = input;
+        query = @"";
+    }
+    id mapping = [cache objectForKey: keyword];
+    if (!mapping && [query length] > 0) {
+       mapping = [cache objectForKey: @"default"];
+    }
+    if (mapping) {
+        mapping = [mapping mutableCopy];
         while (true) {
-            NSRange expansionRange = [output rangeOfString: @"@@@"]; 
+            NSRange expansionRange = [mapping rangeOfString: @"@@@"];
             if (expansionRange.location == NSNotFound) {
                 break;
             }
-            [output deleteCharactersInRange: expansionRange];
-            [output insertString: value atIndex: expansionRange.location];
+            [mapping deleteCharactersInRange: expansionRange];
+            [mapping insertString: query atIndex: expansionRange.location];
         }
-        [output autorelease];
+        while (true) {
+            NSRange expansionRange = [mapping rangeOfString: @"$$$"];
+            if (expansionRange.location == NSNotFound) {
+                break;
+            }
+            [mapping deleteCharactersInRange: expansionRange];
+            [mapping insertString: input atIndex: expansionRange.location];
+        }
+        [mapping autorelease];
+        return mapping;
     } else {
-        output = input;
+        return input;
     }
-    return output;
 }
 
 - (NSString*) mappingFileName {

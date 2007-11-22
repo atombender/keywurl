@@ -1,0 +1,17 @@
+Title SIMBL
+Version 
+Description Allows plugin bundles to be loaded for a particular application.
+DefaultLocation /Library
+DeleteWarning 
+
+### Package Flags
+
+NeedsAuthorization YES
+Required NO
+Relocatable NO
+RequiresReboot NO
+UseUserMask NO
+OverwritePermissions YES
+InstallFat NO
+RootVolumeOnly YES
+OnlyUpdateInstalledLanguages NO

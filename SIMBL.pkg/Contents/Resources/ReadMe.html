@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>SIMBL</title>
+		<meta name="author" content="Mike Solomon" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="mac os x,cocoa,hacking,plugin,inputmanager" />
+				<link rel="stylesheet" type="text/css" title="default" href="/web.css" />
+					</head>
+	<body>
+		<div id="content">
+			<h1>SIMBL</h1>
+			<div style="float: right; border: #224A78 solid 1px; margin-left: 1em;">
+				<p style="margin: 0px; background-color: #224A78; color: #ffffff; text-align: center; font-weight: bold;">
+					Links and Downloads
+				</p>
+				<p style="text-align: center; padding-left: 1em; padding-right: 1em;">
+					<a href="/software/SIMBL/SIMBL.php">SIMBL Information</a><br />
+					<a href="/thc/index.php?category=/Development">Development Related News</a><br />
+				</p>
+				<p style="text-align: center; padding-left: 1em; padding-right: 1em;">
+					<a href="/dl/files/SIMBL-0.8.2.tbz">SIMBL-0.8.2.tbz</a><br />
+				</p>
+				<p style="text-align: center; padding-left: 1em; padding-right: 1em;">
+					<a href="/dl/files/SIMBL-0.8.2-src.tbz">SIMBL-0.8.2-src.tbz</a><br  />
+				</p>
+				<form style="text-align: center" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<p>
+						<input type="hidden" name="cmd" value="_xclick" />
+						<input type="hidden" name="business" value="donations@culater.net" />
+						<input type="hidden" name="item_name" value="SIMBL Development" />
+						<input type="hidden" name="no_shipping" value="1" />
+						<input type="hidden" name="no_note" value="1" />
+						<input type="hidden" name="currency_code" value="USD" />
+						<input type="hidden" name="tax" value="0" />
+						<input type="submit" value="Donate" />
+					</p>
+				</form>
+			</div>
+			<dl>
+				<dt>Problem:</dt>
+				<dd>Some applications do about 90% of what I want.</dd>
+
+				<dt>Solution:</dt>
+				<dd>Develop my own applications.</dd>
+
+				<dt>Better Solution:</dt>
+				<dd>Patch the application myself...</dd>
+			</dl>
+
+			<h2>1. What It Does</h2>
+
+			<p>SIMBL (Smart InputManager Bundle Loader) - pronounced like "symbol" or "cymbal" allows you to build hacks for Cocoa applications and apply the code selectively based on an application's unique identifier. It's not really all that smart, or even clever, but it's smarter than just blindly loading code into an application.</p>
+
+			<p>For example, Safari's application identifier is <code>com.apple.Safari</code>.  You can use this to prevent bundles that link against application-specific frameworks from bombing on startup when they encounter another application that does not support those libraries. You can also use the application's bundle version to further specify when your plugin should load.</p>
+
+			<h2>2. Installing</h2>
+
+			<p>There are two parts to SIMBL, the bundle itself, which is packaged as an InputManager, and the plugins.</p>
+			
+			<p>Due to the limitations of Apple's Installer.app, these packages install to <code>/Library/InputManagers</code>, though they work equally well in the user domain as well (<code>~/Library/InputManagers</code>).  I wish Apple would provide the option for a user-specific install option, since plugins can really sneak up on an unsuspecting user.</p>
+
+			<h2>3. How To</h2>
+			
+			<p>Once you've installed SIMBL, you need to drop some bundles into the Plugins folder. (<code>/Library/Application Support/SIMBL/Plugins</code>) SIMBL scans this folder for bundles each time an application launches.  It will check both the Local and User domain for this special folder.</p>
+
+			<p>This means that it will check <code>~/Library/Application Support/SIMBL/Plugins</code> before looking in <code>/Library/Application Support/SIMBL/Plugins</code>.  Additionally, SIMBL detects if you have two conflicting plugins and prevents potentially undesirable behavior by only loading one.</p>
+
+			<p>SIMBL plugins are nothing more than standard Cocoa bundles created by XCode, with the addition of one key in the <code>Info.plist</code>. For further information, you can read the <a href="/wiki/moin.cgi/CocoaReverseEngineering#head-44c10b1f0da64ecad303c947b1823518f2682bae">SIMBL section</a> in my brief tutorial on <a href="/wiki/moin.cgi/CocoaReverseEngineering">Cocoa hacking</a>.
+
+			<p>SIMBL was originally created when I was working on PithHelmet, but here are now a bunch of <a href="/wiki/moin.cgi/SIMBLPlugins">SIMBL plugins</a> available. If you don't see yours listed, feel free to edit the list on the wiki.</p>
+
+			<h2>4. Caveats</h2>
+
+			<ol style="list-style-type: lower-alpha">
+				<li>Given the amount of flexibility Cocoa gives you for loading arbitrary code, you can shoot yourself in the foot pretty easily.  Luckily, removing SIMBL from the InputManagers folder will remove any problems you may experience.</li>
+				<li>It seems like this functionality would have been built into Mac OS X already, so I may be duplicating some native functionality - I hope not, as that would be a waste of time.</li>
+			</ol>
+
+			<h2>5. Questions | Comments | Feedback</h2>
+
+			<p>Please feel free to <a href="/contact/email-request.php?subject=SIMBL">contact me via email</a> - I'm interested to here your criticisms and thoughts.</p>
+
+			<p>You can always read about my current projects in my <a href="/thc">development journal</a>.</p>
+
+			<h2>6. Licensing</h2>
+
+			<p>A few people have asked about licensing terms, etc. I'm not expert in these areas, so let me explain in terms I understand:</p>
+			<ul>
+				<li>You can use SIMBL for anything you like.</li>
+				<li>You can include the SIMBL.pkg with your distribution, but you need to include the original license and ReadMe files so people know what they are getting.</li>
+				<li>If you want more from SIMBL, check out the source and make change suggestions. Please do not distribute a modified version of SIMBL, it would make my life a living nightmare.</li>
+				<li>There is no warranty of any kind.</li>
+			</ul>
+
+			<p>The point of the license is to be as flexible as possible - basically, it shouldn't get in the way of writing some cool hack. One of the main reasons I wrote SIMBL was because I didn't like the somewhat draconian terms of the APE license.</p>
+
+			<h2>7. Revision History</h2>
+
+			<p>v0.8.2 - <i>released 2007-10-01</i></p>
+
+			<ul class="revision">
+				<li>better error handling for rogue plug-ins</li>
+				<li>better error handling in some extreme corner cases</li>
+				<li>fixed installer file permissions</li>
+			</ul>
+
+			<p>v0.8 - <i>released 2005-06-01</i></p>
+
+			<ul class="revision">
+				<li>improved 10.4.x Tiger compatibility</li>
+				<li>better error handling in some extreme corner cases</li>
+				<li>warning on deprecated SIMBL interface</li>
+				<li>changed the installation package at the request of an informant I shall refer to only as "Deep Throat"</li>
+			</ul>
+
+			<p>v0.5 - <i>released 2004-08-12</i></p>
+
+			<ul class="revision">
+				<li>Fixed version checking bug</li>
+			</ul>
+
+			<p>v0.4 - <i>released 2004-07-02</i></p>
+
+			<ul class="revision">
+				<li>Added version as a new match criteria</li>
+				<li>Implemented legacy compatibility for old plugins</li>
+			</ul>
+
+			<p>v0.3 - <i>unreleased</i></p>
+			<ul class="revision">
+				<li>Added preflight load mechanism to schedule bundle loading once all system libraries have been initialized</li>
+			</ul>
+
+			<p>v0.2 - <i>released 2003-06-23</i></p>
+
+			<ul class="revision">
+				<li>Changed the search paths</li>
+				<li>Added conflict resolution</li>
+				<li>Built an actual installer</li>
+			</ul>
+
+			<p>v0.1 - <i>released 2003-02-03</i></p>
+
+			<ul class="revision">
+				<li>Designed to prevent runtime load errors after installing PithHelmet</li>
+			</ul>
+		</div>
+		<div id="footer">
+&copy;2002-2006 <a href="/contact/email-request.php?subject=Nice footer!">Mike Solomon</a>
+</div>
+	</body>
+</html>

@@ -6,6 +6,21 @@
 	objectVersion = 42;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		FAF7F9090C798E6200A289A7 /* Distribute */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FAF7F90C0C798E6700A289A7 /* Build configuration list for PBXAggregateTarget "Distribute" */;
+			buildPhases = (
+				FAF7F9120C798EB400A289A7 /* ShellScript */,
+			);
+			dependencies = (
+				FAD264E50CF5AC3C0038C40B /* PBXTargetDependency */,
+			);
+			name = Distribute;
+			productName = Distribute;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
@@ -17,12 +32,24 @@
 		FA87B70F0C78D74C0085F985 /* NSPreferences+Keywurl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B70E0C78D74C0085F985 /* NSPreferences+Keywurl.m */; };
 		FA87B7240C78DCAE0085F985 /* Keywurl.png in Resources */ = {isa = PBXBuildFile; fileRef = FA87B7230C78DCAE0085F985 /* Keywurl.png */; };
 		FA87B7280C78DCF00085F985 /* Keywurl.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA87B7270C78DCF00085F985 /* Keywurl.icns */; };
+		FAD264D50CF5ABA60038C40B /* SIMBL.pkg in Resources */ = {isa = PBXBuildFile; fileRef = FAD264D40CF5ABA60038C40B /* SIMBL.pkg */; };
+		FAD264D60CF5ABAD0038C40B /* SIMBL.pkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAD264D40CF5ABA60038C40B /* SIMBL.pkg */; };
 		FAF7F8430C78E74600A289A7 /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F8410C78E74600A289A7 /* Add.tiff */; };
 		FAF7F8440C78E74600A289A7 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F8420C78E74600A289A7 /* Remove.tiff */; };
 		FAF7F8500C78F1A100A289A7 /* KeywordMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF7F84F0C78F1A100A289A7 /* KeywordMapping.m */; };
 		FAF7F89E0C7909F700A289A7 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F89D0C7909F700A289A7 /* Readme.rtf */; };
 		FAF7F89F0C790A0000A289A7 /* Readme.rtf in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAF7F89D0C7909F700A289A7 /* Readme.rtf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAD264E40CF5AC3C0038C40B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* Keywurl */;
+			remoteInfo = Keywurl;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FAF7F8860C7907D600A289A7 /* CopyFiles */ = {
@@ -31,6 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				FAD264D60CF5ABAD0038C40B /* SIMBL.pkg in CopyFiles */,
 				FAF7F89F0C790A0000A289A7 /* Readme.rtf in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +89,7 @@
 		FA87B70E0C78D74C0085F985 /* NSPreferences+Keywurl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPreferences+Keywurl.m"; sourceTree = "<group>"; };
 		FA87B7230C78DCAE0085F985 /* Keywurl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Keywurl.png; sourceTree = "<group>"; };
 		FA87B7270C78DCF00085F985 /* Keywurl.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Keywurl.icns; sourceTree = "<group>"; };
+		FAD264D40CF5ABA60038C40B /* SIMBL.pkg */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.installer-pkg"; path = SIMBL.pkg; sourceTree = "<group>"; };
 		FAF7F8410C78E74600A289A7 /* Add.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Add.tiff; sourceTree = "<group>"; };
 		FAF7F8420C78E74600A289A7 /* Remove.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Remove.tiff; sourceTree = "<group>"; };
 		FAF7F84E0C78F1A100A289A7 /* KeywordMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordMapping.h; sourceTree = "<group>"; };
@@ -165,6 +194,7 @@
 		32C88E010371C26100C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FAD264D40CF5ABA60038C40B /* SIMBL.pkg */,
 				FAF7F89D0C7909F700A289A7 /* Readme.rtf */,
 				32DBCF630370AF2F00C91783 /* Keywurl_Prefix.pch */,
 			);
@@ -199,11 +229,14 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "Keywurl" */;
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 089C166AFE841209C02AAC07 /* Keywurl */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* Keywurl */,
+				FAF7F9090C798E6200A289A7 /* Distribute */,
 			);
 		};
 /* End PBXProject section */
@@ -220,10 +253,27 @@
 				FAF7F8430C78E74600A289A7 /* Add.tiff in Resources */,
 				FAF7F8440C78E74600A289A7 /* Remove.tiff in Resources */,
 				FAF7F89E0C7909F700A289A7 /* Readme.rtf in Resources */,
+				FAD264D50CF5ABA60038C40B /* SIMBL.pkg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FAF7F9120C798EB400A289A7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "imagename=\"$CONFIGURATION_BUILD_DIR/$PROJECT_NAME.dmg\"\nif [ -e \"$imagename\" ]\nthen\nrm -f \"$imagename\"\nfi\necho $imagename\nhdiutil create -srcfolder \"$CONFIGURATION_BUILD_DIR\" -volname \"$PROJECT_NAME\" \"$imagename\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D5B49B1048680CD000E48DA /* Sources */ = {
@@ -240,6 +290,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAD264E50CF5AC3C0038C40B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D5B49AC048680CD000E48DA /* Keywurl */;
+			targetProxy = FAD264E40CF5AC3C0038C40B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
@@ -279,7 +337,7 @@
 			};
 			name = Debug;
 		};
-		1DEB913C08733D840010E9CD /* Release */ = {
+		1DEB913C08733D840010E9CD /* Release (Safari 3.0) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
@@ -295,11 +353,15 @@
 				PRODUCT_NAME = Keywurl;
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = "Release (Safari 3.0)";
 		};
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					i386,
+					PPC,
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = KEYWURL_SAFARI_3_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -311,34 +373,40 @@
 				);
 				OTHER_LDFLAGS = (
 					"-undefined",
-					define_a_way,
+					dynamic_lookup,
 				);
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Debug;
 		};
-		1DEB914008733D840010E9CD /* Release */ = {
+		1DEB914008733D840010E9CD /* Release (Safari 3.0) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					i386,
+					ppc,
+					PPC,
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = YES;
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PREPROCESSOR_DEFINITIONS = KEYWURL_SAFARI_3_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_PREPROCESS = YES;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
-					"MAX_BUNDLE_VERSION=522",
-					"MIN_BUNDLE_VERSION=522",
+					"MAX_BUNDLE_VERSION=5523",
+					"MIN_BUNDLE_VERSION=5523",
 				);
 				OTHER_LDFLAGS = (
 					"-undefined",
-					define_a_way,
+					dynamic_lookup,
 				);
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
-			name = Release;
+			name = "Release (Safari 3.0)";
 		};
 		FAF7F8AF0C7921CE00A289A7 /* Release (Safari 2.0) */ = {
 			isa = XCBuildConfiguration;
@@ -361,6 +429,13 @@
 		FAF7F8B00C7921CE00A289A7 /* Release (Safari 2.0) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					x86_64,
+					i386,
+					ppc,
+					PPC,
+					ppc64,
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PREPROCESSOR_DEFINITIONS = KEYWURL_SAFARI_3_0;
@@ -373,10 +448,39 @@
 				);
 				OTHER_LDFLAGS = (
 					"-undefined",
-					define_a_way,
+					dynamic_lookup,
 				);
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+			};
+			name = "Release (Safari 2.0)";
+		};
+		FAF7F90D0C798E6700A289A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Distribute;
+			};
+			name = Debug;
+		};
+		FAF7F90E0C798E6700A289A7 /* Release (Safari 3.0) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = Distribute;
+				ZERO_LINK = NO;
+			};
+			name = "Release (Safari 3.0)";
+		};
+		FAF7F90F0C798E6700A289A7 /* Release (Safari 2.0) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Distribute;
 			};
 			name = "Release (Safari 2.0)";
 		};
@@ -387,21 +491,31 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB913B08733D840010E9CD /* Debug */,
-				1DEB913C08733D840010E9CD /* Release */,
+				1DEB913C08733D840010E9CD /* Release (Safari 3.0) */,
 				FAF7F8AF0C7921CE00A289A7 /* Release (Safari 2.0) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release (Safari 3.0)";
 		};
 		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "Keywurl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB913F08733D840010E9CD /* Debug */,
-				1DEB914008733D840010E9CD /* Release */,
+				1DEB914008733D840010E9CD /* Release (Safari 3.0) */,
 				FAF7F8B00C7921CE00A289A7 /* Release (Safari 2.0) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release (Safari 3.0)";
+		};
+		FAF7F90C0C798E6700A289A7 /* Build configuration list for PBXAggregateTarget "Distribute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF7F90D0C798E6700A289A7 /* Debug */,
+				FAF7F90E0C798E6700A289A7 /* Release (Safari 3.0) */,
+				FAF7F90F0C798E6700A289A7 /* Release (Safari 2.0) */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release (Safari 3.0)";
 		};
 /* End XCConfigurationList section */
 	};

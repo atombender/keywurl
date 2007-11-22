@@ -7,10 +7,12 @@ static KeywurlPlugin* plugin = nil;
 @implementation KeywurlPlugin
 
 + (void) load {
+    int majorVersion = 1;
+    int minorVersion = 1;
+    NSLog(@"Keywurl version %d.%d loading", majorVersion, minorVersion);
     KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
     NSClassFromString(@"BrowserWindowController");
     [[KeywurlBrowserWindowController class] poseAsClass: [BrowserWindowController class]];
-	//[NSBundle loadNibNamed: @"KeywurlPreferences" owner: plugin];
     NSLog(@"Keywurl installed");
 }
 
