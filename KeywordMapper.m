@@ -2,8 +2,15 @@
 #include "KeywordMapping.h"
 
 @interface KeywordMapper (Internal)
+
+- (void) setupDefaults;
 - (void) buildCache;
 - (NSString*) mappingFileName;
+- (BOOL) isUrl: (NSString*) string;
+- (void) replaceInString: (NSMutableString*) string 
+    fromString: (NSString*) fromString 
+    toString: (NSString*) toString;
+
 @end
 
 @implementation KeywordMapper
@@ -25,8 +32,6 @@
     KeywordMapping* mapping = [mappings objectAtIndex: rowIndex];
     if ([[aTableColumn identifier] isEqualToString: @"Keyword"]) {
         return [mapping keyword];
-    } else if ([[aTableColumn identifier] isEqualToString: @"Expansion"]) {
-        return [mapping expansion];
     } else {
         return nil;
     }
@@ -40,52 +45,70 @@
     if ([[aTableColumn identifier] isEqualToString: @"Keyword"]) {
         [mapping setKeyword: anObject];
         [self buildCache];
-    } else if ([[aTableColumn identifier] isEqualToString: @"Expansion"]) {
-        [mapping setExpansion: anObject];
-        [self buildCache];
     }
 }
 
 - (NSString*) mapKeywordInput: (NSString*) input {
-    input = [input stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-    NSString* keyword = nil;
-    NSString* query = nil;
-    NSRange spaceRange = [input rangeOfString: @" "];
-    if (spaceRange.location != NSNotFound) {
-        keyword = [input substringToIndex: spaceRange.location];
-        query = [input substringFromIndex: spaceRange.location + 1];
-        query = [query stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-    } else {
-        keyword = input;
-        query = @"";
-    }
-    id mapping = [cache objectForKey: keyword];
-    if (!mapping && [query length] > 0) {
-       mapping = [cache objectForKey: @"default"];
-    }
-    if (mapping) {
-        mapping = [mapping mutableCopy];
-        while (true) {
-            NSRange expansionRange = [mapping rangeOfString: @"@@@"];
-            if (expansionRange.location == NSNotFound) {
-                break;
-            }
-            [mapping deleteCharactersInRange: expansionRange];
-            [mapping insertString: query atIndex: expansionRange.location];
+    NSString* result = input;
+    if (![self isUrl: input]) {
+        NSString* keyword = nil;
+        NSString* query = nil;
+        input = [input stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+        NSRange spaceRange = [input rangeOfString: @" "];
+        if (spaceRange.location != NSNotFound) {
+            keyword = [input substringToIndex: spaceRange.location];
+            query = [input substringFromIndex: spaceRange.location + 1];
+            query = [query stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+        } else {
+            keyword = input;
+            query = @"";
         }
-        while (true) {
-            NSRange expansionRange = [mapping rangeOfString: @"$$$"];
-            if (expansionRange.location == NSNotFound) {
-                break;
-            }
-            [mapping deleteCharactersInRange: expansionRange];
-            [mapping insertString: input atIndex: expansionRange.location];
+        KeywordMapping* mapping = [cache objectForKey: keyword];
+        if (!mapping) {
+           mapping = [cache objectForKey: @"default"];
         }
-        [mapping autorelease];
-        return mapping;
-    } else {
-        return input;
+        if (mapping) {
+            NSString* expansion = [[mapping expansion] mutableCopy];
+            if ([mapping dontUseUnicode]) {
+                input = [mapping encodeQuery: input];
+                query = [mapping encodeQuery: query];
+            }
+            if ([mapping encodeSpaces]) {
+                input = [KeywordMapping encodeSpaces: input];
+                query = [KeywordMapping encodeSpaces: query];
+            }
+            [self replaceInString: expansion fromString: @"@@@" toString: query];
+            [self replaceInString: expansion fromString: @"$$$" toString: input];
+            result = expansion;
+        }
     }
+    return result;
+}
+
+- (BOOL) isUrl: (NSString*) string {
+    BOOL isUrl = NO;
+    if ([string rangeOfString: @"."].location != NSNotFound) {
+        NSMutableCharacterSet* characters = [[NSMutableCharacterSet alloc] init];
+        [characters formUnionWithCharacterSet: [NSCharacterSet alphanumericCharacterSet]];
+        [characters addCharactersInString: @"."];
+        isUrl = YES;
+        for (unsigned i = 0; i < [string length]; i++) {
+            if (![characters characterIsMember: [string characterAtIndex: i]]) {
+                isUrl = NO;
+            }
+        }
+    }
+    if (!isUrl) {
+        @try {
+            NSURL* url = [NSURL URLWithString: string];
+            if ([url scheme] != nil && ([url host] != nil || [url path] != nil)) {
+                isUrl = YES;
+            }
+        } @catch (NSException* e) {
+            NSLog(@"Exception parsing URL: %@", e);
+        }
+    }
+    return isUrl;
 }
 
 - (NSString*) mappingFileName {
@@ -113,35 +136,57 @@
             NSEnumerator* keyEumerator = [plist keyEnumerator];
             NSString* keyword;
             while (keyword = [keyEumerator nextObject]) {
-                NSString* expansion = [plist objectForKey: keyword];
-                [self addKeyword: keyword expansion: expansion];
+                KeywordMapping* mapping;
+                id value = [plist objectForKey: keyword];
+                if ([value isKindOfClass: [NSString class]]) {
+                    NSString* expansion = [plist objectForKey: keyword];
+                    mapping = [[KeywordMapping alloc] initWithKeyword: keyword
+                        expansion: expansion];
+                } else {
+                    mapping = [[KeywordMapping alloc] initWithKeyword: keyword
+                        fromDictionary: (NSDictionary*) value];
+                }
+                [self addKeyword: mapping];
+                [mapping release];
             }
         } else {
             NSLog(@"Could not load keywords: %@", error);
             [error release];
         }
     } else {
-        // Set up some sensible defaults
-        [self addKeyword: @"amazon" 
-            expansion: @"http://www.amazon.com/exec/obidos/search-handle-url/index%3Dblended%26field-keywords%3D@@@"];
-        [self addKeyword: @"allmusic"
-            expansion: @"http://allmusic.com/cg/amg.dll?P=amg&sql=@@@&opt1=1"];
-        [self addKeyword: @"discogs"
-            expansion: @"http://www.discogs.com/search?type=all&q=@@@"];
-        [self addKeyword: @"flickr"
-            expansion: @"http://flickr.com/photos/tags/@@@"];
-        [self addKeyword: @"imdb"
-            expansion: @"http://imdb.com/find?s=all&q=@@@"];
-        [self addKeyword: @"gmaps"
-            expansion: @"http://maps.google.com/maps?oi=map&q=@@@"];
-        [self addKeyword: @"gimages"
-            expansion: @"http://images.google.com/images?q=@@@&ie=UTF-8&oe=UTF-8"];
-        [self addKeyword: @"wiki"
-            expansion: @"http://en.wikipedia.org/wiki/Special:Search?search=@@@&go=Go"];
-        [self addKeyword: @"youtube"
-            expansion: @"http://youtube.com/results?search_query=@@@"];
+        [self setupDefaults];
     }
     [self buildCache];
+}
+
+- (void) setupDefaults {
+    // Set up some sensible defaults
+    [self addKeyword: @"default"
+        expansion: @"http://www.google.com/search?q=$$$"];
+    [self addKeyword: @"amazon" 
+        expansion: @"http://www.amazon.com/exec/obidos/search-handle-url/index%3Dblended%26field-keywords%3D@@@"
+        dontUseUnicode: YES
+        encodeSpaces: NO];
+    [self addKeyword: @"allmusic"
+        expansion: @"http://allmusic.com/cg/amg.dll?P=amg&sql=@@@&opt1=1"];
+    [self addKeyword: @"discogs"
+        expansion: @"http://www.discogs.com/search?type=all&q=@@@"];
+    [self addKeyword: @"flickr"
+        expansion: @"http://flickr.com/photos/tags/@@@"];
+    [self addKeyword: @"imdb"
+        expansion: @"http://imdb.com/find?s=all&q=@@@"
+        dontUseUnicode: YES
+        encodeSpaces: NO];
+    [self addKeyword: @"gmaps"
+        expansion: @"http://maps.google.com/maps?oi=map&q=@@@"];
+    [self addKeyword: @"gimages"
+        expansion: @"http://images.google.com/images?q=@@@&ie=UTF-8&oe=UTF-8"];
+    [self addKeyword: @"wiki"
+        expansion: @"http://en.wikipedia.org/wiki/Special:Search?search=@@@&go=Go"
+        dontUseUnicode: NO
+        encodeSpaces: YES];
+    [self addKeyword: @"youtube"
+        expansion: @"http://youtube.com/results?search_query=@@@"];    
 }
 
 - (void) saveMappings {
@@ -151,7 +196,12 @@
 - (void) saveMappingsToFile: (NSString*) path {
     NSLog(@"Saving keywords to %@", path);
     NSString* error;
-    NSData* data = [NSPropertyListSerialization dataFromPropertyList: cache
+    NSMutableDictionary* output = [NSMutableDictionary new];
+    for (int i = [mappings count] - 1; i >= 0; i--) {
+        KeywordMapping* mapping = [mappings objectAtIndex: i];
+        [output setObject: [mapping toDictionary] forKey: [mapping keyword]];
+    }    
+    NSData* data = [NSPropertyListSerialization dataFromPropertyList: output
         format: NSPropertyListXMLFormat_v1_0
         errorDescription: &error];
     if (data) {
@@ -170,11 +220,23 @@
     }
 }
 
-- (void) addKeyword: (NSString*) keyword expansion: (NSString*) expansion {
-    KeywordMapping* mapping = [[KeywordMapping alloc] initWithKeyword: keyword 
-        expansion: expansion];
+- (void) addKeyword: (KeywordMapping*) mapping {
     [mappings addObject: mapping];
     [self buildCache];
+}
+
+- (void) addKeyword: (NSString*) keyword expansion: (NSString*) expansion {
+    [self addKeyword: keyword expansion: expansion dontUseUnicode: NO encodeSpaces: NO];
+}
+
+- (void) addKeyword: (NSString*) keyword expansion: (NSString*) expansion
+    dontUseUnicode: (BOOL) theDontUseUnicode
+    encodeSpaces: (BOOL) theEncodeSpaces {
+    KeywordMapping* mapping = [[KeywordMapping alloc] initWithKeyword: keyword 
+        expansion: expansion
+        dontUseUnicode: theDontUseUnicode
+        encodeSpaces: theEncodeSpaces];
+    [self addKeyword: mapping];
 }
 
 - (void) removeKeyword: (NSString*) keyword {
@@ -200,7 +262,20 @@
     [cache removeAllObjects];
     for (int i = [mappings count] - 1; i >= 0; i--) {
         KeywordMapping* mapping = [mappings objectAtIndex: i];
-        [cache setValue: [mapping expansion] forKey: [mapping keyword]];
+        [cache setValue: mapping forKey: [mapping keyword]];
+    }
+}
+
+- (void) replaceInString: (NSMutableString*) string 
+    fromString: (NSString*) fromString 
+    toString: (NSString*) toString {        
+    while (true) {
+        NSRange range = [string rangeOfString: fromString];
+        if (range.location == NSNotFound) {
+            break;
+        }
+        [string deleteCharactersInRange: range];
+        [string insertString: toString atIndex: range.location];
     }
 }
 

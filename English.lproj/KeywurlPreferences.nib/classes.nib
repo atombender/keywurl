@@ -18,6 +18,12 @@
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
+				<key>dontUseUnicodeCheckBox</key>
+				<string>id</string>
+				<key>encodeSpacesCheckbox</key>
+				<string>id</string>
+				<key>expansionTextField</key>
+				<string>id</string>
 				<key>tableView</key>
 				<string>NSTableView</string>
 			</dict>

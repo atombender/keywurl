@@ -1,6 +1,12 @@
 #import "KeywurlPlugin.h"
 #import "KeywurlPreferences.h"
 
+@interface KeywurlPreferences (Private)
+
+- (void) saveEdit;
+
+@end
+
 @implementation KeywurlPreferences
 
 + (NSImage*) preloadImage: (NSString*) theName
@@ -23,8 +29,12 @@
 	return image;
 }
 
-- (void) awakeFromNib
-{
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+    [super dealloc];
+}
+
+- (void) awakeFromNib {
 	NSDictionary* infoDictionary = [[NSBundle bundleWithIdentifier: @"net.purefiction.keywurl"] 
 	    infoDictionary];
     KeywordMapper* mapper = [[KeywurlPlugin sharedInstance] keywordMapper];
@@ -36,6 +46,13 @@
 		[checkboxShouldReloadOnRelaunch setState: NSOffState];
 	}
 	*/
+	[[NSNotificationCenter defaultCenter] addObserver: self
+	    selector: @selector(tableViewSelectionDidChange:)
+	    name: NSTableViewSelectionDidChangeNotification
+        object: nil];
+    [expansionTextField setEnabled: NO];
+    [encodeSpacesCheckbox setEnabled: NO];
+    [dontUseUnicodeCheckBox setEnabled: NO];
 }
 
 - (NSImage*) imageForPreferenceNamed: (NSString*) theName
@@ -75,6 +92,7 @@
 - (void) saveChanges
 {
 	if ([[KeywurlPlugin sharedInstance] isLoaded]) {
+        [self saveEdit];
         KeywordMapper* mapper = [[KeywurlPlugin sharedInstance] keywordMapper];
         [mapper saveMappings];
 	}
@@ -90,7 +108,7 @@
 	[super moduleWillBeRemoved];
 }
 
-- (void)moduleWasInstalled
+- (void) moduleWasInstalled
 {
 	[super moduleWasInstalled];
 }
@@ -111,6 +129,36 @@
         KeywordMapper* mapper = [[KeywurlPlugin sharedInstance] keywordMapper];
         [mapper removeKeywordAtIndex: rowIndex];
         [tableView reloadData];
+    }
+}
+
+- (void) tableViewSelectionDidChange: (NSNotification*) notification {
+    [self saveEdit];
+    int rowIndex = [tableView selectedRow];
+    if (rowIndex >= 0) {
+        KeywordMapper* mapper = [[KeywurlPlugin sharedInstance] keywordMapper];
+        KeywordMapping* mapping = [[mapper mappings] objectAtIndex: rowIndex];
+        [expansionTextField setStringValue: [mapping expansion]];
+        [encodeSpacesCheckbox setState: [mapping encodeSpaces] ? NSOnState : NSOffState];
+        [dontUseUnicodeCheckBox setState: [mapping dontUseUnicode] ? NSOnState : NSOffState];
+        [expansionTextField setEnabled: YES];
+        [encodeSpacesCheckbox setEnabled: YES];
+        [dontUseUnicodeCheckBox setEnabled: YES];
+        mappingBeingEdited = mapping;
+    } else {
+        [expansionTextField setEnabled: NO];
+        [encodeSpacesCheckbox setEnabled: NO];
+        [dontUseUnicodeCheckBox setEnabled: NO];
+        mappingBeingEdited = nil;
+    }
+}
+
+- (void) saveEdit {
+    if (mappingBeingEdited) {
+        KeywordMapping* mapping = mappingBeingEdited;
+        [mapping setEncodeSpaces: [encodeSpacesCheckbox state] == NSOnState];
+        [mapping setDontUseUnicode: [dontUseUnicodeCheckBox state] == NSOnState];
+        [mapping setExpansion: [expansionTextField stringValue]];
     }
 }
 
