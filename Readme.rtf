@@ -1,24 +1,57 @@
-{\rtf1\ansi\ansicpg1252\cocoartf949
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf270
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid1}
-{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid2}
-{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid3}
-{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid4}}
-{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid6}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}}
 \paperw11900\paperh16840\margl1440\margr1440\vieww14780\viewh12860\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
 
 \f0\b\fs36 \cf0 About
 \b0\fs28 \
-Keywurl is a small extension for Safari that adds keyword search, similar to Firefox's "Quick Search" functionality. The name is an achingly unimaginative portmanteau of "keyword" and "URL".\
-
+Keywurl is a small extension for Safari that adds keyword search, similar to Firefox's "Quick Search" functionality. The name is a witheringly unimaginative portmanteau of "keyword" and "URL".
 \b \
 
-\fs36 Requirements
+\fs36 Changes\
+
+\fs28 1.2 
+\b0 (January 23, 2008)\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
+\ls1\ilvl0
+\b \cf0 {\listtext	\'95	}Default keyword
+\b0 .
+\b  
+\b0 The keyword "default" (if it is defined) is now invoked when no other keyword matches. Google is included as an example. For example, typing "Paris Hilton" in the address bar will now invoke a Google search. Keywurl uses a simple heuristic to determine whether something is a legitimate host name (eg., cnn.com) or something that should be expanded: If what you entered contains only a single word consisting of alphanumeric characters and at least one dot, it's considered a host name and ignored.\
+\ls1\ilvl0
+\b {\listtext	\'95	}Single-word expansions
+\b0 . You can now create convenience aliases \'96 for example, if you add the keyword "sd" with the expansion "slashdot.org", you can enter just "sd" in the address bar to go there.
+\b \
+\ls1\ilvl0
+\b0 {\listtext	\'95	}
+\b Added per-keyword character encoding setting
+\b0 . Some sites (such as imdb.com and amazon.com) require Latin 1 encoding for URLs. This fixes such sites.\
+\ls1\ilvl0
+\b {\listtext	\'95	}Added per-keyboard space encoding setting
+\b0 . Some sites require that spaces are encoded as "+" instead of "%20". This fixes such sites.\
+\ls1\ilvl0
+\b {\listtext	\'95	}
+\b0 The configuration file format changes in this version, breaking backwards compatibility. If you want to be able to downgrade, make a backup first.
+\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
+\cf0 1.1
+\b0  (November 23, 2007)\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
+\ls2\ilvl0\cf0 {\listtext	\'95	}Leopard compatibility.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
+
+\b\fs36 \cf0 Requirements
 \b0\fs28 \
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\ls1\ilvl0\cf0 {\listtext	\'95	}
+\ls3\ilvl0\cf0 {\listtext	\'95	}
 \b Mac OS X 10.4
 \b0  ("Tiger") or later.\
 {\listtext	\'95	}
@@ -29,15 +62,14 @@ Keywurl is a small extension for Safari that adds keyword search, similar to Fir
 \b0 , which lets Keywurl be installed into Safari. SIMBl It is included in the Keywurl package, and may also be downloaded here: \ul \ulc0 http://www.culater.net/software/SIMBL/SIMBL.php
 \b \ulnone \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\cf0 \
 
-\fs36 Installation
+\fs36 \cf0 Installation
 \b0\fs28 \
 
 \b If you want to install the plugin for your own user account only:
 \b0 \
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\ls2\ilvl0\cf0 {\listtext	1.	}If you are upgrading from an earlier release
+\ls4\ilvl0\cf0 {\listtext	1.	}If you are upgrading from an earlier release
 \i , 
 \i0 quit Safari.\
 {\listtext	2.	}Make sure SIMBL is installed.\
@@ -52,7 +84,7 @@ Keywurl is a small extension for Safari that adds keyword search, similar to Fir
 \b \cf0 If you want to install the plugin for your all user accounts on the system, the sequence is identical, except for step 3:
 \b0 \
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\ls3\ilvl0\cf0 {\listtext	1.	}If you are upgrading from an earlier release
+\ls5\ilvl0\cf0 {\listtext	1.	}If you are upgrading from an earlier release
 \i , 
 \i0 quit Safari.\
 {\listtext	2.	}Make sure SIMBL is installed.\
@@ -61,27 +93,25 @@ Keywurl is a small extension for Safari that adds keyword search, similar to Fir
 \b0  into 
 \b /Library/Application Support/SIMBL/Plugins
 \b0 . If this directory does not exist, create it.\
-{\listtext	4.	}Restart Safari.\
+{\listtext	4.	}Restart Safari.
+\b \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
 
-\b \cf0 \
-
-\fs36 License and other necessary legalese
+\fs36 \cf0 License and other necessary legalese
 \b0\fs28 \
 \pard\pardeftab720\sl360\slmult1\sb80\sa80\ql\qnatural
 \cf0 Copyright (c) 2007, Alexander Staubo.\
 All rights reserved.\
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural
-\ls4\ilvl0\cf0 {\listtext	\'95	}Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\
+\ls6\ilvl0\cf0 {\listtext	\'95	}Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\
 {\listtext	\'95	}Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\
 {\listtext	\'95	}The names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\
 \pard\pardeftab720\sl360\slmult1\sb80\sa80\ql\qnatural
 \cf0 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\uc0\u8232 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\u8232 LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\u8232 A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\u8232 CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\u8232 EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,\u8232 PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\u8232 PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\u8232 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\u8232 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\u8232 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\cf0 \
 
-\b\fs36 Credits
+\b\fs36 \cf0 Credits
 \b0\fs28 \
 The preference code was written based on Jim Fowler's ForgetMeNot plugin, with many thanks.\
 }
