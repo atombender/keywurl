@@ -39,13 +39,6 @@
 	    infoDictionary];
     KeywordMapper* mapper = [[KeywurlPlugin sharedInstance] keywordMapper];
     [tableView setDataSource: mapper];
-	/*
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"jfShouldReloadOnRelaunch"]) {
-		[checkboxShouldReloadOnRelaunch setState: NSOnState];
-	} else {
-		[checkboxShouldReloadOnRelaunch setState: NSOffState];
-	}
-	*/
 	[[NSNotificationCenter defaultCenter] addObserver: self
 	    selector: @selector(tableViewSelectionDidChange:)
 	    name: NSTableViewSelectionDidChangeNotification

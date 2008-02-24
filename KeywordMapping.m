@@ -80,28 +80,18 @@
 
 - (NSString*) encodeQuery: (NSString*) query {
     if (dontUseUnicode) {
-        NSMutableString* output = [NSMutableString new];
-        for (unsigned i = 0; i < [query length]; i++) {
-            unichar* c = [query characterAtIndex: i];
-            if (c >= 0 && c < 127) {
-                [output appendString: [NSString stringWithCharacters: &c length: 1]];
-            } else {
-                [output appendString: [NSString stringWithFormat: @"%%%2x", (unsigned int) c]];
-            }
-        }      
-        return output;
+        query = [query stringByAddingPercentEscapesUsingEncoding: NSISOLatin1StringEncoding];
     } else {
-        return query;
+        // Hashes are interpreted as URL fragments by Safari
+        query = [query stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+        query = [query stringByReplacingOccurrencesOfString: @"#" withString: @"%23"];
     }
-}
-
-+ (NSString*) encodeSpaces: (NSString*) string {
-    NSMutableString* newString = [string mutableCopy];
-    [newString replaceOccurrencesOfString: @" " 
-        withString: @"+" 
-        options: 0 
-        range: NSMakeRange(0, [newString length])];
-    return newString;
+    query = [query stringByReplacingOccurrencesOfString: @":" withString: @"%3a"];
+    if (encodeSpaces) {
+        query = [query stringByReplacingOccurrencesOfString: @"%20" withString: @"+"];
+        NSLog(@"Spaced out: %@", query);
+    }
+    return query;
 }
 
 @end

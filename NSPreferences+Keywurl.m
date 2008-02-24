@@ -10,7 +10,6 @@
 
 + (id) sharedPreferences
 {
-    NSLog(@"sharedPreferences");
 	static BOOL	added = NO;
 	id preferences = [super sharedPreferences];
 	if (preferences != nil && !added)

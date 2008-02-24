@@ -68,18 +68,11 @@
            mapping = [cache objectForKey: @"default"];
         }
         if (mapping) {
-            NSString* expansion = [[mapping expansion] mutableCopy];
-            if ([mapping dontUseUnicode]) {
-                input = [mapping encodeQuery: input];
-                query = [mapping encodeQuery: query];
-            }
-            if ([mapping encodeSpaces]) {
-                input = [KeywordMapping encodeSpaces: input];
-                query = [KeywordMapping encodeSpaces: query];
-            }
-            [self replaceInString: expansion fromString: @"@@@" toString: query];
-            [self replaceInString: expansion fromString: @"$$$" toString: input];
-            result = expansion;
+            input = [mapping encodeQuery: input];
+            query = [mapping encodeQuery: query];
+            result = [mapping expansion];
+            result = [result stringByReplacingOccurrencesOfString: @"@@@" withString: query];
+            result = [result stringByReplacingOccurrencesOfString: @"$$$" withString: input];
         }
     }
     return result;
@@ -87,26 +80,13 @@
 
 - (BOOL) isUrl: (NSString*) string {
     BOOL isUrl = NO;
-    if ([string rangeOfString: @"."].location != NSNotFound) {
-        NSMutableCharacterSet* characters = [[NSMutableCharacterSet alloc] init];
-        [characters formUnionWithCharacterSet: [NSCharacterSet alphanumericCharacterSet]];
-        [characters addCharactersInString: @"."];
-        isUrl = YES;
-        for (unsigned i = 0; i < [string length]; i++) {
-            if (![characters characterIsMember: [string characterAtIndex: i]]) {
-                isUrl = NO;
-            }
+    @try {
+        NSURL* url = [NSURL URLWithString: string];
+        if ([url scheme] != nil && ([url host] != nil || [url path] != nil)) {
+            isUrl = YES;
         }
-    }
-    if (!isUrl) {
-        @try {
-            NSURL* url = [NSURL URLWithString: string];
-            if ([url scheme] != nil && ([url host] != nil || [url path] != nil)) {
-                isUrl = YES;
-            }
-        } @catch (NSException* e) {
-            NSLog(@"Exception parsing URL: %@", e);
-        }
+    } @catch (NSException* e) {
+        NSLog(@"Exception parsing URL: %@", e);
     }
     return isUrl;
 }
@@ -263,19 +243,6 @@
     for (int i = [mappings count] - 1; i >= 0; i--) {
         KeywordMapping* mapping = [mappings objectAtIndex: i];
         [cache setValue: mapping forKey: [mapping keyword]];
-    }
-}
-
-- (void) replaceInString: (NSMutableString*) string 
-    fromString: (NSString*) fromString 
-    toString: (NSString*) toString {        
-    while (true) {
-        NSRange range = [string rangeOfString: fromString];
-        if (range.location == NSNotFound) {
-            break;
-        }
-        [string deleteCharactersInRange: range];
-        [string insertString: toString atIndex: range.location];
     }
 }
 

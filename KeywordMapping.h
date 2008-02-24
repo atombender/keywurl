@@ -14,6 +14,7 @@
     expansion: (NSString*) theExpansion
     dontUseUnicode: (BOOL) theDontUseUnicode
     encodeSpaces: (BOOL) theEncodeSpaces;
+
 - (NSString*) keyword;
 - (void) setKeyword: (NSString*) newKeyword;
 - (NSString*) expansion;
@@ -22,8 +23,9 @@
 - (BOOL) dontUseUnicode;
 - (void) setEncodeSpaces: (BOOL) flag;
 - (BOOL) encodeSpaces;
+
 - (NSDictionary*) toDictionary;
+
 - (NSString*) encodeQuery: (NSString*) query;
-+ (NSString*) encodeSpaces: (NSString*) string;
 
 @end

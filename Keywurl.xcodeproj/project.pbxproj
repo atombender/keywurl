@@ -52,6 +52,7 @@
 		FA87B7280C78DCF00085F985 /* Keywurl.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA87B7270C78DCF00085F985 /* Keywurl.icns */; };
 		FAD264D50CF5ABA60038C40B /* SIMBL.pkg in Resources */ = {isa = PBXBuildFile; fileRef = FAD264D40CF5ABA60038C40B /* SIMBL.pkg */; };
 		FAD264D60CF5ABAD0038C40B /* SIMBL.pkg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAD264D40CF5ABA60038C40B /* SIMBL.pkg */; };
+		FAD8B8ED0D71A17900245FCD /* KeywurlBrowserWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8B8EC0D71A17900245FCD /* KeywurlBrowserWebView.m */; };
 		FAF7F8430C78E74600A289A7 /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F8410C78E74600A289A7 /* Add.tiff */; };
 		FAF7F8440C78E74600A289A7 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F8420C78E74600A289A7 /* Remove.tiff */; };
 		FAF7F8500C78F1A100A289A7 /* KeywordMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF7F84F0C78F1A100A289A7 /* KeywordMapping.m */; };
@@ -128,6 +129,8 @@
 		FA87B7230C78DCAE0085F985 /* Keywurl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Keywurl.png; sourceTree = "<group>"; };
 		FA87B7270C78DCF00085F985 /* Keywurl.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Keywurl.icns; sourceTree = "<group>"; };
 		FAD264D40CF5ABA60038C40B /* SIMBL.pkg */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.installer-pkg"; path = SIMBL.pkg; sourceTree = "<group>"; };
+		FAD8B8EB0D71A17900245FCD /* KeywurlBrowserWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlBrowserWebView.h; sourceTree = "<group>"; };
+		FAD8B8EC0D71A17900245FCD /* KeywurlBrowserWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlBrowserWebView.m; sourceTree = "<group>"; };
 		FAF7F8410C78E74600A289A7 /* Add.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Add.tiff; sourceTree = "<group>"; };
 		FAF7F8420C78E74600A289A7 /* Remove.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Remove.tiff; sourceTree = "<group>"; };
 		FAF7F84E0C78F1A100A289A7 /* KeywordMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordMapping.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FAD8B8EB0D71A17900245FCD /* KeywurlBrowserWebView.h */,
+				FAD8B8EC0D71A17900245FCD /* KeywurlBrowserWebView.m */,
 				FAF7F84E0C78F1A100A289A7 /* KeywordMapping.h */,
 				FAF7F84F0C78F1A100A289A7 /* KeywordMapping.m */,
 				FA87B70D0C78D74C0085F985 /* NSPreferences+Keywurl.h */,
@@ -369,6 +374,7 @@
 				FA87B6FE0C78D6AE0085F985 /* KeywurlPreferences.m in Sources */,
 				FA87B70F0C78D74C0085F985 /* NSPreferences+Keywurl.m in Sources */,
 				FAF7F8500C78F1A100A289A7 /* KeywordMapping.m in Sources */,
+				FAD8B8ED0D71A17900245FCD /* KeywurlBrowserWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
