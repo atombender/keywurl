@@ -70,9 +70,10 @@
         if (mapping) {
             input = [mapping encodeQuery: input];
             query = [mapping encodeQuery: query];
-            result = [mapping expansion];
-            result = [result stringByReplacingOccurrencesOfString: @"@@@" withString: query];
-            result = [result stringByReplacingOccurrencesOfString: @"$$$" withString: input];
+            NSMutableString* expansion = [[mapping expansion] mutableCopy];
+            [expansion replaceOccurrencesOfString: @"@@@" withString: query options: 0 range: NSMakeRange(0, [expansion length])];
+            [expansion replaceOccurrencesOfString: @"$$$" withString: input options: 0 range: NSMakeRange(0, [expansion length])];
+            result = expansion;
         }
     }
     return result;

@@ -84,12 +84,12 @@
     } else {
         // Hashes are interpreted as URL fragments by Safari
         query = [query stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-        query = [query stringByReplacingOccurrencesOfString: @"#" withString: @"%23"];
     }
-    query = [query stringByReplacingOccurrencesOfString: @":" withString: @"%3a"];
+    NSMutableString* result = [query mutableCopy];
+    [result replaceOccurrencesOfString: @"#" withString: @"%23" options: 0 range: NSMakeRange(0, [result length])];
+    [result replaceOccurrencesOfString: @":" withString: @"%3a" options: 0 range: NSMakeRange(0, [result length])];
     if (encodeSpaces) {
-        query = [query stringByReplacingOccurrencesOfString: @"%20" withString: @"+"];
-        NSLog(@"Spaced out: %@", query);
+        [result replaceOccurrencesOfString: @"%20" withString: @"+" options: 0 range: NSMakeRange(0, [result length])];
     }
     return query;
 }
