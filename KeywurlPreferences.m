@@ -119,6 +119,7 @@
 - (IBAction) removeKeyword: (id) sender {
     int rowIndex = [tableView selectedRow];
     if (rowIndex >= 0) {
+        mappingBeingEdited = nil;
         KeywordMapper* mapper = [[KeywurlPlugin sharedInstance] keywordMapper];
         [mapper removeKeywordAtIndex: rowIndex];
         [tableView reloadData];
@@ -147,8 +148,8 @@
 }
 
 - (void) saveEdit {
-    if (mappingBeingEdited) {
-        KeywordMapping* mapping = mappingBeingEdited;
+    KeywordMapping* mapping = mappingBeingEdited;
+    if (mapping) {
         [mapping setEncodeSpaces: [encodeSpacesCheckbox state] == NSOnState];
         [mapping setDontUseUnicode: [dontUseUnicodeCheckBox state] == NSOnState];
         [mapping setExpansion: [expansionTextField stringValue]];
