@@ -56,14 +56,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FA0C663A0CF6436B00A04226 /* Keywurl for Safari 3.0 on Tiger */;
+			remoteGlobalIDString = FA0C663A0CF6436B00A04226;
 			remoteInfo = "Keywurl for Safari 3.0 on Tiger";
 		};
 		FA63F9C30D75E79400335062 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* Keywurl for Safari 3.0 on Leopard */;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = "Keywurl for Safari 3.0 on Leopard";
 		};
 /* End PBXContainerItemProxy section */
@@ -74,13 +74,13 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF630370AF2F00C91783 /* Keywurl_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keywurl_Prefix.pch; sourceTree = "<group>"; };
-		8D5B49B6048680CD000E48DA /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Keywurl.bundle; path = "/Keywurl for Safari 3.0 on Leopard/Release/Keywurl.bundle"; sourceTree = "<absolute>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		FA0C66550CF6436C00A04226 /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Keywurl.bundle; path = "/Keywurl for Safari 3.0 on Tiger/Release/Keywurl.bundle"; sourceTree = "<absolute>"; };
 		FA53C8970C7376F900EC5ABE /* KeywurlPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlPlugin.h; sourceTree = "<group>"; };
 		FA53C8980C7376F900EC5ABE /* KeywurlPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlPlugin.m; sourceTree = "<group>"; };
 		FA53C8EA0C73824800EC5ABE /* Safari.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari.h; sourceTree = "<group>"; };
+		FA63FAAB0D761C3B00335062 /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Keywurl.bundle; path = "/Keywurl for Safari 3.0 on Tiger/Release/Keywurl.bundle"; sourceTree = "<absolute>"; };
+		FA63FAAC0D761C3B00335062 /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Keywurl.bundle; path = "/Keywurl for Safari 3.0 on Leopard/Release/Keywurl.bundle"; sourceTree = "<absolute>"; };
 		FA87B6A70C78C7730085F985 /* KeywordMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordMapper.h; sourceTree = "<group>"; };
 		FA87B6A80C78C7730085F985 /* KeywordMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordMapper.m; sourceTree = "<group>"; };
 		FA87B6A90C78C7730085F985 /* KeywurlBrowserWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlBrowserWindowController.h; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 			name = "Keywurl for Safari 3.0 on Leopard";
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = Keywurl;
-			productReference = 8D5B49B6048680CD000E48DA /* Keywurl.bundle */;
+			productReference = FA63FAAC0D761C3B00335062 /* Keywurl.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		FA0C663A0CF6436B00A04226 /* Keywurl for Safari 3.0 on Tiger */ = {
@@ -252,7 +252,7 @@
 			name = "Keywurl for Safari 3.0 on Tiger";
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = Keywurl;
-			productReference = FA0C66550CF6436C00A04226 /* Keywurl.bundle */;
+			productReference = FA63FAAB0D761C3B00335062 /* Keywurl.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -474,6 +474,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
+					"KEYWURL_VERSION=1.3.1",
+					"MAX_BUNDLE_VERSION=523",
+					"MIN_BUNDLE_VERSION=523",
+				);
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
 				SYMROOT = "$(BUILD_DIR)/Keywurl for Safari 3.0 on Tiger";
@@ -494,6 +499,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
+					"KEYWURL_VERSION=1.3.1",
+					"MAX_BUNDLE_VERSION=523",
+					"MIN_BUNDLE_VERSION=523",
+				);
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
 				SYMROOT = "$(BUILD_DIR)/Keywurl for Safari 3.0 on Tiger";
