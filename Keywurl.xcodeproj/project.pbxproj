@@ -7,64 +7,67 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		FA63F9BE0D75E78C00335062 /* All targets */ = {
+		FA3A4DA20D78A25F00BD4C53 /* Keywurl */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = FA63F9C50D75E7B800335062 /* Build configuration list for PBXAggregateTarget "All targets" */;
+			buildConfigurationList = FA3A4DAE0D78A26F00BD4C53 /* Build configuration list for PBXAggregateTarget "Keywurl" */;
 			buildPhases = (
 			);
 			dependencies = (
-				FA63F9C20D75E79400335062 /* PBXTargetDependency */,
-				FA63F9C40D75E79400335062 /* PBXTargetDependency */,
+				FA3A4DA60D78A26600BD4C53 /* PBXTargetDependency */,
+				FA3A4DA80D78A26600BD4C53 /* PBXTargetDependency */,
 			);
-			name = "All targets";
-			productName = "All targets";
+			name = Keywurl;
+			productName = Keywurl;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
-		FA0C663F0CF6436B00A04226 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
-		FA0C66400CF6436B00A04226 /* KeywurlPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA87B6FF0C78D6C20085F985 /* KeywurlPreferences.nib */; };
-		FA0C66410CF6436B00A04226 /* Keywurl.png in Resources */ = {isa = PBXBuildFile; fileRef = FA87B7230C78DCAE0085F985 /* Keywurl.png */; };
-		FA0C66420CF6436B00A04226 /* Keywurl.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA87B7270C78DCF00085F985 /* Keywurl.icns */; };
-		FA0C66430CF6436B00A04226 /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F8410C78E74600A289A7 /* Add.tiff */; };
-		FA0C66440CF6436B00A04226 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F8420C78E74600A289A7 /* Remove.tiff */; };
-		FA0C66480CF6436B00A04226 /* KeywurlPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FA53C8980C7376F900EC5ABE /* KeywurlPlugin.m */; };
-		FA0C66490CF6436B00A04226 /* KeywordMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B6A80C78C7730085F985 /* KeywordMapper.m */; };
-		FA0C664A0CF6436B00A04226 /* KeywurlBrowserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B6AA0C78C7730085F985 /* KeywurlBrowserWindowController.m */; };
-		FA0C664B0CF6436B00A04226 /* KeywurlPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B6FC0C78D6AE0085F985 /* KeywurlPreferences.m */; };
-		FA0C664C0CF6436B00A04226 /* NSPreferences+Keywurl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B70E0C78D74C0085F985 /* NSPreferences+Keywurl.m */; };
-		FA0C664D0CF6436B00A04226 /* KeywordMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF7F84F0C78F1A100A289A7 /* KeywordMapping.m */; };
-		FA0C664F0CF6436B00A04226 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
-		FA53C8990C7376F900EC5ABE /* KeywurlPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FA53C8980C7376F900EC5ABE /* KeywurlPlugin.m */; };
-		FA87B6AB0C78C7730085F985 /* KeywordMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B6A80C78C7730085F985 /* KeywordMapper.m */; };
-		FA87B6AC0C78C7730085F985 /* KeywurlBrowserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B6AA0C78C7730085F985 /* KeywurlBrowserWindowController.m */; };
-		FA87B6FE0C78D6AE0085F985 /* KeywurlPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B6FC0C78D6AE0085F985 /* KeywurlPreferences.m */; };
-		FA87B7010C78D6C20085F985 /* KeywurlPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA87B6FF0C78D6C20085F985 /* KeywurlPreferences.nib */; };
-		FA87B70F0C78D74C0085F985 /* NSPreferences+Keywurl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA87B70E0C78D74C0085F985 /* NSPreferences+Keywurl.m */; };
-		FA87B7240C78DCAE0085F985 /* Keywurl.png in Resources */ = {isa = PBXBuildFile; fileRef = FA87B7230C78DCAE0085F985 /* Keywurl.png */; };
-		FA87B7280C78DCF00085F985 /* Keywurl.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA87B7270C78DCF00085F985 /* Keywurl.icns */; };
-		FAD8B8ED0D71A17900245FCD /* KeywurlBrowserWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD8B8EC0D71A17900245FCD /* KeywurlBrowserWebView.m */; };
-		FAF7F8430C78E74600A289A7 /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F8410C78E74600A289A7 /* Add.tiff */; };
-		FAF7F8440C78E74600A289A7 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FAF7F8420C78E74600A289A7 /* Remove.tiff */; };
-		FAF7F8500C78F1A100A289A7 /* KeywordMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF7F84F0C78F1A100A289A7 /* KeywordMapping.m */; };
+		FA3A4D2E0D789D2800BD4C53 /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D170D789D2800BD4C53 /* Add.tiff */; };
+		FA3A4D2F0D789D2800BD4C53 /* KeywordMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D190D789D2800BD4C53 /* KeywordMapper.m */; };
+		FA3A4D300D789D2800BD4C53 /* KeywordMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D1B0D789D2800BD4C53 /* KeywordMapping.m */; };
+		FA3A4D310D789D2800BD4C53 /* Keywurl.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D1C0D789D2800BD4C53 /* Keywurl.icns */; };
+		FA3A4D320D789D2800BD4C53 /* Keywurl.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D1D0D789D2800BD4C53 /* Keywurl.png */; };
+		FA3A4D330D789D2800BD4C53 /* KeywurlBrowserWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D1F0D789D2800BD4C53 /* KeywurlBrowserWebView.m */; };
+		FA3A4D340D789D2800BD4C53 /* KeywurlBrowserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D210D789D2800BD4C53 /* KeywurlBrowserWindowController.m */; };
+		FA3A4D350D789D2800BD4C53 /* KeywurlPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D230D789D2800BD4C53 /* KeywurlPlugin.m */; };
+		FA3A4D360D789D2800BD4C53 /* KeywurlPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D250D789D2800BD4C53 /* KeywurlPreferences.m */; };
+		FA3A4D370D789D2800BD4C53 /* NSPreferences+Keywurl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D280D789D2800BD4C53 /* NSPreferences+Keywurl.m */; };
+		FA3A4D380D789D2800BD4C53 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D290D789D2800BD4C53 /* Readme.rtf */; };
+		FA3A4D390D789D2800BD4C53 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D2A0D789D2800BD4C53 /* Remove.tiff */; };
+		FA3A4D780D78A0BD00BD4C53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		FA3A4D790D78A0BD00BD4C53 /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D170D789D2800BD4C53 /* Add.tiff */; };
+		FA3A4D7A0D78A0BD00BD4C53 /* Keywurl.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D1C0D789D2800BD4C53 /* Keywurl.icns */; };
+		FA3A4D7B0D78A0BD00BD4C53 /* Keywurl.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D1D0D789D2800BD4C53 /* Keywurl.png */; };
+		FA3A4D7C0D78A0BD00BD4C53 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D290D789D2800BD4C53 /* Readme.rtf */; };
+		FA3A4D7D0D78A0BD00BD4C53 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D2A0D789D2800BD4C53 /* Remove.tiff */; };
+		FA3A4D7F0D78A0BD00BD4C53 /* KeywordMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D190D789D2800BD4C53 /* KeywordMapper.m */; };
+		FA3A4D800D78A0BD00BD4C53 /* KeywordMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D1B0D789D2800BD4C53 /* KeywordMapping.m */; };
+		FA3A4D810D78A0BD00BD4C53 /* KeywurlBrowserWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D1F0D789D2800BD4C53 /* KeywurlBrowserWebView.m */; };
+		FA3A4D820D78A0BD00BD4C53 /* KeywurlBrowserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D210D789D2800BD4C53 /* KeywurlBrowserWindowController.m */; };
+		FA3A4D830D78A0BD00BD4C53 /* KeywurlPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D230D789D2800BD4C53 /* KeywurlPlugin.m */; };
+		FA3A4D840D78A0BD00BD4C53 /* KeywurlPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D250D789D2800BD4C53 /* KeywurlPreferences.m */; };
+		FA3A4D850D78A0BD00BD4C53 /* NSPreferences+Keywurl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D280D789D2800BD4C53 /* NSPreferences+Keywurl.m */; };
+		FA3A4D870D78A0BD00BD4C53 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		FA3A4D9E0D78A1DF00BD4C53 /* KeywurlPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D9C0D78A1DF00BD4C53 /* KeywurlPreferences.nib */; };
+		FA3A4D9F0D78A1E500BD4C53 /* KeywurlPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D9C0D78A1DF00BD4C53 /* KeywurlPreferences.nib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FA63F9C10D75E79400335062 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA0C663A0CF6436B00A04226;
-			remoteInfo = "Keywurl for Safari 3.0 on Tiger";
-		};
-		FA63F9C30D75E79400335062 /* PBXContainerItemProxy */ = {
+		FA3A4DA50D78A26600BD4C53 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
-			remoteInfo = "Keywurl for Safari 3.0 on Leopard";
+			remoteInfo = "Keywurl on Leopard";
+		};
+		FA3A4DA70D78A26600BD4C53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA3A4D760D78A0BD00BD4C53;
+			remoteInfo = "Keywurl on Tiger";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -73,34 +76,34 @@
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		32DBCF630370AF2F00C91783 /* Keywurl_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keywurl_Prefix.pch; sourceTree = "<group>"; };
-		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Keywurl.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		FA53C8970C7376F900EC5ABE /* KeywurlPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlPlugin.h; sourceTree = "<group>"; };
-		FA53C8980C7376F900EC5ABE /* KeywurlPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlPlugin.m; sourceTree = "<group>"; };
-		FA53C8EA0C73824800EC5ABE /* Safari.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari.h; sourceTree = "<group>"; };
-		FA63FAAB0D761C3B00335062 /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Keywurl.bundle; path = "/Keywurl for Safari 3.0 on Tiger/Release/Keywurl.bundle"; sourceTree = "<absolute>"; };
-		FA63FAAC0D761C3B00335062 /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Keywurl.bundle; path = "/Keywurl for Safari 3.0 on Leopard/Release/Keywurl.bundle"; sourceTree = "<absolute>"; };
-		FA87B6A70C78C7730085F985 /* KeywordMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordMapper.h; sourceTree = "<group>"; };
-		FA87B6A80C78C7730085F985 /* KeywordMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordMapper.m; sourceTree = "<group>"; };
-		FA87B6A90C78C7730085F985 /* KeywurlBrowserWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlBrowserWindowController.h; sourceTree = "<group>"; };
-		FA87B6AA0C78C7730085F985 /* KeywurlBrowserWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlBrowserWindowController.m; sourceTree = "<group>"; };
-		FA87B6FB0C78D6AE0085F985 /* KeywurlPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlPreferences.h; sourceTree = "<group>"; };
-		FA87B6FC0C78D6AE0085F985 /* KeywurlPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlPreferences.m; sourceTree = "<group>"; };
-		FA87B6FD0C78D6AE0085F985 /* NSPreferenceModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferenceModule.h; sourceTree = "<group>"; };
-		FA87B7000C78D6C20085F985 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/KeywurlPreferences.nib; sourceTree = "<group>"; };
-		FA87B70D0C78D74C0085F985 /* NSPreferences+Keywurl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPreferences+Keywurl.h"; sourceTree = "<group>"; };
-		FA87B70E0C78D74C0085F985 /* NSPreferences+Keywurl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPreferences+Keywurl.m"; sourceTree = "<group>"; };
-		FA87B7230C78DCAE0085F985 /* Keywurl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Keywurl.png; sourceTree = "<group>"; };
-		FA87B7270C78DCF00085F985 /* Keywurl.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Keywurl.icns; sourceTree = "<group>"; };
-		FAD264D40CF5ABA60038C40B /* SIMBL.pkg */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.installer-pkg"; path = SIMBL.pkg; sourceTree = "<group>"; };
-		FAD8B8EB0D71A17900245FCD /* KeywurlBrowserWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlBrowserWebView.h; sourceTree = "<group>"; };
-		FAD8B8EC0D71A17900245FCD /* KeywurlBrowserWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlBrowserWebView.m; sourceTree = "<group>"; };
-		FAF7F8410C78E74600A289A7 /* Add.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Add.tiff; sourceTree = "<group>"; };
-		FAF7F8420C78E74600A289A7 /* Remove.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Remove.tiff; sourceTree = "<group>"; };
-		FAF7F84E0C78F1A100A289A7 /* KeywordMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordMapping.h; sourceTree = "<group>"; };
-		FAF7F84F0C78F1A100A289A7 /* KeywordMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordMapping.m; sourceTree = "<group>"; };
-		FAF7F89D0C7909F700A289A7 /* Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
+		FA3A4D170D789D2800BD4C53 /* Add.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Add.tiff; sourceTree = "<group>"; };
+		FA3A4D180D789D2800BD4C53 /* KeywordMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordMapper.h; sourceTree = "<group>"; };
+		FA3A4D190D789D2800BD4C53 /* KeywordMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordMapper.m; sourceTree = "<group>"; };
+		FA3A4D1A0D789D2800BD4C53 /* KeywordMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordMapping.h; sourceTree = "<group>"; };
+		FA3A4D1B0D789D2800BD4C53 /* KeywordMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordMapping.m; sourceTree = "<group>"; };
+		FA3A4D1C0D789D2800BD4C53 /* Keywurl.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Keywurl.icns; sourceTree = "<group>"; };
+		FA3A4D1D0D789D2800BD4C53 /* Keywurl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Keywurl.png; sourceTree = "<group>"; };
+		FA3A4D1E0D789D2800BD4C53 /* KeywurlBrowserWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlBrowserWebView.h; sourceTree = "<group>"; };
+		FA3A4D1F0D789D2800BD4C53 /* KeywurlBrowserWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlBrowserWebView.m; sourceTree = "<group>"; };
+		FA3A4D200D789D2800BD4C53 /* KeywurlBrowserWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlBrowserWindowController.h; sourceTree = "<group>"; };
+		FA3A4D210D789D2800BD4C53 /* KeywurlBrowserWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlBrowserWindowController.m; sourceTree = "<group>"; };
+		FA3A4D220D789D2800BD4C53 /* KeywurlPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlPlugin.h; sourceTree = "<group>"; };
+		FA3A4D230D789D2800BD4C53 /* KeywurlPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlPlugin.m; sourceTree = "<group>"; };
+		FA3A4D240D789D2800BD4C53 /* KeywurlPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywurlPreferences.h; sourceTree = "<group>"; };
+		FA3A4D250D789D2800BD4C53 /* KeywurlPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywurlPreferences.m; sourceTree = "<group>"; };
+		FA3A4D260D789D2800BD4C53 /* NSPreferenceModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferenceModule.h; sourceTree = "<group>"; };
+		FA3A4D270D789D2800BD4C53 /* NSPreferences+Keywurl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPreferences+Keywurl.h"; sourceTree = "<group>"; };
+		FA3A4D280D789D2800BD4C53 /* NSPreferences+Keywurl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPreferences+Keywurl.m"; sourceTree = "<group>"; };
+		FA3A4D290D789D2800BD4C53 /* Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
+		FA3A4D2A0D789D2800BD4C53 /* Remove.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Remove.tiff; sourceTree = "<group>"; };
+		FA3A4D2B0D789D2800BD4C53 /* Safari.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari.h; sourceTree = "<group>"; };
+		FA3A4D2C0D789D2800BD4C53 /* Safari2_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari2_0.h; sourceTree = "<group>"; };
+		FA3A4D2D0D789D2800BD4C53 /* Safari3_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari3_0.h; sourceTree = "<group>"; };
+		FA3A4D8B0D78A0BD00BD4C53 /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Keywurl.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3A4D9D0D78A1DF00BD4C53 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/KeywurlPreferences.nib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +115,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA0C664E0CF6436B00A04226 /* Frameworks */ = {
+		FA3A4D860D78A0BD00BD4C53 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA0C664F0CF6436B00A04226 /* Cocoa.framework in Frameworks */,
+				FA3A4D870D78A0BD00BD4C53 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,11 +150,12 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FAF7F8410C78E74600A289A7 /* Add.tiff */,
-				FAF7F8420C78E74600A289A7 /* Remove.tiff */,
-				FA87B7270C78DCF00085F985 /* Keywurl.icns */,
-				FA87B7230C78DCAE0085F985 /* Keywurl.png */,
-				FA87B6FF0C78D6C20085F985 /* KeywurlPreferences.nib */,
+				FA3A4D9C0D78A1DF00BD4C53 /* KeywurlPreferences.nib */,
+				FA3A4D170D789D2800BD4C53 /* Add.tiff */,
+				FA3A4D1C0D789D2800BD4C53 /* Keywurl.icns */,
+				FA3A4D1D0D789D2800BD4C53 /* Keywurl.png */,
+				FA3A4D290D789D2800BD4C53 /* Readme.rtf */,
+				FA3A4D2A0D789D2800BD4C53 /* Remove.tiff */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 			);
@@ -161,22 +165,24 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FAD8B8EB0D71A17900245FCD /* KeywurlBrowserWebView.h */,
-				FAD8B8EC0D71A17900245FCD /* KeywurlBrowserWebView.m */,
-				FAF7F84E0C78F1A100A289A7 /* KeywordMapping.h */,
-				FAF7F84F0C78F1A100A289A7 /* KeywordMapping.m */,
-				FA87B70D0C78D74C0085F985 /* NSPreferences+Keywurl.h */,
-				FA87B70E0C78D74C0085F985 /* NSPreferences+Keywurl.m */,
-				FA87B6FB0C78D6AE0085F985 /* KeywurlPreferences.h */,
-				FA87B6FC0C78D6AE0085F985 /* KeywurlPreferences.m */,
-				FA87B6FD0C78D6AE0085F985 /* NSPreferenceModule.h */,
-				FA87B6A70C78C7730085F985 /* KeywordMapper.h */,
-				FA87B6A80C78C7730085F985 /* KeywordMapper.m */,
-				FA87B6A90C78C7730085F985 /* KeywurlBrowserWindowController.h */,
-				FA87B6AA0C78C7730085F985 /* KeywurlBrowserWindowController.m */,
-				FA53C8970C7376F900EC5ABE /* KeywurlPlugin.h */,
-				FA53C8980C7376F900EC5ABE /* KeywurlPlugin.m */,
-				FA53C8EA0C73824800EC5ABE /* Safari.h */,
+				FA3A4D180D789D2800BD4C53 /* KeywordMapper.h */,
+				FA3A4D190D789D2800BD4C53 /* KeywordMapper.m */,
+				FA3A4D1A0D789D2800BD4C53 /* KeywordMapping.h */,
+				FA3A4D1B0D789D2800BD4C53 /* KeywordMapping.m */,
+				FA3A4D1E0D789D2800BD4C53 /* KeywurlBrowserWebView.h */,
+				FA3A4D1F0D789D2800BD4C53 /* KeywurlBrowserWebView.m */,
+				FA3A4D200D789D2800BD4C53 /* KeywurlBrowserWindowController.h */,
+				FA3A4D210D789D2800BD4C53 /* KeywurlBrowserWindowController.m */,
+				FA3A4D220D789D2800BD4C53 /* KeywurlPlugin.h */,
+				FA3A4D230D789D2800BD4C53 /* KeywurlPlugin.m */,
+				FA3A4D240D789D2800BD4C53 /* KeywurlPreferences.h */,
+				FA3A4D250D789D2800BD4C53 /* KeywurlPreferences.m */,
+				FA3A4D260D789D2800BD4C53 /* NSPreferenceModule.h */,
+				FA3A4D270D789D2800BD4C53 /* NSPreferences+Keywurl.h */,
+				FA3A4D280D789D2800BD4C53 /* NSPreferences+Keywurl.m */,
+				FA3A4D2B0D789D2800BD4C53 /* Safari.h */,
+				FA3A4D2C0D789D2800BD4C53 /* Safari2_0.h */,
+				FA3A4D2D0D789D2800BD4C53 /* Safari3_0.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -202,6 +208,8 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				8D5B49B6048680CD000E48DA /* Keywurl.bundle */,
+				FA3A4D8B0D78A0BD00BD4C53 /* Keywurl.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,9 +217,6 @@
 		32C88E010371C26100C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FAD264D40CF5ABA60038C40B /* SIMBL.pkg */,
-				FAF7F89D0C7909F700A289A7 /* Readme.rtf */,
-				32DBCF630370AF2F00C91783 /* Keywurl_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -219,9 +224,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D5B49AC048680CD000E48DA /* Keywurl for Safari 3.0 on Leopard */ = {
+		8D5B49AC048680CD000E48DA /* Keywurl on Leopard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "Keywurl for Safari 3.0 on Leopard" */;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "Keywurl on Leopard" */;
 			buildPhases = (
 				8D5B49AF048680CD000E48DA /* Resources */,
 				8D5B49B1048680CD000E48DA /* Sources */,
@@ -231,28 +236,28 @@
 			);
 			dependencies = (
 			);
-			name = "Keywurl for Safari 3.0 on Leopard";
+			name = "Keywurl on Leopard";
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = Keywurl;
-			productReference = FA63FAAC0D761C3B00335062 /* Keywurl.bundle */;
+			productReference = 8D5B49B6048680CD000E48DA /* Keywurl.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		FA0C663A0CF6436B00A04226 /* Keywurl for Safari 3.0 on Tiger */ = {
+		FA3A4D760D78A0BD00BD4C53 /* Keywurl on Tiger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA0C66500CF6436B00A04226 /* Build configuration list for PBXNativeTarget "Keywurl for Safari 3.0 on Tiger" */;
+			buildConfigurationList = FA3A4D880D78A0BD00BD4C53 /* Build configuration list for PBXNativeTarget "Keywurl on Tiger" */;
 			buildPhases = (
-				FA0C663E0CF6436B00A04226 /* Resources */,
-				FA0C66470CF6436B00A04226 /* Sources */,
-				FA0C664E0CF6436B00A04226 /* Frameworks */,
+				FA3A4D770D78A0BD00BD4C53 /* Resources */,
+				FA3A4D7E0D78A0BD00BD4C53 /* Sources */,
+				FA3A4D860D78A0BD00BD4C53 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Keywurl for Safari 3.0 on Tiger";
+			name = "Keywurl on Tiger";
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = Keywurl;
-			productReference = FA63FAAB0D761C3B00335062 /* Keywurl.bundle */;
+			productReference = FA3A4D8B0D78A0BD00BD4C53 /* Keywurl.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -267,9 +272,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA63F9BE0D75E78C00335062 /* All targets */,
-				FA0C663A0CF6436B00A04226 /* Keywurl for Safari 3.0 on Tiger */,
-				8D5B49AC048680CD000E48DA /* Keywurl for Safari 3.0 on Leopard */,
+				FA3A4DA20D78A25F00BD4C53 /* Keywurl */,
+				8D5B49AC048680CD000E48DA /* Keywurl on Leopard */,
+				FA3A4D760D78A0BD00BD4C53 /* Keywurl on Tiger */,
 			);
 		};
 /* End PBXProject section */
@@ -280,24 +285,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
-				FA87B7010C78D6C20085F985 /* KeywurlPreferences.nib in Resources */,
-				FA87B7240C78DCAE0085F985 /* Keywurl.png in Resources */,
-				FA87B7280C78DCF00085F985 /* Keywurl.icns in Resources */,
-				FAF7F8430C78E74600A289A7 /* Add.tiff in Resources */,
-				FAF7F8440C78E74600A289A7 /* Remove.tiff in Resources */,
+				FA3A4D2E0D789D2800BD4C53 /* Add.tiff in Resources */,
+				FA3A4D310D789D2800BD4C53 /* Keywurl.icns in Resources */,
+				FA3A4D320D789D2800BD4C53 /* Keywurl.png in Resources */,
+				FA3A4D380D789D2800BD4C53 /* Readme.rtf in Resources */,
+				FA3A4D390D789D2800BD4C53 /* Remove.tiff in Resources */,
+				FA3A4D9E0D78A1DF00BD4C53 /* KeywurlPreferences.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA0C663E0CF6436B00A04226 /* Resources */ = {
+		FA3A4D770D78A0BD00BD4C53 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA0C663F0CF6436B00A04226 /* InfoPlist.strings in Resources */,
-				FA0C66400CF6436B00A04226 /* KeywurlPreferences.nib in Resources */,
-				FA0C66410CF6436B00A04226 /* Keywurl.png in Resources */,
-				FA0C66420CF6436B00A04226 /* Keywurl.icns in Resources */,
-				FA0C66430CF6436B00A04226 /* Add.tiff in Resources */,
-				FA0C66440CF6436B00A04226 /* Remove.tiff in Resources */,
+				FA3A4D780D78A0BD00BD4C53 /* InfoPlist.strings in Resources */,
+				FA3A4D790D78A0BD00BD4C53 /* Add.tiff in Resources */,
+				FA3A4D7A0D78A0BD00BD4C53 /* Keywurl.icns in Resources */,
+				FA3A4D7B0D78A0BD00BD4C53 /* Keywurl.png in Resources */,
+				FA3A4D7C0D78A0BD00BD4C53 /* Readme.rtf in Resources */,
+				FA3A4D7D0D78A0BD00BD4C53 /* Remove.tiff in Resources */,
+				FA3A4D9F0D78A1E500BD4C53 /* KeywurlPreferences.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,41 +315,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA53C8990C7376F900EC5ABE /* KeywurlPlugin.m in Sources */,
-				FA87B6AB0C78C7730085F985 /* KeywordMapper.m in Sources */,
-				FA87B6AC0C78C7730085F985 /* KeywurlBrowserWindowController.m in Sources */,
-				FA87B6FE0C78D6AE0085F985 /* KeywurlPreferences.m in Sources */,
-				FA87B70F0C78D74C0085F985 /* NSPreferences+Keywurl.m in Sources */,
-				FAF7F8500C78F1A100A289A7 /* KeywordMapping.m in Sources */,
-				FAD8B8ED0D71A17900245FCD /* KeywurlBrowserWebView.m in Sources */,
+				FA3A4D2F0D789D2800BD4C53 /* KeywordMapper.m in Sources */,
+				FA3A4D300D789D2800BD4C53 /* KeywordMapping.m in Sources */,
+				FA3A4D330D789D2800BD4C53 /* KeywurlBrowserWebView.m in Sources */,
+				FA3A4D340D789D2800BD4C53 /* KeywurlBrowserWindowController.m in Sources */,
+				FA3A4D350D789D2800BD4C53 /* KeywurlPlugin.m in Sources */,
+				FA3A4D360D789D2800BD4C53 /* KeywurlPreferences.m in Sources */,
+				FA3A4D370D789D2800BD4C53 /* NSPreferences+Keywurl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA0C66470CF6436B00A04226 /* Sources */ = {
+		FA3A4D7E0D78A0BD00BD4C53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA0C66480CF6436B00A04226 /* KeywurlPlugin.m in Sources */,
-				FA0C66490CF6436B00A04226 /* KeywordMapper.m in Sources */,
-				FA0C664A0CF6436B00A04226 /* KeywurlBrowserWindowController.m in Sources */,
-				FA0C664B0CF6436B00A04226 /* KeywurlPreferences.m in Sources */,
-				FA0C664C0CF6436B00A04226 /* NSPreferences+Keywurl.m in Sources */,
-				FA0C664D0CF6436B00A04226 /* KeywordMapping.m in Sources */,
+				FA3A4D7F0D78A0BD00BD4C53 /* KeywordMapper.m in Sources */,
+				FA3A4D800D78A0BD00BD4C53 /* KeywordMapping.m in Sources */,
+				FA3A4D810D78A0BD00BD4C53 /* KeywurlBrowserWebView.m in Sources */,
+				FA3A4D820D78A0BD00BD4C53 /* KeywurlBrowserWindowController.m in Sources */,
+				FA3A4D830D78A0BD00BD4C53 /* KeywurlPlugin.m in Sources */,
+				FA3A4D840D78A0BD00BD4C53 /* KeywurlPreferences.m in Sources */,
+				FA3A4D850D78A0BD00BD4C53 /* NSPreferences+Keywurl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FA63F9C20D75E79400335062 /* PBXTargetDependency */ = {
+		FA3A4DA60D78A26600BD4C53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FA0C663A0CF6436B00A04226 /* Keywurl for Safari 3.0 on Tiger */;
-			targetProxy = FA63F9C10D75E79400335062 /* PBXContainerItemProxy */;
+			target = 8D5B49AC048680CD000E48DA /* Keywurl on Leopard */;
+			targetProxy = FA3A4DA50D78A26600BD4C53 /* PBXContainerItemProxy */;
 		};
-		FA63F9C40D75E79400335062 /* PBXTargetDependency */ = {
+		FA3A4DA80D78A26600BD4C53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D5B49AC048680CD000E48DA /* Keywurl for Safari 3.0 on Leopard */;
-			targetProxy = FA63F9C30D75E79400335062 /* PBXContainerItemProxy */;
+			target = FA3A4D760D78A0BD00BD4C53 /* Keywurl on Tiger */;
+			targetProxy = FA3A4DA70D78A26600BD4C53 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -355,10 +363,10 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		FA87B6FF0C78D6C20085F985 /* KeywurlPreferences.nib */ = {
+		FA3A4D9C0D78A1DF00BD4C53 /* KeywurlPreferences.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA87B7000C78D6C20085F985 /* English */,
+				FA3A4D9D0D78A1DF00BD4C53 /* English */,
 			);
 			name = KeywurlPreferences.nib;
 			sourceTree = "<group>";
@@ -369,18 +377,23 @@
 		1DEB913B08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) on Leopard";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = supported;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
+					"MIN_BUNDLE_VERSION=5523",
+					"MAX_BUNDLE_VERSION=5523",
+				);
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
-				SYMROOT = "$(BUILD_DIR)/Keywurl for Safari 3.0 on Leopard";
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
 			};
@@ -389,19 +402,20 @@
 		1DEB913C08733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) on Leopard";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_GC = supported;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
+					"MIN_BUNDLE_VERSION=5523",
+					"MAX_BUNDLE_VERSION=5523",
+				);
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
-				SYMROOT = "$(BUILD_DIR)/Keywurl for Safari 3.0 on Leopard";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -409,22 +423,14 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					PPC,
-				);
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = KEYWURL_SAFARI_3_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_PREPROCESS = YES;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
-					"MAX_BUNDLE_VERSION=522",
-					"MIN_BUNDLE_VERSION=522",
+					"MIN_BUNDLE_VERSION=523",
+					"MAX_BUNDLE_VERSION=523",
 				);
-				KEYWURL_MAINTENANCE_VERSION = 1;
-				KEYWURL_MAJOR_VERSION = 1;
-				KEYWURL_MINOR_VERSION = 3;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -438,22 +444,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
-					i386,
 					ppc,
-					PPC,
+					i386,
 				);
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = KEYWURL_SAFARI_3_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_PREPROCESS = YES;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
-					"KEYWURL_VERSION=1.3.1",
-					"MAX_BUNDLE_VERSION=5523",
-					"MIN_BUNDLE_VERSION=5523",
+					"MIN_BUNDLE_VERSION=523",
+					"MAX_BUNDLE_VERSION=523",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -463,9 +464,10 @@
 			};
 			name = Release;
 		};
-		FA0C66510CF6436B00A04226 /* Debug */ = {
+		FA3A4D890D78A0BD00BD4C53 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) on Tiger";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -473,61 +475,46 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
-					"KEYWURL_VERSION=1.3.1",
-					"MAX_BUNDLE_VERSION=523",
-					"MIN_BUNDLE_VERSION=523",
-				);
+				INFOPLIST_FILE = "/Users/alex/Devel/Apps/Keywurl/Keywurl_1.3_branch/Info copy.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
-				SYMROOT = "$(BUILD_DIR)/Keywurl for Safari 3.0 on Tiger";
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
-		FA0C66520CF6436B00A04226 /* Release */ = {
+		FA3A4D8A0D78A0BD00BD4C53 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) on Tiger";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
-					"KEYWURL_VERSION=1.3.1",
-					"MAX_BUNDLE_VERSION=523",
-					"MIN_BUNDLE_VERSION=523",
-				);
+				INFOPLIST_FILE = "/Users/alex/Devel/Apps/Keywurl/Keywurl_1.3_branch/Info copy.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
-				SYMROOT = "$(BUILD_DIR)/Keywurl for Safari 3.0 on Tiger";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
-		FA63F9BF0D75E78C00335062 /* Debug */ = {
+		FA3A4DA30D78A26000BD4C53 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "All targets";
+				PRODUCT_NAME = Keywurl;
 			};
 			name = Debug;
 		};
-		FA63F9C00D75E78C00335062 /* Release */ = {
+		FA3A4DA40D78A26000BD4C53 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = "All targets";
+				PRODUCT_NAME = Keywurl;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -535,7 +522,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "Keywurl for Safari 3.0 on Leopard" */ = {
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "Keywurl on Leopard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB913B08733D840010E9CD /* Debug */,
@@ -553,20 +540,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA0C66500CF6436B00A04226 /* Build configuration list for PBXNativeTarget "Keywurl for Safari 3.0 on Tiger" */ = {
+		FA3A4D880D78A0BD00BD4C53 /* Build configuration list for PBXNativeTarget "Keywurl on Tiger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA0C66510CF6436B00A04226 /* Debug */,
-				FA0C66520CF6436B00A04226 /* Release */,
+				FA3A4D890D78A0BD00BD4C53 /* Debug */,
+				FA3A4D8A0D78A0BD00BD4C53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA63F9C50D75E7B800335062 /* Build configuration list for PBXAggregateTarget "All targets" */ = {
+		FA3A4DAE0D78A26F00BD4C53 /* Build configuration list for PBXAggregateTarget "Keywurl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA63F9BF0D75E78C00335062 /* Debug */,
-				FA63F9C00D75E78C00335062 /* Release */,
+				FA3A4DA30D78A26000BD4C53 /* Debug */,
+				FA3A4DA40D78A26000BD4C53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
