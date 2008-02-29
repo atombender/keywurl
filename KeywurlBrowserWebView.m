@@ -9,13 +9,12 @@
     LocationFieldEditor* fieldEditor = (LocationFieldEditor*) [[[self windowController] window] firstResponder];
 	NSString* address = [[fieldEditor textStorage] string];
     NSString* mapped = [mapper mapKeywordInput: address];
-    NSArray* fallbackUrls = nil;
 	if (mapped && ![mapped isEqualToString: address]) {
         NSURL* mappedUrl = [NSURL URLWithString: mapped];
-        NSLog(@"Fallback URL %@", mappedUrl);
-        fallbackUrls = [NSArray arrayWithObject: mappedUrl];
+        return [NSArray arrayWithObject: mappedUrl];
+    } else {
+        return [super fallbackURLs];
     }
-	return fallbackUrls;
 }
 
 @end
