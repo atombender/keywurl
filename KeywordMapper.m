@@ -103,7 +103,9 @@
 }
 
 - (void) loadMappingsFromFile: (NSString*) path {
+    #ifdef DEBUG
     NSLog(@"Loading keywords from %@", path);
+    #endif
     [mappings removeAllObjects];
     if ([[NSFileManager defaultManager] fileExistsAtPath: path]) {
         NSData* data = [NSData dataWithContentsOfFile: path];
