@@ -4,11 +4,12 @@
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid1}
 {\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid2}
 {\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid3}
-{\list\listtemplateid4\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid4}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid4}
 {\list\listtemplateid5\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid5}
-{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid6}}
-{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww14780\viewh12860\viewkind0
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid7}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}}
+\vieww16960\viewh14620\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
 
 \f0\b\fs36 \cf0 About
@@ -18,32 +19,46 @@ Keywurl is a small extension for Safari that adds keyword search, similar to Fir
 
 \fs36 Changes\
 
-\fs28 1.3 
+\fs28 1.3.2 
+\b0 (January 29, 2008)\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
+\ls1\ilvl0\cf0 {\listtext	\'95	}
+\b Tiger compatibility
+\b0 .\
+{\listtext	\'95	}Fixed a crash when exiting the preference pane.\
+{\listtext	\'95	}Fixed so that Safari's default fallback (eg., going to "foo.com" when you enter just "foo") works if there is no default keyword.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
+
+\b \cf0 1.3.1 
+\b0 (January 27, 2008)\
+This released was hoped to fix Tiger compatibility. It did not.\
+
+\b 1.3 
 \b0 (January 24, 2008)\
 This is a minor bug fix release. Thanks to Eli Dourado and Brian de Alwis for ideas and suggestions.\
 
 \b 1.2 
 \b0 (January 23, 2008)\
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\ls1\ilvl0
+\ls2\ilvl0
 \b \cf0 {\listtext	\'95	}Default keyword
 \b0 .
 \b  
 \b0 The keyword "default" (if it is defined) is now invoked when no other keyword matches. Google is included as an example. For example, typing "Paris Hilton" in the address bar will now invoke a Google search. Keywurl uses a simple heuristic to determine whether something is a legitimate host name (eg., cnn.com) or something that should be expanded: If what you entered contains only a single word consisting of alphanumeric characters and at least one dot, it's considered a host name and ignored.\
-\ls1\ilvl0
+\ls2\ilvl0
 \b {\listtext	\'95	}Single-word expansions
 \b0 . You can now create convenience aliases \'96 for example, if you add the keyword "sd" with the expansion "slashdot.org", you can enter just "sd" in the address bar to go there.
 \b \
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\ls1\ilvl0
+\ls2\ilvl0
 \b0 \cf0 {\listtext	\'95	}
 \b Added per-keyword character encoding setting
 \b0 . Some sites (such as imdb.com and amazon.com) require Latin 1 encoding for URLs. This fixes such sites.\
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\ls1\ilvl0
+\ls2\ilvl0
 \b \cf0 {\listtext	\'95	}Added per-keyboard space encoding setting
 \b0 . Some sites require that spaces are encoded as "+" instead of "%20". This fixes such sites.\
-\ls1\ilvl0
+\ls2\ilvl0
 \b {\listtext	\'95	}
 \b0 The configuration file format changes in this version, breaking backwards compatibility. If you want to be able to downgrade, make a backup first.
 \b \
@@ -51,13 +66,13 @@ This is a minor bug fix release. Thanks to Eli Dourado and Brian de Alwis for id
 \cf0 1.1
 \b0  (November 23, 2007)\
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\ls2\ilvl0\cf0 {\listtext	\'95	}Leopard compatibility.\
+\ls3\ilvl0\cf0 {\listtext	\'95	}Leopard compatibility.\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
 
 \b\fs36 \cf0 Requirements
 \b0\fs28 \
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\ls3\ilvl0\cf0 {\listtext	\'95	}
+\ls4\ilvl0\cf0 {\listtext	\'95	}
 \b Mac OS X 10.4
 \b0  ("Tiger") or later.\
 {\listtext	\'95	}
@@ -75,7 +90,7 @@ This is a minor bug fix release. Thanks to Eli Dourado and Brian de Alwis for id
 \b If you want to install the plugin for your own user account only:
 \b0 \
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\ls4\ilvl0\cf0 {\listtext	1.	}If you are upgrading from an earlier release
+\ls5\ilvl0\cf0 {\listtext	1.	}If you are upgrading from an earlier release
 \i , 
 \i0 quit Safari.\
 {\listtext	2.	}Make sure SIMBL is installed.\
@@ -90,7 +105,7 @@ This is a minor bug fix release. Thanks to Eli Dourado and Brian de Alwis for id
 \b \cf0 If you want to install the plugin for your all user accounts on the system, the sequence is identical, except for step 3:
 \b0 \
 \pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural\pardirnatural
-\ls5\ilvl0\cf0 {\listtext	1.	}If you are upgrading from an earlier release
+\ls6\ilvl0\cf0 {\listtext	1.	}If you are upgrading from an earlier release
 \i , 
 \i0 quit Safari.\
 {\listtext	2.	}Make sure SIMBL is installed.\
@@ -110,7 +125,7 @@ This is a minor bug fix release. Thanks to Eli Dourado and Brian de Alwis for id
 All rights reserved.\
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\
 \pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\slmult1\sb80\sa80\ql\qnatural
-\ls6\ilvl0\cf0 {\listtext	\'95	}Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\
+\ls7\ilvl0\cf0 {\listtext	\'95	}Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\
 {\listtext	\'95	}Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\
 {\listtext	\'95	}The names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\
 \pard\pardeftab720\sl360\slmult1\sb80\sa80\ql\qnatural
