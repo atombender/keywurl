@@ -97,20 +97,20 @@
     [expansion appendString: @"?"];
     for (int i = 0; i < [fields count]; i++) {
         FormField* field = (FormField*) [fields objectAtIndex: i];
-        [expansion appendString: [field name]];
+        [expansion appendString: [[field name] stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
         [expansion appendString: @"="];
-        [expansion appendString: [field value]];
+        [expansion appendString: [[field value] stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
         [expansion appendString: @"&"];
     }
     NSMenuItem* buttonItem = [buttonPopupButton selectedItem];
     if (buttonItem) {
-        [expansion appendString: [buttonItem representedObject]];
+        [expansion appendString: [[buttonItem representedObject] stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
         [expansion appendString: @"="];
-        [expansion appendString: [buttonItem title]];
+        [expansion appendString: [[buttonItem title] stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
         [expansion appendString: @"&"];
     }
     [expansion appendString: [inputElement name]];
-    [expansion appendString: @"=@*"];
+    [expansion appendString: @"={query}"];
     NSString* keyword = [nameTextField stringValue];
     KeywordMapping* mapping = [[KeywordMapping alloc] initWithKeyword: keyword
         expansion: expansion];
@@ -120,7 +120,9 @@
 
     NSAlert *alert = [[NSAlert alloc] init];
     [alert addButtonWithTitle: @"OK"];
-    [alert setMessageText: @"Keyword added."];
+    [alert setMessageText: @"Keyword added"];
+    [alert setInformativeText: [NSString stringWithFormat:
+        @"You can now type '%@ something' in Safari's address field to do a search for 'something'", keyword]];
     [alert setAlertStyle: NSInformationalAlertStyle];
     [alert beginSheetModalForWindow: [NSApp keyWindow]
         modalDelegate: nil

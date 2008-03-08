@@ -188,9 +188,10 @@
 
 - (NSArray*) tokenField: (NSTokenField*) tokenField 
     shouldAddObjects: (NSArray*) tokens 
-    atIndex: (NSUInteger) index {
+    atIndex: (unsigned) index {
     NSMutableArray* result = [NSMutableArray new];
-    for (id item in tokens) {
+    for (unsigned i = 0; i < [tokens count]; i++) {
+        id item = [tokens objectAtIndex: i];
         if ([item isEqualToString: @"Query"]) {
             [result addObject: [[QueryToken alloc] init]];
         } else if ([item isEqualToString: @"Input"]) {
