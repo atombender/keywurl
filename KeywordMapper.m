@@ -210,8 +210,25 @@
 }
 
 - (void) saveMappingsToFile: (NSString*) path {
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    NSString* directory = [path stringByDeletingLastPathComponent];
+    if (![fileManager fileExistsAtPath: directory]) {
+        if (![fileManager createDirectoryAtPath: directory attributes: nil]) {
+            NSLog(@"Could not create plugin configuration directory");
+        }
+    }
+    if ([fileManager fileExistsAtPath: path]) {
+        NSString* backupPath = [path stringByAppendingString: @".backup"];
+        NSLog(@"Making backup of keyword in %@", backupPath);
+        if ([fileManager fileExistsAtPath: backupPath] &&
+            ![fileManager removeFileAtPath: backupPath handler: nil]) {
+            NSLog(@"Could not remove existing backup file for some reason");
+        }
+        if (![fileManager copyPath: path toPath: backupPath handler: nil]) {
+            NSLog(@"Could not save backup file for some reason");
+        }
+    }
     NSLog(@"Saving keywords to %@", path);
-    NSString* error;
     NSMutableDictionary* plist = [NSMutableDictionary new];
     NSMutableDictionary* keywordDictionary = [NSMutableDictionary new];
     for (int i = [mappings count] - 1; i >= 0; i--) {
@@ -220,22 +237,17 @@
     }
     [plist setObject: keywordDictionary forKey: @"keywords"];
     [plist setObject: [NSNumber numberWithInt: 1] forKey: @"version"];
+    NSString* errorDescription;
     NSData* data = [NSPropertyListSerialization dataFromPropertyList: plist
         format: NSPropertyListXMLFormat_v1_0
-        errorDescription: &error];
+        errorDescription: &errorDescription];
     if (data) {
-        NSString* directory = [path stringByDeletingLastPathComponent];
-        if (![[NSFileManager defaultManager] fileExistsAtPath: directory]) {
-            if (![[NSFileManager defaultManager] createDirectoryAtPath: directory attributes: nil]) {
-                NSLog(@"Could not create directory");
-            }
-        }
         if (![data writeToFile: path atomically: YES]) {
             NSLog(@"Could not write mappings to file");
         }
     } else {
-        NSLog(@"Could not serialize keywords: %@", error);
-        [error release];
+        NSLog(@"Could not serialize keywords: %@", errorDescription);
+        [errorDescription release];
     }
 }
 
