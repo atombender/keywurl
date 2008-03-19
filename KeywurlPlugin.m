@@ -3,16 +3,14 @@
 #import "KeywurlBrowserWindowController.h"
 #import "Safari.h"
 #import "KeywordSaveController.h"
+#import "Constants.h"
 
 static KeywurlPlugin* plugin = nil;
 
 @implementation KeywurlPlugin
 
 + (void) load {
-    int majorVersion = 1;
-    int minorVersion = 3;
-    int maintenanceVersion = 2;
-    NSLog(@"Keywurl version %d.%d.%d loading", majorVersion, minorVersion, maintenanceVersion);
+    NSLog(@"Keywurl version %d.%d.%d loading", KEYWURL_MAJORVERSION, KEYWURL_MINORVERSION, KEYWURL_MAINTVERSION);
     KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
     NSClassFromString(@"BrowserWindowController");
     [[KeywurlBrowserWindowController class] poseAsClass: [BrowserWindowController class]];
