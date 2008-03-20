@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>Readme</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        line-height: 100%;
+        font-size: normal;
+      }
+      body {
+        margin: 50px 25px;
+        font-family: "Lucida Grande", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        font-size: 10pt;
+      }
+      body, p {
+        color: #888;
+      }
+      a:link, a:visited, a:active, a:hover {
+        color: #5d90ff;
+      }
+      p, li {
+        line-height: 160%;
+        margin: 10px 0;
+      }
+      h1 {
+        color: #111;
+        font-weight: normal;
+        font-size: 18pt;
+        margin-bottom: 20px;
+      }
+      h2 {
+        color: #444;
+        font-weight: normal;
+        font-size: 13pt;
+        margin-bottom: 10px;
+        margin-top: 20px;
+      }
+      h2 b {
+        font-weight: normal;
+      }
+      ol.ol1 {list-style-type: decimal}
+      ul.ul1 {list-style-type: disc}
+      ul, ol {
+        margin-left: 35px;
+      }
+      .section {
+      }
+      .section.section2 {
+        margin-top: 15px;
+        padding-top: 15px;
+      }
+      b.high {
+        color: #333;
+        background: #ffd;
+      }
+      .warn {
+        color: #a30;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <h1>About</h1>
+      <p class="p2">Keywurl is a small extension for Safari that adds keyword search, similar to Firefox's "Quick Search" functionality. The name is an increasingly unimaginative portmanteau of "keyword" and "URL".</p>
+    </div>
+    <div class="section section2">
+      <h1>Changes</h1>
+      <h2><b>1.4 beta 1 </b>(February 20, 2008)</h2>
+      <p class="p2">This is a public beta of 1.4. Report bugs and
+        suggestions to <a href="mailto:alex@purefiction.net">alex@purefiction.net</a>.</p>
+      <ul class="ul1">
+        <li><b class="warn">This is prelease software. Please back up your preference file (under
+          <tt>Library/Application Support/Keywurl</tt>) before use. I am not responsible for any
+          data loss incurred by this plugin. Don't blame me if the sky falls on your head.
+        </b>
+        <li><b class="high">You can now create a new keyword just by right-clicking on any text field in any web page form, and selecting <i>Create Keyword</i>. </b>Keywurl takes care of the dirty details.</li>
+        <li><b class="high">Nicer substitution syntax.</b> The "@@@" and "$$$" expansion symbols have been replaced with a more human-friendly system that does not rely on magic syntax. Instead, the address field now shows the substitutions using nice, friendly, little blue bubble shapes. Old configuration files are automatically migrated from the old syntax. The available substitutions are shown in a separate box, and you can drag them with the mouse into the address field. Visual editing, yay!</li>
+        <li><b class="high">It is now possible to address each query word separately</b>: In the query "foo bar", "query 1" expands to "foo", "query 2" to "bar", etc. Up to 10 such query terms are supported. For example, this allows you to map a queries such as: <a href="http://quote.fool.com/Chart/chart.asp?time=1dy&amp;symbols=aapl">graph 2yr aapl</a> (stock prices for Apple over two years) or <a href="http://quote.fool.com/Chart/chart.asp?time=1dy&amp;symbols=msft">graph 1dy msft</a> (stock prices for Microsoft for one day).</li>
+        <li>The configuration file is now backed up to a separate file whenever it is saved.</li>
+        <li>The keyword list in the preference dialog is now sorted lexicographically.</li>
+        <li>Some minor bug fixes to the way selection and keyword creation is handled.</li>
+      </ul>
+      <h2><b>1.3.3 </b>(February 18, 2008)</h2>
+      <p class="p2">Safari 3.1 compatibility.</p>
+      <h2><b>1.3.2 </b>(January 29, 2008)</h2>
+      <ul class="ul1">
+        <li><b class="high">Tiger compatibility</b>.</li>
+        <li>Fixed a crash when exiting the preference pane.</li>
+        <li>Fixed so that Safari's default fallback (eg., going to "foo.com" when you enter just "foo") works if there is no default keyword.</li>
+      </ul>
+      <h2><b>1.3.1 </b>(January 27, 2008)</h2>
+      <p class="p2">This released was hoped to fix Tiger compatibility. It did not.</p>
+      <h2><b>1.3 </b>(January 24, 2008)</h2>
+      <p class="p2">This is a minor bug fix release. Thanks to Eli Dourado and Brian de Alwis for ideas and suggestions.</p>
+      <h2><b>1.2 </b>(January 23, 2008)</h2>
+      <ul class="ul1">
+        <li><b class="high">Default keyword</b>.<b> </b>The keyword "default" (if it is defined) is now invoked when no other keyword matches. Google is included as an example. For example, typing "Paris Hilton" in the address bar will now invoke a Google search. Keywurl uses a simple heuristic to determine whether something is a legitimate host name (eg., cnn.com) or something that should be expanded: If what you entered contains only a single word consisting of alphanumeric characters and at least one dot, it's considered a host name and ignored.</li>
+        <li><b class="high">Single-word expansions</b>. You can now create convenience aliases – for example, if you add the keyword "sd" with the expansion "slashdot.org", you can enter just "sd" in the address bar to go there.</li>
+        <li><b class="high">Added per-keyword character encoding setting</b>. Some sites (such as imdb.com and amazon.com) require Latin 1 encoding for URLs. This fixes such sites.</li>
+        <li><b class="high">Added per-keyboard space encoding setting</b>. Some sites require that spaces are encoded as "+" instead of "%20". This fixes such sites.</li>
+        <li><b></b>The configuration file format changes in this version, breaking backwards compatibility. If you want to be able to downgrade, make a backup first.</li>
+      </ul>
+      <h2><b>1.1</b> (November 23, 2007)</h2>
+      <ul class="ul1">
+        <li>Leopard compatibility.</li>
+      </ul>
+    </div>
+    <div class="section section2">
+      <h1>Requirements</h1>
+      <ul class="ul1">
+        <li><b class="high">Mac OS X 10.5 ("Leopard") or later</b>. Sorry, no Tiger support until the final release.</li>
+        <li><b class="high">Safari 3.0</b> or later.</li>
+        <li><b class="high">SIMBL</b>, which lets Keywurl be installed into Safari. SIMBL is included in the Keywurl package, and may also be <a href="http://www.culater.net/software/SIMBL/SIMBL.php">downloaded here</a>.</li>
+      </ul>
+    </div>
+    <div class="section section2">
+      <h1>Installation</h1>
+      <p class="p2">Run the installer. Remember to also run the SIMBL installer.</p>
+    </div>
+    <div class="section section2">
+      <h1>License</h1>
+      <p class="p2">See the file License.rtf accompanying the installer.</p>
+    </div>
+    <div class="section section2">
+      <h1>Credits</h1>
+      <p class="p2">The preference code was written based on Jim Fowler's ForgetMeNot plugin, with many thanks.</p>
+    </div>
+  </body>
+</html>
