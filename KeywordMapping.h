@@ -51,7 +51,20 @@
 
 - (NSDictionary*) toDictionary;
 
+/*!
+  Encodes a query using the settings (Unicode, etc.) of this mapping.
+*/
 - (NSString*) encodeQuery: (NSString*) query;
+
+/*!
+  Tokenizes a query into parts. Each word is a part, as is each phrase (multiple words enclosed in 
+  double quotes).
+*/
 - (NSArray*) tokenizeParts: (NSString*) query;
+
+/*!
+  Expands a query using this mapping, returning the expanded version.
+*/
+- (NSString*) expand: (NSString*) input forKeyword: (NSString*) keyword;
 
 @end

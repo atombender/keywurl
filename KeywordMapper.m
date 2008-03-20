@@ -24,68 +24,27 @@
     return self;
 }
 
-- (int) numberOfRowsInTableView: (NSTableView*) aTableView {
-    return [mappings count];
-}
-
-- (id) tableView: (NSTableView*) aTableView 
-    objectValueForTableColumn: (NSTableColumn*) aTableColumn
-    row: (int) rowIndex {
-    KeywordMapping* mapping = [mappings objectAtIndex: rowIndex];
-    if ([[aTableColumn identifier] isEqualToString: @"Keyword"]) {
-        return [mapping keyword];
-    } else {
-        return nil;
-    }
-}
-
-- (void) tableView: (NSTableView*) aTableView 
-    setObjectValue: (id) anObject 
-    forTableColumn: (NSTableColumn*) aTableColumn 
-    row: (int) rowIndex {
-    KeywordMapping* mapping = [mappings objectAtIndex: rowIndex];
-    if ([[aTableColumn identifier] isEqualToString: @"Keyword"]) {
-        [mapping setKeyword: anObject];
-        [self buildCache];
-    }
+- (KeywordMapping*) mappingForKeyword: (NSString*) keyword {
+    return (KeywordMapping*) [cache objectForKey: keyword];
 }
 
 - (NSString*) mapKeywordInput: (NSString*) input {
     NSString* result = input;
-    if (![self isUrl: input]) {
+    if (input && ![self isUrl: input]) {
         NSString* keyword = nil;
-        NSString* query = nil;
         input = [input stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
         NSRange spaceRange = [input rangeOfString: @" "];
         if (spaceRange.location != NSNotFound) {
             keyword = [input substringToIndex: spaceRange.location];
-            query = [input substringFromIndex: spaceRange.location + 1];
-            query = [query stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
         } else {
             keyword = input;
-            query = @"";
         }
         KeywordMapping* mapping = [cache objectForKey: keyword];
         if (!mapping) {
            mapping = [cache objectForKey: @"default"];
-           query = input;
         }
         if (mapping) {
-            NSArray* parts = [mapping tokenizeParts: query];
-            input = [mapping encodeQuery: input];
-            query = [mapping encodeQuery: query];
-            NSMutableString* expansion = [[mapping expansion] mutableCopy];
-            [expansion replaceOccurrencesOfString: @"{query}" withString: query options: 0 range: NSMakeRange(0, [expansion length])];
-            [expansion replaceOccurrencesOfString: @"{input}" withString: input options: 0 range: NSMakeRange(0, [expansion length])];
-            for (int i = 0; i < [parts count]; i++) {
-                NSString* symbol = [NSString stringWithFormat: @"{%d}", i + 1];
-                NSString* part = [parts objectAtIndex: i];
-                if (part) {
-                    [expansion replaceOccurrencesOfString: symbol withString: part options: 0 range: NSMakeRange(0, [expansion length])];
-                }
-            }
-            [parts release];
-            result = expansion;
+            result = [mapping expand: input forKeyword: keyword];
         }
     }
     return result;
@@ -295,6 +254,10 @@
         KeywordMapping* mapping = [mappings objectAtIndex: i];
         [cache setValue: mapping forKey: [mapping keyword]];
     }
+}
+
+- (void) modified {
+    [self buildCache];
 }
 
 @end

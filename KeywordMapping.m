@@ -96,7 +96,6 @@
 
 - (NSArray*) expansionAsTokens {
     NSMutableArray* tokens = [NSMutableArray new];
-    NSLog(@"making tokens from %@", expansion);
     int start = 0;
     int searchStart = 0;
     while (start < [expansion length]) {
@@ -125,7 +124,6 @@
             break;            
         }
     }
-    NSLog(@"as tokens: %@", tokens);
     return tokens;
 }
 
@@ -168,6 +166,8 @@
     NSMutableString* result = [query mutableCopy];
     [result replaceOccurrencesOfString: @"#" withString: @"%23" options: 0 range: NSMakeRange(0, [result length])];
     [result replaceOccurrencesOfString: @":" withString: @"%3a" options: 0 range: NSMakeRange(0, [result length])];
+    [result replaceOccurrencesOfString: @"&" withString: @"%26" options: 0 range: NSMakeRange(0, [result length])];
+    [result replaceOccurrencesOfString: @"=" withString: @"%3d" options: 0 range: NSMakeRange(0, [result length])];
     if (encodeSpaces) {
         [result replaceOccurrencesOfString: @"%20" withString: @"+" options: 0 range: NSMakeRange(0, [result length])];
     }
@@ -204,8 +204,27 @@
         NSString* part = [query substringWithRange: NSMakeRange(start, offset - start)];
         [parts addObject: part];
     }
-    NSLog(@"Parts: %@", parts);
     return parts;
+}
+
+- (NSString*) expand: (NSString*) input forKeyword: (NSString*) forKeyword {    
+    NSArray* parts = [self tokenizeParts: input];
+    NSString* query = forKeyword == nil ? input :
+        [[parts subarrayWithRange: NSMakeRange(1, [parts count] - 1)] componentsJoinedByString: @" "];
+    input = [self encodeQuery: input];
+    query = [self encodeQuery: query];
+    NSMutableString* result = [expansion mutableCopy];
+    [result replaceOccurrencesOfString: @"{query}" withString: query options: 0 range: NSMakeRange(0, [result length])];
+    [result replaceOccurrencesOfString: @"{input}" withString: input options: 0 range: NSMakeRange(0, [result length])];
+    for (int i = 0; i < [parts count]; i++) {
+        NSString* symbol = [NSString stringWithFormat: @"{%d}", i + 1];
+        NSString* part = [parts objectAtIndex: i];
+        if (part) {
+            [result replaceOccurrencesOfString: symbol withString: part options: 0 range: NSMakeRange(0, [result length])];
+        }
+    }
+    [parts release];
+    return result;
 }
 
 @end
