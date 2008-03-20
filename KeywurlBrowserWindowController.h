@@ -2,4 +2,7 @@
 #import "Safari.h"
 
 @interface KeywurlBrowserWindowController : BrowserWindowController
+
+- (id) keywurl_locationFieldEditor;
+
 @end

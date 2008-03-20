@@ -19,4 +19,8 @@
     return [super goToToolbarLocation: sender];
 }
 
+- (id) keywurl_locationFieldEditor {
+    return _locationFieldEditor;
+}
+
 @end
