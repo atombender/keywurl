@@ -10,7 +10,13 @@ static KeywurlPlugin* plugin = nil;
 @implementation KeywurlPlugin
 
 + (void) load {
-    NSLog(@"Keywurl version %d.%d.%d loading", KEYWURL_MAJORVERSION, KEYWURL_MINORVERSION, KEYWURL_MAINTVERSION);
+    #ifdef KEYWURL_BETA_BUILD
+        NSLog(@"Keywurl version %d.%d.%d beta %d loading", 
+            KEYWURL_MAJORVERSION, KEYWURL_MINORVERSION, KEYWURL_MAINTVERSION, KEYWURL_BETA_BUILD);
+    #else
+        NSLog(@"Keywurl version %d.%d.%d loading", 
+            KEYWURL_MAJORVERSION, KEYWURL_MINORVERSION, KEYWURL_MAINTVERSION);
+    #endif
     KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
     NSClassFromString(@"BrowserWindowController");
     [[KeywurlBrowserWindowController class] poseAsClass: [BrowserWindowController class]];
