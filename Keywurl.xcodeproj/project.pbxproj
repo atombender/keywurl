@@ -38,13 +38,11 @@
 		FA3A4D350D789D2800BD4C53 /* KeywurlPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D230D789D2800BD4C53 /* KeywurlPlugin.m */; };
 		FA3A4D360D789D2800BD4C53 /* KeywurlPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D250D789D2800BD4C53 /* KeywurlPreferences.m */; };
 		FA3A4D370D789D2800BD4C53 /* NSPreferences+Keywurl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D280D789D2800BD4C53 /* NSPreferences+Keywurl.m */; };
-		FA3A4D380D789D2800BD4C53 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D290D789D2800BD4C53 /* Readme.rtf */; };
 		FA3A4D390D789D2800BD4C53 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D2A0D789D2800BD4C53 /* Remove.tiff */; };
 		FA3A4D780D78A0BD00BD4C53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		FA3A4D790D78A0BD00BD4C53 /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D170D789D2800BD4C53 /* Add.tiff */; };
 		FA3A4D7A0D78A0BD00BD4C53 /* Keywurl.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D1C0D789D2800BD4C53 /* Keywurl.icns */; };
 		FA3A4D7B0D78A0BD00BD4C53 /* Keywurl.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D1D0D789D2800BD4C53 /* Keywurl.png */; };
-		FA3A4D7C0D78A0BD00BD4C53 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D290D789D2800BD4C53 /* Readme.rtf */; };
 		FA3A4D7D0D78A0BD00BD4C53 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D2A0D789D2800BD4C53 /* Remove.tiff */; };
 		FA3A4D7F0D78A0BD00BD4C53 /* KeywordMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D190D789D2800BD4C53 /* KeywordMapper.m */; };
 		FA3A4D800D78A0BD00BD4C53 /* KeywordMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D1B0D789D2800BD4C53 /* KeywordMapping.m */; };
@@ -105,7 +103,6 @@
 		FA3A4D260D789D2800BD4C53 /* NSPreferenceModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferenceModule.h; sourceTree = "<group>"; };
 		FA3A4D270D789D2800BD4C53 /* NSPreferences+Keywurl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPreferences+Keywurl.h"; sourceTree = "<group>"; };
 		FA3A4D280D789D2800BD4C53 /* NSPreferences+Keywurl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPreferences+Keywurl.m"; sourceTree = "<group>"; };
-		FA3A4D290D789D2800BD4C53 /* Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
 		FA3A4D2A0D789D2800BD4C53 /* Remove.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Remove.tiff; sourceTree = "<group>"; };
 		FA3A4D2B0D789D2800BD4C53 /* Safari.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari.h; sourceTree = "<group>"; };
 		FA3A4D2C0D789D2800BD4C53 /* Safari2_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari2_0.h; sourceTree = "<group>"; };
@@ -162,7 +159,6 @@
 				FA3A4D170D789D2800BD4C53 /* Add.tiff */,
 				FA3A4D1C0D789D2800BD4C53 /* Keywurl.icns */,
 				FA3A4D1D0D789D2800BD4C53 /* Keywurl.png */,
-				FA3A4D290D789D2800BD4C53 /* Readme.rtf */,
 				FA3A4D2A0D789D2800BD4C53 /* Remove.tiff */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
@@ -298,7 +294,6 @@
 				FA3A4D2E0D789D2800BD4C53 /* Add.tiff in Resources */,
 				FA3A4D310D789D2800BD4C53 /* Keywurl.icns in Resources */,
 				FA3A4D320D789D2800BD4C53 /* Keywurl.png in Resources */,
-				FA3A4D380D789D2800BD4C53 /* Readme.rtf in Resources */,
 				FA3A4D390D789D2800BD4C53 /* Remove.tiff in Resources */,
 				FA3A4D9E0D78A1DF00BD4C53 /* KeywurlPreferences.nib in Resources */,
 				FA3406560D81FC0600F0EC2E /* SaveKeywordWindow.nib in Resources */,
@@ -313,7 +308,6 @@
 				FA3A4D790D78A0BD00BD4C53 /* Add.tiff in Resources */,
 				FA3A4D7A0D78A0BD00BD4C53 /* Keywurl.icns in Resources */,
 				FA3A4D7B0D78A0BD00BD4C53 /* Keywurl.png in Resources */,
-				FA3A4D7C0D78A0BD00BD4C53 /* Readme.rtf in Resources */,
 				FA3A4D7D0D78A0BD00BD4C53 /* Remove.tiff in Resources */,
 				FA3A4D9F0D78A1E500BD4C53 /* KeywurlPreferences.nib in Resources */,
 				FA3406570D81FC0600F0EC2E /* SaveKeywordWindow.nib in Resources */,
