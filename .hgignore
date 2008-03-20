@@ -5,3 +5,5 @@
 ~$
 \.pch$
 ^Keywurl.xcodeproj/alex\..*
+^Installer/Install Keywurl.pkg$
+
