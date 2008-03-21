@@ -24,5 +24,5 @@ task :distribute do
   system("hdiutil create -srcfolder '#{work_directory}' '#{dmg_file}'")
 
   puts "Creating source tarball"
-  system("darcs dist -d '#{output_directory}/Keywurl-#{version}'")
+  system("hg archive -t tbz2 '#{output_directory}/Keywurl-#{version}.tar.bz2'")
 end
