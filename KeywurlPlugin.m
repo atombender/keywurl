@@ -10,7 +10,7 @@ static KeywurlPlugin* plugin = nil;
 + (void) load {
     int majorVersion = 1;
     int minorVersion = 3;
-    int maintenanceVersion = 4;
+    int maintenanceVersion = 5;
     NSLog(@"Keywurl version %d.%d.%d loading", majorVersion, minorVersion, maintenanceVersion);
     KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
     NSClassFromString(@"BrowserWindowController");
