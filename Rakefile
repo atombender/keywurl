@@ -8,13 +8,10 @@ task :distribute do
   puts "Preparing distribution"
   work_directory = "build/distribute.tmp/Keywurl"
   FileUtils.mkdir_p(work_directory)
-  FileUtils.cp("Readme.rtf", work_directory)
+  FileUtils.cp("Readme.html", work_directory)
+  FileUtils.cp("License.rtf", work_directory)
   FileUtils.cp_r("SIMBL.pkg", work_directory)
-  ["Leopard", "Tiger"].each do |target|
-    target_directory = "#{work_directory}/Safari 3.0 on #{target}"
-    FileUtils.mkdir_p(target_directory)
-    FileUtils.cp_r("build/Release on #{target}/Keywurl.bundle", target_directory)
-  end
+  FileUtils.cp_r("Installer/Install Keywurl.pkg", work_directory)
 
   puts "Building DMG image"
   output_directory = "../Distribute"
@@ -22,8 +19,8 @@ task :distribute do
   dmg_file = "#{output_directory}/Keywurl-#{version}.dmg"
   FileUtils.rm_f(dmg_file)
   system("hdiutil create -srcfolder '#{work_directory}' '#{dmg_file}'")
-  system("hdiutil hdiutil internet-enable -yes '#{dmg_file}'")
+  system("hdiutil internet-enable -yes '#{dmg_file}'")
 
   puts "Creating source tarball"
-  system("darcs dist -d '#{output_directory}/Keywurl-#{version}'")
+  system("hg archive -t tbz2 '#{output_directory}/Keywurl-#{version}.tar.bz2'")
 end

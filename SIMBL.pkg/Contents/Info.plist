@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleGetInfoString</key>
+	<string>0.8.2, © 2007 Mike Solomon</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.culater.SIMBL.pkg</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.8.2</string>
+	<key>IFMajorVersion</key>
+	<integer>0</integer>
+	<key>IFMinorVersion</key>
+	<integer>8</integer>
+	<key>IFPkgFlagAllowBackRev</key>
+	<true/>
+	<key>IFPkgFlagAuthorizationAction</key>
+	<string>AdminAuthorization</string>
+	<key>IFPkgFlagBackgroundAlignment</key>
+	<string>topleft</string>
+	<key>IFPkgFlagBackgroundScaling</key>
+	<string>none</string>
+	<key>IFPkgFlagDefaultLocation</key>
+	<string>/Library</string>
+	<key>IFPkgFlagFollowLinks</key>
+	<integer>0</integer>
+	<key>IFPkgFlagInstallFat</key>
+	<false/>
+	<key>IFPkgFlagInstalledSize</key>
+	<integer>76</integer>
+	<key>IFPkgFlagIsRequired</key>
+	<integer>0</integer>
+	<key>IFPkgFlagOverwritePermissions</key>
+	<true/>
+	<key>IFPkgFlagRelocatable</key>
+	<integer>0</integer>
+	<key>IFPkgFlagRestartAction</key>
+	<string>NoRestart</string>
+	<key>IFPkgFlagRootVolumeOnly</key>
+	<integer>1</integer>
+	<key>IFPkgFlagUpdateInstalledLanguages</key>
+	<false/>
+	<key>IFPkgFormatVersion</key>
+	<real>0.10000000149011612</real>
+</dict>
+</plist>

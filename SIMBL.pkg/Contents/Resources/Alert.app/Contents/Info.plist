@@ -5,24 +5,20 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>SIMBL</string>
-	<key>CFBundleGetInfoString</key>
-	<string>SIMBL 0.8.2, ©2006 Mike Solomon</string>
-	<key>CFBundleIdentifier</key>
-	<string>net.culater.SIMBL</string>
+	<string>Alert</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>SIMBL</string>
 	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>0.8.2</string>
+	<string>APPL</string>
 	<key>CFBundleSignature</key>
-	<string>SIM∞</string>
+	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>8</string>
+	<string>0.1</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
-	<string>SIMBL</string>
+	<string>NSApplication</string>
+	<key>NSUIElement</key>
+	<string>1</string>
 </dict>
 </plist>
