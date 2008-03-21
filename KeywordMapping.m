@@ -211,7 +211,8 @@
 - (NSString*) expand: (NSString*) input forKeyword: (NSString*) forKeyword {    
     NSArray* parts = [self tokenizeParts: input];
     NSString* query = forKeyword == nil ? input :
-        [[parts subarrayWithRange: NSMakeRange(1, [parts count] - 1)] componentsJoinedByString: @" "];
+        [parts count] > 1 ? 
+            [[parts subarrayWithRange: NSMakeRange(1, [parts count] - 1)] componentsJoinedByString: @" "] : @"";
     input = [self encodeQuery: input];
     query = [self encodeQuery: query];
     NSMutableString* result = [expansion mutableCopy];

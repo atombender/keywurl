@@ -1,6 +1,8 @@
 #include "KeywordMapper.h"
 #include "KeywordMapping.h"
 
+const NSString* KeywordMapperMappingsDidChangeNotification = @"KeywordMapperMappingsDidChangeNotification";
+
 @interface KeywordMapper (Internal)
 
 - (void) setupDefaults;
@@ -103,7 +105,7 @@
     } else {
         [self setupDefaults];
     }
-    [self buildCache];
+    [self modified];
 }
 
 - (void) loadMappingsFromDictionary: (NSDictionary*) dictionary 
@@ -212,7 +214,7 @@
 
 - (void) addKeyword: (KeywordMapping*) mapping {
     [mappings addObject: mapping];
-    [self buildCache];
+    [self modified];
 }
 
 - (void) addKeyword: (NSString*) keyword expansion: (NSString*) expansion {
@@ -236,12 +238,7 @@
             [mappings removeObjectAtIndex: i];
         }
     }
-    [self buildCache];
-}
-
-- (void) removeKeywordAtIndex: (int) index {
-    [mappings removeObjectAtIndex: index];
-    [self buildCache];
+    [self modified];
 }
 
 - (NSArray*) mappings {
@@ -258,6 +255,10 @@
 
 - (void) modified {
     [self buildCache];
+    [[NSNotificationCenter defaultCenter] 
+        postNotificationName: KeywordMapperMappingsDidChangeNotification
+        object: self
+        userInfo: nil];
 }
 
 @end

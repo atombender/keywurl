@@ -5,8 +5,10 @@
 
 - (void) saveEdit;
 - (void) leaveEdit;
-- (void) updateSelection;
 - (void) reloadKeywords;
+- (void) selectKeyword: (NSString*) keyword;
+- (void) selectKeyword: (NSString*) keyword edit: (BOOL) edit;
+- (void) updateForm;
 
 @end
 
@@ -67,12 +69,14 @@
         nil
     ]];
 	
+    [[NSNotificationCenter defaultCenter] addObserver: self
+        selector: @selector(mappingsDidChange:)
+        name: KeywordMapperMappingsDidChangeNotification
+        object: mapper];
 	[[NSNotificationCenter defaultCenter] addObserver: self
 	    selector: @selector(tableViewSelectionDidChange:)
 	    name: NSTableViewSelectionDidChangeNotification
-        object: nil];
-    
-    [self updateSelection];
+        object: tableView];
 }
 
 - (NSImage*) imageForPreferenceNamed: (NSString*) theName
@@ -134,15 +138,8 @@
 
 - (IBAction) addKeyword: (id) sender {
     [self saveEdit];
-    [self leaveEdit];
     [mapper addKeyword: @"" expansion: @""];
-    [keywords addObject: @""];
-    int rowIndex = [keywords count] - 1;
-    [tableView reloadData];
-    [tableView scrollRowToVisible: rowIndex];
-    [tableView selectRowIndexes: [NSIndexSet indexSetWithIndex: rowIndex] byExtendingSelection: NO];
-    [tableView editColumn: 0 row: rowIndex withEvent: nil select: YES];
-    [self updateSelection];
+    [self selectKeyword: @"" edit: YES];
 }
 
 - (IBAction) removeKeyword: (id) sender {
@@ -150,15 +147,39 @@
     if (rowIndex >= 0) {
         [self leaveEdit];
         NSString* keyword = [keywords objectAtIndex: rowIndex];
-        [keywords removeObject: keyword];
         [mapper removeKeyword: keyword];
-        [tableView reloadData];
-        [self updateSelection];
     }
 }
 
 - (void) tableViewSelectionDidChange: (NSNotification*) notification {
-    [self updateSelection];
+    [self saveEdit];
+    NSString* keyword = [tableView selectedRow] >= 0 ? [keywords objectAtIndex: [tableView selectedRow]] : nil;
+    if (keyword) {
+        KeywordMapping* mapping = [mapper mappingForKeyword: keyword];
+        mappingBeingEdited = [mapping retain];
+    } else {
+        if (mappingBeingEdited) {
+            [mappingBeingEdited release];
+            mappingBeingEdited = nil;
+        }
+    }
+    [self updateForm];
+}
+
+- (void) updateForm {
+    if (mappingBeingEdited) {
+        [expansionTokenField setObjectValue: [mappingBeingEdited expansionAsTokens]];
+        [encodeSpacesCheckbox setState: [mappingBeingEdited encodeSpaces] ? NSOnState : NSOffState];
+        [dontUseUnicodeCheckBox setState: [mappingBeingEdited dontUseUnicode] ? NSOnState : NSOffState];        
+    } else {
+        [expansionTokenField setStringValue: @""];
+        [encodeSpacesCheckbox setState: NSOffState];
+        [dontUseUnicodeCheckBox setState: NSOffState];        
+    }
+    [expansionTokenField setEnabled: mappingBeingEdited != nil];
+    [encodeSpacesCheckbox setEnabled: mappingBeingEdited != nil];
+    [dontUseUnicodeCheckBox setEnabled: mappingBeingEdited != nil];
+    [sourceTokenField setEnabled: mappingBeingEdited != nil];    
 }
 
 - (NSTokenStyle) tokenField: (NSTokenField*) tokenField 
@@ -223,27 +244,6 @@
     return result;
 }
 
-- (void) updateSelection {
-    [self saveEdit];
-    [self leaveEdit];
-    NSString* keyword = [tableView selectedRow] >= 0 ? [keywords objectAtIndex: [tableView selectedRow]] : nil;
-    if (keyword) {
-        KeywordMapping* mapping = [mapper mappingForKeyword: keyword];
-        [expansionTokenField setObjectValue: [mapping expansionAsTokens]];
-        [encodeSpacesCheckbox setState: [mapping encodeSpaces] ? NSOnState : NSOffState];
-        [dontUseUnicodeCheckBox setState: [mapping dontUseUnicode] ? NSOnState : NSOffState];
-        mappingBeingEdited = [mapping retain];
-    } else {
-        [expansionTokenField setStringValue: @""];
-        [encodeSpacesCheckbox setState: NSOffState];
-        [dontUseUnicodeCheckBox setState: NSOffState];
-    }
-    [expansionTokenField setEnabled: keyword != nil];
-    [encodeSpacesCheckbox setEnabled: keyword != nil];
-    [dontUseUnicodeCheckBox setEnabled: keyword != nil];
-    [sourceTokenField setEnabled: keyword != nil];
-}
-
 - (void) saveEdit {
     KeywordMapping* mapping = mappingBeingEdited;
     if (mapping) {
@@ -258,17 +258,67 @@
     if (mappingBeingEdited) {
         [mappingBeingEdited release];
         mappingBeingEdited = nil;
+        [self updateForm];
     }
 }
 
 - (void) reloadKeywords {
-    [keywords removeAllObjects];
-    NSArray* mappings = [mapper mappings];
-    for (int i = 0; i < [mappings count]; i++) {
-        KeywordMapping* mapping = [mappings objectAtIndex: i];
-        [keywords addObject: [mapping keyword]];
+    if (!reloading) {
+        reloading = YES;
+        @try {
+            [self saveEdit];
+    
+            // Get currently selected keywod
+            int rowIndex = [tableView selectedRow];
+            NSString* keyword = rowIndex >= 0 && rowIndex < [keywords count] ? 
+                [keywords objectAtIndex: [tableView selectedRow]] : nil;
+            if (keyword) [keyword retain];
+
+            // Build new, sorted keyword list
+            [keywords removeAllObjects];
+            NSArray* mappings = [mapper mappings];
+            for (int i = 0; i < [mappings count]; i++) {
+                KeywordMapping* mapping = [mappings objectAtIndex: i];
+                [keywords addObject: [mapping keyword]];
+            }
+            [keywords sortUsingSelector: @selector(caseInsensitiveCompare:)];
+            int emptyIndex = [keywords indexOfObject: @""];
+            if (emptyIndex != NSNotFound) {
+                [keywords removeObjectAtIndex: emptyIndex];
+                [keywords addObject: @""];
+            }
+            [tableView reloadData];
+
+            // Reselect previously selected
+            [self selectKeyword: keyword];
+            if (keyword) [keyword release];
+        } @finally {
+            reloading = NO;
+        }
     }
-    [keywords sortUsingSelector: @selector(caseInsensitiveCompare:)];
+}
+
+- (void) selectKeyword: (NSString*) keyword edit: (BOOL) edit {
+    if (keyword) {
+        int rowIndex = [keywords indexOfObject: keyword];
+        if (rowIndex != NSNotFound) {
+            [tableView scrollRowToVisible: rowIndex];
+            [tableView selectRowIndexes: [NSIndexSet indexSetWithIndex: rowIndex] byExtendingSelection: NO];
+            if (edit) {
+                [tableView editColumn: 0 row: rowIndex withEvent: nil select: YES];
+            }
+        }
+    }
+}
+
+- (void) selectKeyword: (NSString*) keyword {
+    [self selectKeyword: keyword edit: NO];
+}
+
+/* Mapper notifications */
+
+- (void) mappingsDidChange: (NSNotification*) notification {
+    [self reloadKeywords];
 }
 
 /* Table view data source methods */
@@ -306,18 +356,11 @@
                 } else {
                     [mapping setKeyword: newValue];
                     [mapper modified];
-                }
-                [self reloadKeywords];
-                [tableView reloadData];
-                if (mapping) {
-                    int rowIndex = [keywords indexOfObject: [mapping keyword]];
-                    [tableView scrollRowToVisible: rowIndex];
-                    [tableView selectRowIndexes: [NSIndexSet indexSetWithIndex: rowIndex] byExtendingSelection: NO];
+                    [self selectKeyword: [mapping keyword]];
                 }
             }
         }
     }
-    [self updateSelection];
 }
 
 @end

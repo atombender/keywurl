@@ -1,6 +1,8 @@
 #import <Cocoa/Cocoa.h>
 #import "KeywordMapping.h"
 
+extern const NSString* KeywordMapperMappingsDidChangeNotification;
+
 @interface KeywordMapper : NSObject {
     NSMutableArray* mappings;
     NSMutableDictionary* cache;
@@ -19,7 +21,6 @@
     dontUseUnicode: (BOOL) theDontUseUnicode
     encodeSpaces: (BOOL) theEncodeSpaces;
 - (void) removeKeyword: (NSString*) keyword;
-- (void) removeKeywordAtIndex: (int) index;
 - (NSArray*) mappings;
 - (void) modified;
 

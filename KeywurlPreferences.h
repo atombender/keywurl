@@ -13,6 +13,7 @@
     KeywordMapper* mapper;
     KeywordMapping* mappingBeingEdited;
     NSMutableArray* keywords;
+    BOOL reloading;
 }
 
 - (IBAction) addKeyword: (id) sender;
