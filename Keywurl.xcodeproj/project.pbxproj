@@ -394,16 +394,6 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
-<<<<<<< local
-				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_PREPROCESS = YES;
-				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
-					"MIN_BUNDLE_VERSION=5523",
-					"KEYWURL_VERSION=1.3.5",
-					"MAX_BUNDLE_VERSION=5525",
-				);
-=======
->>>>>>> other
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
@@ -419,16 +409,6 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
-<<<<<<< local
-				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_PREPROCESS = YES;
-				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
-					"MIN_BUNDLE_VERSION=5523",
-					"KEYWURL_VERSION=1.3.5",
-					"MAX_BUNDLE_VERSION=5525",
-				);
-=======
->>>>>>> other
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
@@ -466,13 +446,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-<<<<<<< local
-=======
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "";
 				INFOPLIST_PREFIX_HEADER = Constants.h;
 				INFOPLIST_PREPROCESS = YES;
->>>>>>> other
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_LDFLAGS = (
 					"-undefined",
@@ -494,17 +471,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
-<<<<<<< local
 				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_PREPROCESS = YES;
-				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
-					"MAX_BUNDLE_VERSION=4525",
-					"KEYWURL_VERSION=1.3.5",
-					"MIN_BUNDLE_VERSION=523",
-				);
-=======
-				INFOPLIST_FILE = /Users/alex/Devel/Apps/Keywurl/trunk/Info.plist;
->>>>>>> other
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
 				WRAPPER_EXTENSION = bundle;
@@ -520,17 +487,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
-<<<<<<< local
-				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_PREPROCESS = YES;
-				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
-					"MAX_BUNDLE_VERSION=4525",
-					"KEYWURL_VERSION=1.3.5",
-					"MIN_BUNDLE_VERSION=523",
-				);
-=======
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = KEYWURL_TARGET_TIGER;
->>>>>>> other
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
 				WRAPPER_EXTENSION = bundle;
