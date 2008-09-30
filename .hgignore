@@ -1,9 +1,0 @@
-^\.DS_Store$
-(^|/)\.hg($|/)
-(^|/)\.hgtags($|/)
-^build$
-~$
-\.pch$
-^Keywurl.xcodeproj/alex\..*
-^Installer/Install Keywurl.pkg$
-

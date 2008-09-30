@@ -1,7 +1,6 @@
 #include "KeywurlBrowserWebView.h"
 #include "KeywurlBrowserWindowController.h"
 #include "KeywurlPlugin.h"
-#include "KeywurlBrowserWindowController.h"
 
 @implementation KeywurlBrowserWebView
 

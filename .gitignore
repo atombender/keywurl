@@ -1,0 +1,6 @@
+.DS_Store
+/build
+*~
+*.pch
+Keywurl.xcodeproj/alex*
+Installer/Install Keywurl.pkg
