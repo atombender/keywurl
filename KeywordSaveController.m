@@ -116,6 +116,7 @@
         expansion: expansion];
     KeywordMapper* mapper = [[KeywurlPlugin sharedInstance] keywordMapper];
     [mapper addKeyword: mapping];
+    [mapper saveMappings];
     [NSApp endSheet: window];
 
     NSAlert *alert = [[NSAlert alloc] init];
