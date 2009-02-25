@@ -1,6 +1,4 @@
-#import <Cocoa/Cocoa.h>
-#import <WebKit/WebKit.h>
-#import <Foundation/Foundation.h>
+/* Generated using class-dump */
 
 @protocol ProvidesSearchTarget
 - (id)targetForSearch;

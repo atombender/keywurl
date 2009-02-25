@@ -4,6 +4,7 @@
 
 @implementation KeywurlBrowserWebView
 
+#if KEYWURL_SAFARI_VERSION <= 3
 - (NSArray*) fallbackURLs {
 	KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
     KeywordMapper* mapper = [plugin keywordMapper];
@@ -17,6 +18,7 @@
         return [super fallbackURLs];
     }
 }
+#endif
 
 - (id) webView: (id) sender 
     contextMenuItemsForElement: (id) elementDictionary

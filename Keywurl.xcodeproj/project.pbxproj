@@ -54,6 +54,22 @@
 		FA3A4D870D78A0BD00BD4C53 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		FA3A4D9E0D78A1DF00BD4C53 /* KeywurlPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D9C0D78A1DF00BD4C53 /* KeywurlPreferences.nib */; };
 		FA3A4D9F0D78A1E500BD4C53 /* KeywurlPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D9C0D78A1DF00BD4C53 /* KeywurlPreferences.nib */; };
+		FAE6DFDB0F55DC2C008D3D58 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		FAE6DFDC0F55DC2C008D3D58 /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D170D789D2800BD4C53 /* Add.tiff */; };
+		FAE6DFDD0F55DC2C008D3D58 /* Keywurl.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D1C0D789D2800BD4C53 /* Keywurl.icns */; };
+		FAE6DFDE0F55DC2C008D3D58 /* Keywurl.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D1D0D789D2800BD4C53 /* Keywurl.png */; };
+		FAE6DFDF0F55DC2C008D3D58 /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D2A0D789D2800BD4C53 /* Remove.tiff */; };
+		FAE6DFE00F55DC2C008D3D58 /* KeywurlPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D9C0D78A1DF00BD4C53 /* KeywurlPreferences.nib */; };
+		FAE6DFE10F55DC2C008D3D58 /* SaveKeywordWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA3406550D81FC0600F0EC2E /* SaveKeywordWindow.nib */; };
+		FAE6DFE30F55DC2C008D3D58 /* KeywordMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D190D789D2800BD4C53 /* KeywordMapper.m */; };
+		FAE6DFE40F55DC2C008D3D58 /* KeywordMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D1B0D789D2800BD4C53 /* KeywordMapping.m */; };
+		FAE6DFE50F55DC2C008D3D58 /* KeywurlBrowserWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D1F0D789D2800BD4C53 /* KeywurlBrowserWebView.m */; };
+		FAE6DFE60F55DC2C008D3D58 /* KeywurlBrowserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D210D789D2800BD4C53 /* KeywurlBrowserWindowController.m */; };
+		FAE6DFE70F55DC2C008D3D58 /* KeywurlPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D230D789D2800BD4C53 /* KeywurlPlugin.m */; };
+		FAE6DFE80F55DC2C008D3D58 /* KeywurlPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D250D789D2800BD4C53 /* KeywurlPreferences.m */; };
+		FAE6DFE90F55DC2C008D3D58 /* NSPreferences+Keywurl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A4D280D789D2800BD4C53 /* NSPreferences+Keywurl.m */; };
+		FAE6DFEA0F55DC2C008D3D58 /* KeywordSaveController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3406540D81FBF000F0EC2E /* KeywordSaveController.m */; };
+		FAE6DFEC0F55DC2C008D3D58 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +124,8 @@
 		FA3A4D2C0D789D2800BD4C53 /* Safari2_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari2_0.h; sourceTree = "<group>"; };
 		FA3A4D2D0D789D2800BD4C53 /* Safari3_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari3_0.h; sourceTree = "<group>"; };
 		FA3A4D9D0D78A1DF00BD4C53 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/KeywurlPreferences.nib; sourceTree = "<group>"; };
+		FAE6DFF00F55DC2C008D3D58 /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Keywurl.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE6DFF10F55DC2C008D3D58 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +142,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3A4D870D78A0BD00BD4C53 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE6DFEB0F55DC2C008D3D58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE6DFEC0F55DC2C008D3D58 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +188,7 @@
 				FA3A4D2A0D789D2800BD4C53 /* Remove.tiff */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+				FAE6DFF10F55DC2C008D3D58 /* Info copy.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -216,6 +243,7 @@
 			children = (
 				FA34066F0D81FDF100F0EC2E /* Keywurl.bundle */,
 				FA3406700D81FDF100F0EC2E /* Keywurl.bundle */,
+				FAE6DFF00F55DC2C008D3D58 /* Keywurl.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,9 +258,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D5B49AC048680CD000E48DA /* Keywurl on Leopard */ = {
+		8D5B49AC048680CD000E48DA /* Keywurl for Safari 3 on Leopard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "Keywurl on Leopard" */;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "Keywurl for Safari 3 on Leopard" */;
 			buildPhases = (
 				8D5B49AF048680CD000E48DA /* Resources */,
 				8D5B49B1048680CD000E48DA /* Sources */,
@@ -242,15 +270,15 @@
 			);
 			dependencies = (
 			);
-			name = "Keywurl on Leopard";
+			name = "Keywurl for Safari 3 on Leopard";
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = Keywurl;
 			productReference = FA34066F0D81FDF100F0EC2E /* Keywurl.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		FA3A4D760D78A0BD00BD4C53 /* Keywurl on Tiger */ = {
+		FA3A4D760D78A0BD00BD4C53 /* Keywurl for Safari 3 on Tiger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA3A4D880D78A0BD00BD4C53 /* Build configuration list for PBXNativeTarget "Keywurl on Tiger" */;
+			buildConfigurationList = FA3A4D880D78A0BD00BD4C53 /* Build configuration list for PBXNativeTarget "Keywurl for Safari 3 on Tiger" */;
 			buildPhases = (
 				FA3A4D770D78A0BD00BD4C53 /* Resources */,
 				FA3A4D7E0D78A0BD00BD4C53 /* Sources */,
@@ -260,10 +288,28 @@
 			);
 			dependencies = (
 			);
-			name = "Keywurl on Tiger";
+			name = "Keywurl for Safari 3 on Tiger";
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = Keywurl;
 			productReference = FA3406700D81FDF100F0EC2E /* Keywurl.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		FAE6DFD90F55DC2C008D3D58 /* Keywurl for Safari 4 on Leopard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAE6DFED0F55DC2C008D3D58 /* Build configuration list for PBXNativeTarget "Keywurl for Safari 4 on Leopard" */;
+			buildPhases = (
+				FAE6DFDA0F55DC2C008D3D58 /* Resources */,
+				FAE6DFE20F55DC2C008D3D58 /* Sources */,
+				FAE6DFEB0F55DC2C008D3D58 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Keywurl for Safari 4 on Leopard";
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = Keywurl;
+			productReference = FAE6DFF00F55DC2C008D3D58 /* Keywurl.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -279,8 +325,9 @@
 			projectRoot = "";
 			targets = (
 				FA3A4DA20D78A25F00BD4C53 /* Keywurl */,
-				8D5B49AC048680CD000E48DA /* Keywurl on Leopard */,
-				FA3A4D760D78A0BD00BD4C53 /* Keywurl on Tiger */,
+				8D5B49AC048680CD000E48DA /* Keywurl for Safari 3 on Leopard */,
+				FA3A4D760D78A0BD00BD4C53 /* Keywurl for Safari 3 on Tiger */,
+				FAE6DFD90F55DC2C008D3D58 /* Keywurl for Safari 4 on Leopard */,
 			);
 		};
 /* End PBXProject section */
@@ -311,6 +358,20 @@
 				FA3A4D7D0D78A0BD00BD4C53 /* Remove.tiff in Resources */,
 				FA3A4D9F0D78A1E500BD4C53 /* KeywurlPreferences.nib in Resources */,
 				FA3406570D81FC0600F0EC2E /* SaveKeywordWindow.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE6DFDA0F55DC2C008D3D58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE6DFDB0F55DC2C008D3D58 /* InfoPlist.strings in Resources */,
+				FAE6DFDC0F55DC2C008D3D58 /* Add.tiff in Resources */,
+				FAE6DFDD0F55DC2C008D3D58 /* Keywurl.icns in Resources */,
+				FAE6DFDE0F55DC2C008D3D58 /* Keywurl.png in Resources */,
+				FAE6DFDF0F55DC2C008D3D58 /* Remove.tiff in Resources */,
+				FAE6DFE00F55DC2C008D3D58 /* KeywurlPreferences.nib in Resources */,
+				FAE6DFE10F55DC2C008D3D58 /* SaveKeywordWindow.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,17 +408,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAE6DFE20F55DC2C008D3D58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE6DFE30F55DC2C008D3D58 /* KeywordMapper.m in Sources */,
+				FAE6DFE40F55DC2C008D3D58 /* KeywordMapping.m in Sources */,
+				FAE6DFE50F55DC2C008D3D58 /* KeywurlBrowserWebView.m in Sources */,
+				FAE6DFE60F55DC2C008D3D58 /* KeywurlBrowserWindowController.m in Sources */,
+				FAE6DFE70F55DC2C008D3D58 /* KeywurlPlugin.m in Sources */,
+				FAE6DFE80F55DC2C008D3D58 /* KeywurlPreferences.m in Sources */,
+				FAE6DFE90F55DC2C008D3D58 /* NSPreferences+Keywurl.m in Sources */,
+				FAE6DFEA0F55DC2C008D3D58 /* KeywordSaveController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		FA3A4DA60D78A26600BD4C53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D5B49AC048680CD000E48DA /* Keywurl on Leopard */;
+			target = 8D5B49AC048680CD000E48DA /* Keywurl for Safari 3 on Leopard */;
 			targetProxy = FA3A4DA50D78A26600BD4C53 /* PBXContainerItemProxy */;
 		};
 		FA3A4DA80D78A26600BD4C53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FA3A4D760D78A0BD00BD4C53 /* Keywurl on Tiger */;
+			target = FA3A4D760D78A0BD00BD4C53 /* Keywurl for Safari 3 on Tiger */;
 			targetProxy = FA3A4DA70D78A26600BD4C53 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -385,7 +461,7 @@
 		1DEB913B08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) on Leopard";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) for Safari 3 on Leopard";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -394,6 +470,8 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=3";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=3";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
@@ -404,11 +482,13 @@
 		1DEB913C08733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) on Leopard";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) for Safari 3 on Leopard";
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=3";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=3";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
@@ -515,10 +595,50 @@
 			};
 			name = Release;
 		};
+		FAE6DFEE0F55DC2C008D3D58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) for Safari 4 on Leopard";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=4";
+				INFOPLIST_FILE = "/Users/alex/Devel/Keywurl/Git/Info copy.plist";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=4";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = Keywurl;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		FAE6DFEF0F55DC2C008D3D58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) for Safari 4 on Leopard";
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=4";
+				INFOPLIST_FILE = "/Users/alex/Devel/Keywurl/Git/Info copy.plist";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=4";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = Keywurl;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "Keywurl on Leopard" */ = {
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "Keywurl for Safari 3 on Leopard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB913B08733D840010E9CD /* Debug */,
@@ -536,7 +656,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA3A4D880D78A0BD00BD4C53 /* Build configuration list for PBXNativeTarget "Keywurl on Tiger" */ = {
+		FA3A4D880D78A0BD00BD4C53 /* Build configuration list for PBXNativeTarget "Keywurl for Safari 3 on Tiger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA3A4D890D78A0BD00BD4C53 /* Debug */,
@@ -550,6 +670,15 @@
 			buildConfigurations = (
 				FA3A4DA30D78A26000BD4C53 /* Debug */,
 				FA3A4DA40D78A26000BD4C53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAE6DFED0F55DC2C008D3D58 /* Build configuration list for PBXNativeTarget "Keywurl for Safari 4 on Leopard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE6DFEE0F55DC2C008D3D58 /* Debug */,
+				FAE6DFEF0F55DC2C008D3D58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,9 +7,12 @@
     KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
     KeywordMapper* mapper = [plugin keywordMapper];
     
-    // Only catch addresses containing spaces. We let the fallback URL mechanism catch the rest.
     NSString* input = [[_locationFieldEditor textStorage] string];
-    if (input && [input rangeOfString: @" "].location != NSNotFound) {
+    BOOL shouldMatch = true;
+    #if KEYWURL_SAFARI_VERSION <= 3
+      shouldMatch = (input && [input rangeOfString: @" "].location != NSNotFound);
+    #endif
+    if (shouldMatch) {
         NSString* newUrl = [mapper mapKeywordInput: input];
         if (![input isEqualToString: newUrl]) {
             [_locationFieldEditor->field setObjectValue: newUrl];
