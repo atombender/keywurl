@@ -17,7 +17,7 @@
         font-size: 10pt;
       }
       body, p {
-        color: #888;
+        color: #444;
       }
       a:link, a:visited, a:active, a:hover {
         color: #5d90ff;
@@ -27,9 +27,10 @@
         margin: 10px 0;
       }
       h1 {
-        color: #111;
-        font-weight: normal;
-        font-size: 18pt;
+        color: #222;
+        font-weight: bold;
+        letter-spacing: -1px;
+        font-size: 15pt;
         margin-bottom: 20px;
       }
       h2 {
@@ -55,28 +56,60 @@
       }
       b.high {
         color: #333;
-        background: #ffd;
       }
       .warn {
-        color: #a30;
+        color: #c40;
       }
     </style>
   </head>
   <body>
     <div class="section">
       <h1>About</h1>
-      <p class="p2">Keywurl is a small extension for Safari that adds keyword search, similar to Firefox's "Quick Search" functionality. The name is an increasingly unimaginative portmanteau of "keyword" and "URL".</p>
+      <p>Keywurl is a small extension for Safari that adds keyword search, similar to Firefox's "Quick Search" functionality. The name is an increasingly unimaginative portmanteau of "keyword" and "URL".</p>
+    </div>
+    <div class="section section2">
+      <h1>Installation</h1>
+      <p>
+        The current beta <strong>does not have an installer</strong>. Apple's installer
+        tool is something I'm not going to fight with right now. So to install:
+      </p>
+      <p>
+        Copy <b><tt>Keywurl.bundle</tt></b> into
+        <b><tt>Library/Application Support/SIMBL/Plugins</tt></b> under your home folder, <em>or</em>
+        in <b><tt>/Library/Application Support/SIMBL/Plugins</tt></b> in the hard drive root if you
+        want Keywurl to be enabled for all users on the computer.
+      </p>
+      <p>
+        <b>Remember to also run the SIMBL installer</b>. If SIMBL does not work properly, try
+        installing it system-wide. Or, if that was what you were doing, try installing it
+        for your user account only.
+      </p>
+      <p>
+        To uninstall, just delete the file you copied.
+      </p>      
     </div>
     <div class="section section2">
       <h1>Changes</h1>
-      <h2><b>1.4 beta 1 </b>(February 20, 2008)</h2>
-      <p class="p2">This is a public beta of 1.4. Report bugs and
-        suggestions to <a href="mailto:alex@purefiction.net">alex@purefiction.net</a>.</p>
-      <ul class="ul1">
-        <li><b class="warn">This is prelease software. Please back up your preference file (under
+
+      <p>
+        <b class="warn">The current beta version is prelease software. Please back up your preference file (under
           <tt>Library/Application Support/Keywurl</tt>) before use. I am not responsible for any
           data loss incurred by this plugin. Don't blame me if the sky falls on your head.
         </b>
+      </p>
+
+      <h2><b>1.4 beta 3 </b>(February 25, 2009)</h2>
+      <p>Support for for the new Safari 4 beta. Fixed a bug where keywords would not be
+        saved if you created it with the context menu. Currently Leopard only.</p>
+
+      <h2><b>1.4 beta 2 </b>(Mar 20, 2008)</h2>
+      <p>Safari 3.1 changed some internals that broke how Keywurl handled fallbacks when no 
+        "default" keyword has been created; so just typing foo in the address field would 
+        not take you to www.foo.com.</p>
+
+      <h2><b>1.4 beta 1 </b>(February 20, 2008)</h2>
+      <p>First beta.</p>
+      <ul class="ul1">
         <li><b class="high">You can now create a new keyword just by right-clicking on any text field in any web page form, and selecting <i>Create Keyword</i>. </b>Keywurl takes care of the dirty details.</li>
         <li><b class="high">Nicer substitution syntax.</b> The "@@@" and "$$$" expansion symbols have been replaced with a more human-friendly system that does not rely on magic syntax. Instead, the address field now shows the substitutions using nice, friendly, little blue bubble shapes. Old configuration files are automatically migrated from the old syntax. The available substitutions are shown in a separate box, and you can drag them with the mouse into the address field. Visual editing, yay!</li>
         <li><b class="high">It is now possible to address each query word separately</b>: In the query "foo bar", "query 1" expands to "foo", "query 2" to "bar", etc. Up to 10 such query terms are supported. For example, this allows you to map a queries such as: <a href="http://quote.fool.com/Chart/chart.asp?time=1dy&amp;symbols=aapl">graph 2yr aapl</a> (stock prices for Apple over two years) or <a href="http://quote.fool.com/Chart/chart.asp?time=1dy&amp;symbols=msft">graph 1dy msft</a> (stock prices for Microsoft for one day).</li>
@@ -85,7 +118,7 @@
         <li>Some minor bug fixes to the way selection and keyword creation is handled.</li>
       </ul>
       <h2><b>1.3.3 </b>(February 18, 2008)</h2>
-      <p class="p2">Safari 3.1 compatibility.</p>
+      <p>Safari 3.1 compatibility.</p>
       <h2><b>1.3.2 </b>(January 29, 2008)</h2>
       <ul class="ul1">
         <li><b class="high">Tiger compatibility</b>.</li>
@@ -93,9 +126,9 @@
         <li>Fixed so that Safari's default fallback (eg., going to "foo.com" when you enter just "foo") works if there is no default keyword.</li>
       </ul>
       <h2><b>1.3.1 </b>(January 27, 2008)</h2>
-      <p class="p2">This released was hoped to fix Tiger compatibility. It did not.</p>
+      <p>This released was hoped to fix Tiger compatibility. It did not.</p>
       <h2><b>1.3 </b>(January 24, 2008)</h2>
-      <p class="p2">This is a minor bug fix release. Thanks to Eli Dourado and Brian de Alwis for ideas and suggestions.</p>
+      <p>This is a minor bug fix release. Thanks to Eli Dourado and Brian de Alwis for ideas and suggestions.</p>
       <h2><b>1.2 </b>(January 23, 2008)</h2>
       <ul class="ul1">
         <li><b class="high">Default keyword</b>.<b> </b>The keyword "default" (if it is defined) is now invoked when no other keyword matches. Google is included as an example. For example, typing "Paris Hilton" in the address bar will now invoke a Google search. Keywurl uses a simple heuristic to determine whether something is a legitimate host name (eg., cnn.com) or something that should be expanded: If what you entered contains only a single word consisting of alphanumeric characters and at least one dot, it's considered a host name and ignored.</li>
@@ -111,23 +144,25 @@
     </div>
     <div class="section section2">
       <h1>Requirements</h1>
+      <p>
+        For Tiger support I recommend the 1.3 series. Unfortunately, I no longer
+        have a machine with Tiger on which to test. For the current versions the following
+        apply:
+      </p>
+      </p>
       <ul class="ul1">
-        <li><b class="high">Mac OS X 10.5 ("Leopard") or later</b>. Sorry, no Tiger support until the final release.</li>
+        <li><b class="high">Mac OS X 10.5 ("Leopard") or later</b>.</li>
         <li><b class="high">Safari 3.0</b> or later.</li>
         <li><b class="high">SIMBL</b>, which lets Keywurl be installed into Safari. SIMBL is included in the Keywurl package, and may also be <a href="http://www.culater.net/software/SIMBL/SIMBL.php">downloaded here</a>.</li>
       </ul>
     </div>
     <div class="section section2">
-      <h1>Installation</h1>
-      <p class="p2">Run the installer. Remember to also run the SIMBL installer.</p>
-    </div>
-    <div class="section section2">
       <h1>License</h1>
-      <p class="p2">See the file License.rtf accompanying the installer.</p>
+      <p>See the file License.rtf accompanying the installer.</p>
     </div>
     <div class="section section2">
       <h1>Credits</h1>
-      <p class="p2">The preference code was written based on Jim Fowler's ForgetMeNot plugin, with many thanks.</p>
+      <p>The preference code was written based on Jim Fowler's ForgetMeNot plugin, with many thanks.</p>
     </div>
   </body>
 </html>
