@@ -1,0 +1,1 @@
+Keywurl is a small extension for Safari that adds keyword search, similar to Firefox's "Quick Search" functionality. The name is an increasingly unimaginative portmanteau of "keyword" and "URL".
