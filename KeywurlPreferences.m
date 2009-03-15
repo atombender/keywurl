@@ -55,8 +55,8 @@
     [tableView setDataSource: self];
     
     [sourceTokenField setObjectValue: [NSArray arrayWithObjects: 
-        [[QueryToken alloc] init],
         [[InputToken alloc] init],
+        [[QueryToken alloc] init],
         [[QueryPartToken alloc] initWithPartNumber: 1],
         [[QueryPartToken alloc] initWithPartNumber: 2],
         [[QueryPartToken alloc] initWithPartNumber: 3],

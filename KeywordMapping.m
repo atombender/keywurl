@@ -7,7 +7,7 @@
 }
 
 - (NSString*) label {
-    return @"Query";
+    return @"complete query";
 }
 
 @end
@@ -28,7 +28,7 @@
 }
 
 - (NSString*) label {
-    return [NSString stringWithFormat: @"Query %d", partNumber];
+    return [NSString stringWithFormat: @"query word %d", partNumber];
 }
 
 @end
@@ -40,7 +40,7 @@
 }
 
 - (NSString*) label {
-    return @"Input";
+    return @"complete location field";
 }
 
 @end
