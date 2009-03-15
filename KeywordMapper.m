@@ -143,7 +143,7 @@ const NSString* KeywordMapperMappingsDidChangeNotification = @"KeywordMapperMapp
 - (void) setupDefaults {
     // Set up some sensible defaults
     [self addKeyword: @"default"
-        expansion: @"http://www.google.com/search?q=@$"];
+        expansion: @"http://www.google.com/search?q={input}"];
     [self addKeyword: @"amazon" 
         expansion: @"http://www.amazon.com/exec/obidos/search-handle-url/index%3Dblended%26field-keywords%3D{query}"
         dontUseUnicode: YES
