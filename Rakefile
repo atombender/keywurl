@@ -1,9 +1,18 @@
 require "fileutils"
 
 VERSIONS = [
-  ["1.4 beta 3", "Leopard", "Safari 3"],
-  ["1.4 beta 3", "Leopard", "Safari 4"]
+  ["1.4 beta 4", "Leopard", "Safari 3"],
+  ["1.4 beta 4", "Leopard", "Safari 4"]
 ]
+
+def run(s)
+  puts s
+  succeeded = system(s)
+  unless succeeded
+    $stderr << "Failed to run command."
+    exit(1)
+  end
+end
 
 desc "Create a distribution"
 task :distribute do
@@ -23,12 +32,12 @@ task :distribute do
     FileUtils.mkdir_p(output_directory)
     dmg_file = "#{output_directory}/Keywurl-#{version.gsub(/\s/, "-")}-#{safari.gsub(/\s/, "-")}-#{os}.dmg"
     FileUtils.rm_f(dmg_file)
-    system("hdiutil create -srcfolder '#{work_directory}' '#{dmg_file}'")
-    system("hdiutil internet-enable -yes '#{dmg_file}'")
+    run("hdiutil create -srcfolder '#{work_directory}' '#{dmg_file}'")
+    run("hdiutil internet-enable -yes '#{dmg_file}'")
 
     puts "Creating source tarball"
-    system("git archive --format=tar refs/tags/Release_'#{version.gsub(/\s/, '_')}' | " <<
-      "bzip2 -9 > '#{output_directory}/Keywurl-#{version}.tar.bz2'")
+    run("git archive --format=tar 'refs/tags/Release_#{version.gsub(/[\s]/, '_')}' | " <<
+      "bzip2 -9 > '#{output_directory}/Keywurl-#{version.gsub(/\s/, '_')}.tar.bz2'")
     puts
   end
 end
