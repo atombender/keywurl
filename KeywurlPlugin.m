@@ -50,21 +50,45 @@ static KeywurlPlugin* plugin = nil;
     NSString* documentUrl = (NSString*) [parameters objectAtIndex: 0];
     DOMElement* inputElement = (DOMElement*) [parameters objectAtIndex: 1];
     DOMElement* formElement = nil;
-    DOMNode* node = inputElement;
-    while (node) {
-        if ([node nodeType] == DOM_ELEMENT_NODE) {
-            DOMElement* element = (DOMElement*) node;
-            if ([[element tagName] isEqualToString: @"FORM"]) {
-                formElement = element;
-                break;
+    if ([inputElement respondsToSelector: @selector(form)]) {
+        formElement = [inputElement form];
+    }
+    if (!formElement) {
+        DOMNode* node = inputElement;
+        while (node) {
+            NSLog(@"looking at node: %@", node);
+            if ([node nodeType] == DOM_ELEMENT_NODE) {
+                DOMElement* element = (DOMElement*) node;
+                NSLog(@"  element: %@", [element tagName]);
+                if ([[element tagName] isEqualToString: @"FORM"]) {
+                    formElement = element;
+                    break;
+                }
             }
+            node = [node parentNode];
         }
-        node = [node parentNode];
     }
     if (inputElement && formElement) {
         KeywordSaveController* controller = [[KeywordSaveController alloc] initWithUrl: documentUrl
             inputElement: inputElement
             formElement: formElement];
+    } else {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle: @"OK"];
+        [alert setMessageText: @"Could not create keyword"];
+        [alert setInformativeText: [NSString stringWithFormat:
+            @"The field you clicked on seem to be constructed in a way that Keywurl \
+does not understand. \
+\
+For example, the field may be JavaScript/AJAX-based, or the HTML may be malformed. \
+Keywurl can only deal with good old-fashioned HTML forms. \
+\
+Sorry."]];
+        [alert setAlertStyle: NSInformationalAlertStyle];
+        [alert beginSheetModalForWindow: [NSApp keyWindow]
+            modalDelegate: nil
+            didEndSelector: nil
+            contextInfo: nil];
     }
 }
 
