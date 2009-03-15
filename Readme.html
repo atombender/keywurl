@@ -12,12 +12,12 @@
         font-size: normal;
       }
       body {
-        margin: 50px 25px;
+        margin: 25px 25px;
         font-family: "Lucida Grande", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
         font-size: 10pt;
       }
       body, p {
-        color: #444;
+        color: #666;
       }
       a:link, a:visited, a:active, a:hover {
         color: #5d90ff;
@@ -31,17 +31,15 @@
         font-weight: bold;
         letter-spacing: -1px;
         font-size: 15pt;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
       h2 {
         color: #444;
-        font-weight: normal;
-        font-size: 13pt;
+        font-size: 11pt;
         margin-bottom: 10px;
         margin-top: 20px;
       }
       h2 b {
-        font-weight: normal;
       }
       ol.ol1 {list-style-type: decimal}
       ul.ul1 {list-style-type: disc}
@@ -53,16 +51,33 @@
       .section.section2 {
         margin-top: 15px;
         padding-top: 15px;
+        border-top: solid 1px #ddd;
       }
       b.high {
         color: #333;
       }
       .warn {
         color: #c40;
+        font-size: 14pt;
+      }
+      .beta_warning {
+        margin-bottom: 30px;
+        border: solid 1px #c40;
+        padding: 5px 15px;
       }
     </style>
   </head>
   <body>
+
+    <div class="section beta_warning">
+      <p>
+        <b class="warn">The current beta version is prelease software. Please back up your preference file (under
+          Library/Application Support/Keywurl) before use. I am not responsible for any
+          data loss incurred by this plugin. Don't blame me if the sky falls on your head.
+        </b>
+      </p>
+    </div>
+
     <div class="section">
       <h1>About</h1>
       <p>Keywurl is a small extension for Safari that adds keyword search, similar to Firefox's "Quick Search" functionality. The name is an increasingly unimaginative portmanteau of "keyword" and "URL".</p>
@@ -84,18 +99,27 @@
         installing it system-wide. Or, if that was what you were doing, try installing it
         for your user account only.
       </p>
+    </div>
+
+    <div class="section section2">
+      <h1>Uninstalling</h1>
       <p>
         To uninstall, just delete the file you copied.
       </p>      
     </div>
+    
     <div class="section section2">
       <h1>Changes</h1>
 
-      <p>
-        <b class="warn">The current beta version is prelease software. Please back up your preference file (under
-          <tt>Library/Application Support/Keywurl</tt>) before use. I am not responsible for any
-          data loss incurred by this plugin. Don't blame me if the sky falls on your head.
-        </b>
+      <h2><b>1.4 beta 4 </b>(March 15, 2009)</h2>
+      <p>Fixes several bugs, the most important
+      one being in handling legitimate addresses typed without the http:// prefix;
+      this restores the way address resolution worked with Safari 3, with the
+      additional benefit that you can now remap hosts as keywords. For example, 
+      you can create a keyword named <strong>apple.com</strong> and have it
+      expand to <strong>apple.de</strong>. This release also fixes and improves
+      the right-click-to-create-keyword feature, and fixes the 
+      default <strong>default</strong> expansion, which was broken.
       </p>
 
       <h2><b>1.4 beta 3 </b>(February 25, 2009)</h2>
