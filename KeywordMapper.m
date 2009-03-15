@@ -31,6 +31,10 @@ const NSString* KeywordMapperMappingsDidChangeNotification = @"KeywordMapperMapp
 }
 
 - (NSString*) mapKeywordInput: (NSString*) input {
+    return [self mapKeywordInput: input withDefault: YES];
+}
+
+- (NSString*) mapKeywordInput: (NSString*) input withDefault: (BOOL) withDefault {
     NSString* result = input;
     if (input && ![self isUrl: input]) {
         NSString* keyword = nil;
@@ -42,7 +46,7 @@ const NSString* KeywordMapperMappingsDidChangeNotification = @"KeywordMapperMapp
             keyword = input;
         }
         KeywordMapping* mapping = [cache objectForKey: keyword];
-        if (!mapping) {
+        if (!mapping && withDefault) {
            mapping = [cache objectForKey: @"default"];
         }
         if (mapping) {

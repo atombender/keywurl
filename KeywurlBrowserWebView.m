@@ -4,11 +4,34 @@
 
 @implementation KeywurlBrowserWebView
 
-#if KEYWURL_SAFARI_VERSION <= 3
+#if KEYWURL_SAFARI_VERSION >= 4
+
+- (NSArray*) fallbackURLs {
+    // If Safari has failed to resolve the address into a proper host name, the
+    // list of fallback URLs is empty and we can intercept the URL and map it
+    NSArray* urls = [super fallbackURLs];
+    if (urls == nil || [urls count] == 0) {
+    	KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
+        KeywordMapper* mapper = [plugin keywordMapper];
+        LocationFieldEditor* fieldEditor = (LocationFieldEditor*) [
+          (KeywurlBrowserWindowController*) [self windowController] keywurl_locationFieldEditor];
+    	NSString* address = [[fieldEditor textStorage] string];
+        NSString* mapped = [mapper mapKeywordInput: address];
+    	if (mapped && ![mapped isEqualToString: address]) {
+            NSURL* mappedUrl = [NSURL URLWithString: mapped];
+            urls = [NSArray arrayWithObject: mappedUrl];
+        }
+    }
+    return urls;
+}
+
+#else
+
 - (NSArray*) fallbackURLs {
 	KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
     KeywordMapper* mapper = [plugin keywordMapper];
-    LocationFieldEditor* fieldEditor = (LocationFieldEditor*) [(KeywurlBrowserWindowController*) [self windowController] keywurl_locationFieldEditor];
+    LocationFieldEditor* fieldEditor = (LocationFieldEditor*) [
+      (KeywurlBrowserWindowController*) [self windowController] keywurl_locationFieldEditor];
 	NSString* address = [[fieldEditor textStorage] string];
     NSString* mapped = [mapper mapKeywordInput: address];
 	if (mapped && ![mapped isEqualToString: address]) {
@@ -18,6 +41,7 @@
         return [super fallbackURLs];
     }
 }
+
 #endif
 
 - (id) webView: (id) sender 

@@ -3,22 +3,24 @@
 
 @implementation KeywurlBrowserWindowController
 
+// We override this method to intercept addresses at an early stage without 
+// invoking Safari's fallback system. This is quicker as it avoids unnecessary 
+// DNS lookups
 - (void) goToToolbarLocation: (id) sender {
     KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
     KeywordMapper* mapper = [plugin keywordMapper];
-    
     NSString* input = [[_locationFieldEditor textStorage] string];
-    BOOL shouldMatch = true;
-    #if KEYWURL_SAFARI_VERSION <= 3
-      shouldMatch = (input && [input rangeOfString: @" "].location != NSNotFound);
-    #endif
-    if (shouldMatch) {
-        NSString* newUrl = [mapper mapKeywordInput: input];
+    if (input) {
+        BOOL useDefault = NO;
+        if (input && [input rangeOfString: @" "].location != NSNotFound) {
+            // URL contains spaces, so it's pretty much guaranteed to not be a URL
+            useDefault = YES;
+        }
+        NSString* newUrl = [mapper mapKeywordInput: input withDefault: useDefault];
         if (![input isEqualToString: newUrl]) {
             [_locationFieldEditor->field setObjectValue: newUrl];
         }
     }
-
     return [super goToToolbarLocation: sender];
 }
 

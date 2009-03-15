@@ -11,6 +11,7 @@ extern const NSString* KeywordMapperMappingsDidChangeNotification;
 - (id) init;
 - (KeywordMapping*) mappingForKeyword: (NSString*) keyword;
 - (NSString*) mapKeywordInput: (NSString*) input;
+- (NSString*) mapKeywordInput: (NSString*) input withDefault: (BOOL) withDefault;
 - (void) reloadMappings;
 - (void) loadMappingsFromFile: (NSString*) path;
 - (void) saveMappings;
