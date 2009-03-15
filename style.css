@@ -170,10 +170,11 @@ h1.bigheading {
 .main_columns .right_column .donate_box p {
   margin: 0;
   color: #888;
-  font-size: 8.5pt;
+  font-size: 8.5pt;           
 }
 
 .main_columns .right_column .donate_box p strong {
+  line-height: 120%;
   font-size: 14pt;
   font-weight: normal;
   color: #333;
