@@ -230,12 +230,12 @@
     NSMutableArray* result = [NSMutableArray new];
     for (unsigned i = 0; i < [tokens count]; i++) {
         id item = [tokens objectAtIndex: i];
-        if ([item isEqualToString: @"Query"]) {
+        if ([item isEqualToString: @"complete query"]) {
             [result addObject: [[QueryToken alloc] init]];
-        } else if ([item isEqualToString: @"Input"]) {
+        } else if ([item isEqualToString: @"complete location field"]) {
             [result addObject: [[InputToken alloc] init]];
-        } else if ([item hasPrefix: @"Query "] && [[item substringFromIndex: 6] intValue] >= 1) {
-            int n = [[item substringFromIndex: 6] intValue];
+        } else if ([item hasPrefix: @"query word "] && [[item substringFromIndex: 11] intValue] >= 1) {
+            int n = [[item substringFromIndex: 11] intValue];
             [result addObject: [[QueryPartToken alloc] initWithPartNumber: n]];
         } else {
             [result addObject: item];
