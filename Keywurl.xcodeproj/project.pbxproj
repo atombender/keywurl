@@ -125,7 +125,6 @@
 		FA3A4D2D0D789D2800BD4C53 /* Safari3_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari3_0.h; sourceTree = "<group>"; };
 		FA3A4D9D0D78A1DF00BD4C53 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/KeywurlPreferences.nib; sourceTree = "<group>"; };
 		FAE6DFF00F55DC2C008D3D58 /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Keywurl.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAE6DFF10F55DC2C008D3D58 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +187,6 @@
 				FA3A4D2A0D789D2800BD4C53 /* Remove.tiff */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
-				FAE6DFF10F55DC2C008D3D58 /* Info copy.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -608,7 +606,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=4";
-				INFOPLIST_FILE = "/Users/alex/Devel/Keywurl/Git/Info copy.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=4";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
@@ -626,7 +624,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=4";
-				INFOPLIST_FILE = "/Users/alex/Devel/Keywurl/Git/Info copy.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=4";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
