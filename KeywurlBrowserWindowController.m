@@ -12,8 +12,10 @@
     NSString* input = [[_locationFieldEditor textStorage] string];
     if (input) {
         BOOL useDefault = NO;
-        if (input && [input rangeOfString: @" "].location != NSNotFound) {
-            // URL contains spaces, so it's pretty much guaranteed to not be a URL
+        if ([input rangeOfString: @" "].location != NSNotFound ||
+          [input rangeOfString: @"."].location == NSNotFound) {
+            // URL contains spaces and is not a single word that contains dots, 
+            // so it's pretty much guaranteed to not be a URL
             useDefault = YES;
         }
         NSString* newUrl = [mapper mapKeywordInput: input withDefault: useDefault];
