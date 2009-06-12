@@ -2,7 +2,7 @@
 #define KEYWURL_MAJORVERSION 1
 #define KEYWURL_MINORVERSION 4
 #define KEYWURL_MAINTVERSION 0
-#define KEYWURL_BETA_BUILD 5
+#define KEYWURL_BETA_BUILD 6
 
 // Symbols needed for Info.plist; ugly workaround to avoid whitespace
 #define MACRO_PASTE_5(a, b, c, d, e) a##b##c##d##e
