@@ -47,8 +47,8 @@
     inputElement: (DOMElement*) theInputElement
     formElement: (DOMElement*) theFormElement {
     url = [theUrl copy];
-    inputElement = theInputElement;
-    formElement = theFormElement; 
+    inputElement = [theInputElement retain];
+    formElement = [theFormElement retain]; 
     if (![NSBundle loadNibNamed: @"SaveKeywordWindow" owner: self]) {
         NSLog(@"Could not load resource.");
         return nil;
@@ -84,6 +84,13 @@
         didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
         contextInfo: nil];        
     return self;
+}
+- (void)dealloc
+{
+    [url release];
+    [inputElement release];
+    [formElement release];
+    [super dealloc];
 }
 
 - (void) saveKeyword: (id) sender {
