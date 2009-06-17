@@ -1,6 +1,7 @@
 #import "KeywurlPlugin.h"
 #import "KeywurlBrowserWebView.h"
 #import "KeywurlBrowserWindowController.h"
+#import "IntroWindowController.h"
 #import "Safari.h"
 #import "KeywordSaveController.h"
 #import "Constants.h"
@@ -22,6 +23,15 @@ static KeywurlPlugin* plugin = nil;
     [[KeywurlBrowserWindowController class] poseAsClass: [BrowserWindowController class]];
     NSClassFromString(@"BrowserWebView");
     [[KeywurlBrowserWebView class] poseAsClass: [BrowserWebView class]];
+    
+    NSUserDefaults* preferences = [[NSUserDefaults standardUserDefaults] retain];
+    [preferences setObject: @"world" forKey: @"hello"];
+    [preferences release];
+    
+    if ([IntroWindowController shouldShow]) {
+        IntroWindowController* introController = [[IntroWindowController alloc] init];
+        [introController show];
+    }
 }
 
 + (KeywurlPlugin*) sharedInstance {
@@ -34,7 +44,39 @@ static KeywurlPlugin* plugin = nil;
 - (id) init { 
     fKeywordMapper = [[KeywordMapper alloc] init];
     fLoaded = YES;
+    introWindow = nil;
     return self;
+}
+
+- (void) dealloc {
+    if (preferences) {
+        [preferences release];
+    }
+    [super dealloc];
+}
+
+- (NSString*) preferenceFileName {
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(
+      NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    return [[paths objectAtIndex: 0] stringByAppendingPathComponent: @"Keywurl/Settings.plist"];
+}
+
+- (NSMutableDictionary*) preferences {
+    if (!preferences) {
+        NSDictionary* immutablePreferences = [NSDictionary dictionaryWithContentsOfFile: [self preferenceFileName]];
+        if (immutablePreferences) {
+            preferences = [immutablePreferences mutableCopy];
+        } else {
+            preferences = [NSMutableDictionary dictionary];
+        }
+    }
+    return preferences;
+}
+
+- (void) savePreferences {
+    if (preferences) {
+        [preferences writeToFile: [self preferenceFileName] atomically: YES];
+    }
 }
 
 - (KeywordMapper*) keywordMapper {
@@ -56,10 +98,8 @@ static KeywurlPlugin* plugin = nil;
     if (!formElement) {
         DOMNode* node = inputElement;
         while (node) {
-            NSLog(@"looking at node: %@", node);
             if ([node nodeType] == DOM_ELEMENT_NODE) {
                 DOMElement* element = (DOMElement*) node;
-                NSLog(@"  element: %@", [element tagName]);
                 if ([[element tagName] isEqualToString: @"FORM"]) {
                     formElement = element;
                     break;
@@ -69,7 +109,7 @@ static KeywurlPlugin* plugin = nil;
         }
     }
     if (inputElement && formElement) {
-        KeywordSaveController* controller = [[KeywordSaveController alloc] initWithUrl: documentUrl
+        [[KeywordSaveController alloc] initWithUrl: documentUrl
             inputElement: inputElement
             formElement: formElement];
     } else {

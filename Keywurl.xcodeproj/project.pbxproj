@@ -54,6 +54,22 @@
 		FA3A4D870D78A0BD00BD4C53 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		FA3A4D9E0D78A1DF00BD4C53 /* KeywurlPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D9C0D78A1DF00BD4C53 /* KeywurlPreferences.nib */; };
 		FA3A4D9F0D78A1E500BD4C53 /* KeywurlPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D9C0D78A1DF00BD4C53 /* KeywurlPreferences.nib */; };
+		FA7657530FE963DA00910178 /* IntroWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA7657520FE963DA00910178 /* IntroWindow.nib */; };
+		FA7657540FE963DA00910178 /* IntroWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA7657520FE963DA00910178 /* IntroWindow.nib */; };
+		FA7657550FE963DA00910178 /* IntroWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA7657520FE963DA00910178 /* IntroWindow.nib */; };
+		FA7657560FE963DA00910178 /* IntroWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = FA7657520FE963DA00910178 /* IntroWindow.nib */; };
+		FA76577C0FE9712900910178 /* IntroWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA76577B0FE9712900910178 /* IntroWindowController.m */; };
+		FA76577D0FE9712900910178 /* IntroWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA76577B0FE9712900910178 /* IntroWindowController.m */; };
+		FA76577E0FE9712900910178 /* IntroWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA76577B0FE9712900910178 /* IntroWindowController.m */; };
+		FA76577F0FE9712900910178 /* IntroWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA76577B0FE9712900910178 /* IntroWindowController.m */; };
+		FA7657B90FE97DA800910178 /* PreferencePreview.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7657B70FE97DA800910178 /* PreferencePreview.png */; };
+		FA7657BA0FE97DA800910178 /* PreferencePreview2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7657B80FE97DA800910178 /* PreferencePreview2.png */; };
+		FA7657BB0FE97DA800910178 /* PreferencePreview.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7657B70FE97DA800910178 /* PreferencePreview.png */; };
+		FA7657BC0FE97DA800910178 /* PreferencePreview2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7657B80FE97DA800910178 /* PreferencePreview2.png */; };
+		FA7657BD0FE97DA800910178 /* PreferencePreview.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7657B70FE97DA800910178 /* PreferencePreview.png */; };
+		FA7657BE0FE97DA800910178 /* PreferencePreview2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7657B80FE97DA800910178 /* PreferencePreview2.png */; };
+		FA7657BF0FE97DA800910178 /* PreferencePreview.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7657B70FE97DA800910178 /* PreferencePreview.png */; };
+		FA7657C00FE97DA800910178 /* PreferencePreview2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7657B80FE97DA800910178 /* PreferencePreview2.png */; };
 		FAD406F80FE2C59200365831 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		FAD406F90FE2C59200365831 /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D170D789D2800BD4C53 /* Add.tiff */; };
 		FAD406FA0FE2C59200365831 /* Keywurl.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA3A4D1C0D789D2800BD4C53 /* Keywurl.icns */; };
@@ -140,6 +156,11 @@
 		FA3A4D2C0D789D2800BD4C53 /* Safari2_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari2_0.h; sourceTree = "<group>"; };
 		FA3A4D2D0D789D2800BD4C53 /* Safari3_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari3_0.h; sourceTree = "<group>"; };
 		FA3A4D9D0D78A1DF00BD4C53 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/KeywurlPreferences.nib; sourceTree = "<group>"; };
+		FA7657520FE963DA00910178 /* IntroWindow.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = IntroWindow.nib; sourceTree = "<group>"; };
+		FA76577A0FE9712900910178 /* IntroWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroWindowController.h; sourceTree = "<group>"; };
+		FA76577B0FE9712900910178 /* IntroWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroWindowController.m; sourceTree = "<group>"; };
+		FA7657B70FE97DA800910178 /* PreferencePreview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PreferencePreview.png; sourceTree = "<group>"; };
+		FA7657B80FE97DA800910178 /* PreferencePreview2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PreferencePreview2.png; sourceTree = "<group>"; };
 		FAD4070D0FE2C59200365831 /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Keywurl.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE6DFF00F55DC2C008D3D58 /* Keywurl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Keywurl.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -204,6 +225,9 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA7657B70FE97DA800910178 /* PreferencePreview.png */,
+				FA7657B80FE97DA800910178 /* PreferencePreview2.png */,
+				FA7657520FE963DA00910178 /* IntroWindow.nib */,
 				FA3406550D81FC0600F0EC2E /* SaveKeywordWindow.nib */,
 				FA3A4D9C0D78A1DF00BD4C53 /* KeywurlPreferences.nib */,
 				FA3A4D170D789D2800BD4C53 /* Add.tiff */,
@@ -219,6 +243,8 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FA76577A0FE9712900910178 /* IntroWindowController.h */,
+				FA76577B0FE9712900910178 /* IntroWindowController.m */,
 				FA3406530D81FBF000F0EC2E /* KeywordSaveController.h */,
 				FA3406540D81FBF000F0EC2E /* KeywordSaveController.m */,
 				FA3A4D180D789D2800BD4C53 /* KeywordMapper.h */,
@@ -387,6 +413,9 @@
 				FA3A4D390D789D2800BD4C53 /* Remove.tiff in Resources */,
 				FA3A4D9E0D78A1DF00BD4C53 /* KeywurlPreferences.nib in Resources */,
 				FA3406560D81FC0600F0EC2E /* SaveKeywordWindow.nib in Resources */,
+				FA7657530FE963DA00910178 /* IntroWindow.nib in Resources */,
+				FA7657BB0FE97DA800910178 /* PreferencePreview.png in Resources */,
+				FA7657BC0FE97DA800910178 /* PreferencePreview2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +430,9 @@
 				FA3A4D7D0D78A0BD00BD4C53 /* Remove.tiff in Resources */,
 				FA3A4D9F0D78A1E500BD4C53 /* KeywurlPreferences.nib in Resources */,
 				FA3406570D81FC0600F0EC2E /* SaveKeywordWindow.nib in Resources */,
+				FA7657540FE963DA00910178 /* IntroWindow.nib in Resources */,
+				FA7657BD0FE97DA800910178 /* PreferencePreview.png in Resources */,
+				FA7657BE0FE97DA800910178 /* PreferencePreview2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +447,9 @@
 				FAD406FC0FE2C59200365831 /* Remove.tiff in Resources */,
 				FAD406FD0FE2C59200365831 /* KeywurlPreferences.nib in Resources */,
 				FAD406FE0FE2C59200365831 /* SaveKeywordWindow.nib in Resources */,
+				FA7657560FE963DA00910178 /* IntroWindow.nib in Resources */,
+				FA7657BF0FE97DA800910178 /* PreferencePreview.png in Resources */,
+				FA7657C00FE97DA800910178 /* PreferencePreview2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +464,9 @@
 				FAE6DFDF0F55DC2C008D3D58 /* Remove.tiff in Resources */,
 				FAE6DFE00F55DC2C008D3D58 /* KeywurlPreferences.nib in Resources */,
 				FAE6DFE10F55DC2C008D3D58 /* SaveKeywordWindow.nib in Resources */,
+				FA7657550FE963DA00910178 /* IntroWindow.nib in Resources */,
+				FA7657B90FE97DA800910178 /* PreferencePreview.png in Resources */,
+				FA7657BA0FE97DA800910178 /* PreferencePreview2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +485,7 @@
 				FA3A4D360D789D2800BD4C53 /* KeywurlPreferences.m in Sources */,
 				FA3A4D370D789D2800BD4C53 /* NSPreferences+Keywurl.m in Sources */,
 				FA3406A20D82125E00F0EC2E /* KeywordSaveController.m in Sources */,
+				FA76577D0FE9712900910178 /* IntroWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +501,7 @@
 				FA3A4D840D78A0BD00BD4C53 /* KeywurlPreferences.m in Sources */,
 				FA3A4D850D78A0BD00BD4C53 /* NSPreferences+Keywurl.m in Sources */,
 				FA3406A10D82125D00F0EC2E /* KeywordSaveController.m in Sources */,
+				FA76577E0FE9712900910178 /* IntroWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +517,7 @@
 				FAD407050FE2C59200365831 /* KeywurlPreferences.m in Sources */,
 				FAD407060FE2C59200365831 /* NSPreferences+Keywurl.m in Sources */,
 				FAD407070FE2C59200365831 /* KeywordSaveController.m in Sources */,
+				FA76577F0FE9712900910178 /* IntroWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +533,7 @@
 				FAE6DFE80F55DC2C008D3D58 /* KeywurlPreferences.m in Sources */,
 				FAE6DFE90F55DC2C008D3D58 /* NSPreferences+Keywurl.m in Sources */,
 				FAE6DFEA0F55DC2C008D3D58 /* KeywordSaveController.m in Sources */,
+				FA76577C0FE9712900910178 /* IntroWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
