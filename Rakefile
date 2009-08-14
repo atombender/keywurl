@@ -1,10 +1,7 @@
 require "fileutils"
 
 VERSIONS = [
-  ["1.4 beta 6", "Tiger", "Safari 3"],
-  ["1.4 beta 6", "Tiger", "Safari 4"],
-  ["1.4 beta 6", "Leopard", "Safari 3"],
-  ["1.4 beta 6", "Leopard", "Safari 4"]
+  ["1.4 beta 7", "Leopard", "Safari 4"]
 ]
 
 def run(s)
