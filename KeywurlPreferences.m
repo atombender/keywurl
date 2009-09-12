@@ -226,7 +226,7 @@
 
 - (NSArray*) tokenField: (NSTokenField*) tokenField 
     shouldAddObjects: (NSArray*) tokens 
-    atIndex: (unsigned) index {
+    atIndex: (NSUInteger) index {
     NSMutableArray* result = [NSMutableArray new];
     for (unsigned i = 0; i < [tokens count]; i++) {
         id item = [tokens objectAtIndex: i];
@@ -282,7 +282,7 @@
                 [keywords addObject: [mapping keyword]];
             }
             [keywords sortUsingSelector: @selector(caseInsensitiveCompare:)];
-            int emptyIndex = [keywords indexOfObject: @""];
+            NSInteger emptyIndex = [keywords indexOfObject: @""];
             if (emptyIndex != NSNotFound) {
                 [keywords removeObjectAtIndex: emptyIndex];
                 [keywords addObject: @""];
@@ -300,7 +300,7 @@
 
 - (void) selectKeyword: (NSString*) keyword edit: (BOOL) edit {
     if (keyword) {
-        int rowIndex = [keywords indexOfObject: keyword];
+        NSInteger rowIndex = [keywords indexOfObject: keyword];
         if (rowIndex != NSNotFound) {
             [tableView scrollRowToVisible: rowIndex];
             [tableView selectRowIndexes: [NSIndexSet indexSetWithIndex: rowIndex] byExtendingSelection: NO];
@@ -323,13 +323,13 @@
 
 /* Table view data source methods */
 
-- (int) numberOfRowsInTableView: (NSTableView*) aTableView {
+- (NSInteger) numberOfRowsInTableView: (NSTableView*) aTableView {
     return [keywords count];
 }
 
 - (id) tableView: (NSTableView*) aTableView 
     objectValueForTableColumn: (NSTableColumn*) aTableColumn
-    row: (int) rowIndex {
+    row: (NSInteger) rowIndex {
     if ([[aTableColumn identifier] isEqualToString: @"Keyword"]) {
         NSString* keyword = [keywords objectAtIndex: rowIndex];
         if (keyword) {        
@@ -343,7 +343,7 @@
 - (void) tableView: (NSTableView*) aTableView 
     setObjectValue: (id) newValue
     forTableColumn: (NSTableColumn*) aTableColumn 
-    row: (int) rowIndex {
+    row: (NSInteger) rowIndex {
     if ([[aTableColumn identifier] isEqualToString: @"Keyword"]) {
         NSString* keyword = [keywords objectAtIndex: rowIndex];
         if (keyword) {

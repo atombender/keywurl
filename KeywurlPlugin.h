@@ -1,6 +1,11 @@
 #import <Cocoa/Cocoa.h>
 #import "KeywordMapper.h"
 
+#ifndef NSINTEGER_DEFINED
+typedef int NSInteger;
+typedef unsigned int NSUInteger;
+#endif
+
 @interface KeywurlPlugin : NSObject {
     IBOutlet NSWindow* introWindow;
     KeywordMapper* fKeywordMapper;
