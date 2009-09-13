@@ -128,6 +128,7 @@
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9056C74D105D3DF1002041F3 /* Safari4_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari4_0.h; sourceTree = "<group>"; };
+		9056C758105D3EAB002041F3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		FA3406530D81FBF000F0EC2E /* KeywordSaveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordSaveController.h; sourceTree = "<group>"; };
 		FA3406540D81FBF000F0EC2E /* KeywordSaveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordSaveController.m; sourceTree = "<group>"; };
@@ -299,6 +300,7 @@
 		32C88E010371C26100C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9056C758105D3EAB002041F3 /* Constants.h */,
 				FA3A4D2B0D789D2800BD4C53 /* Safari.h */,
 				FA3A4D2C0D789D2800BD4C53 /* Safari2_0.h */,
 				FA3A4D2D0D789D2800BD4C53 /* Safari3_0.h */,
