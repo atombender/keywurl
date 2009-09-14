@@ -12,28 +12,26 @@
 #ifdef __OBJC2__
 + (void) keywurl_load
 {
-	Method old, new;
-	Class self_class = [self class];
+    Method old, new;
+    Class self_class = [self class];
     Class safari_class = [objc_getClass("BrowserWebView") class];
-    NSLog(@"%@\n", objc_getClass("BrowserWebView"));
     
     class_addMethod(safari_class, @selector(keywurl_fallbackURLs),
                     class_getMethodImplementation(self_class, @selector(fallbackURLs)),
                     "@@:");
-    NSLog(@"responds: %d\n", [objc_getClass("BrowserWebView") instancesRespondToSelector:@selector(keywurl_fallbackURLs)]);
-	
-	old = class_getInstanceMethod(safari_class, @selector(fallbackURLs));
-	new = class_getInstanceMethod(safari_class, @selector(keywurl_fallbackURLs));
-	method_exchangeImplementations(old, new);
-    
+
+    old = class_getInstanceMethod(safari_class, @selector(fallbackURLs));
+    new = class_getInstanceMethod(safari_class, @selector(keywurl_fallbackURLs));
+    method_exchangeImplementations(old, new);
+
     class_addMethod(safari_class, @selector(webView:contextMenuItemsForElement:defaultMenuItems:),
                     class_getMethodImplementation(self_class,
                                                   @selector(keywurl_webView:contextMenuItemsForElement:defaultMenuItems:)),
                     "@@:@@@");
-	
-	old = class_getInstanceMethod(safari_class, @selector(webView:contextMenuItemsForElement:defaultMenuItems:));
-	new = class_getInstanceMethod(safari_class, @selector(keywurl_webView:contextMenuItemsForElement:defaultMenuItems:));
-	method_exchangeImplementations(old, new);
+
+    old = class_getInstanceMethod(safari_class, @selector(webView:contextMenuItemsForElement:defaultMenuItems:));
+    new = class_getInstanceMethod(safari_class, @selector(keywurl_webView:contextMenuItemsForElement:defaultMenuItems:));
+    method_exchangeImplementations(old, new);
 }
 #endif
 
