@@ -2,8 +2,8 @@
 #import "Safari.h"
 
 #ifdef __OBJC2__
-@interface BrowserWebView (Keywurl_BrowserWebView)
-+ (void) _Keywurl_load;
+@interface KeywurlBrowserWebView : NSObject
++ (void) keywurl_load;
 @end
 #else
 @interface KeywurlBrowserWebView : BrowserWebView

@@ -1,14 +1,15 @@
 #import <Cocoa/Cocoa.h>
 #import "Safari.h"
 
+@interface KeywurlBrowserWindowController
 #ifdef __OBJC2__
-@interface BrowserWindowController (Keywurl_BrowserWindowController)
+    : NSObject
 #else
-@interface KeywurlBrowserWindowController : BrowserWindowController
+    : BrowserWindowController
 #endif
 
 #ifdef __OBJC2__
-+ (void) _Keywurl_load;
++ (void) keywurl_load;
 #endif
 
 - (id) keywurl_locationFieldEditor;

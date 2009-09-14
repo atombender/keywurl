@@ -7,39 +7,43 @@
 #include "KeywurlBrowserWindowController.h"
 #include "KeywurlPlugin.h"
 
-#ifdef __OBJC2__
-@implementation BrowserWebView (BrowserWebView_KeywurlPlugin)
-#else
 @implementation KeywurlBrowserWebView
-#endif
 
 #ifdef __OBJC2__
-+ (void) _Keywurl_load
++ (void) keywurl_load
 {
 	Method old, new;
-	Class c = [self class];
+	Class self_class = [self class];
+    Class safari_class = [objc_getClass("BrowserWebView") class];
+    NSLog(@"%@\n", objc_getClass("BrowserWebView"));
+    
+    class_addMethod(safari_class, @selector(keywurl_fallbackURLs),
+                    class_getMethodImplementation(self_class, @selector(fallbackURLs)),
+                    "@@:");
+    NSLog(@"responds: %d\n", [objc_getClass("BrowserWebView") instancesRespondToSelector:@selector(keywurl_fallbackURLs)]);
 	
-	old = class_getInstanceMethod(c, @selector(fallbackURLs));
-	new = class_getInstanceMethod(c, @selector(_Keywurl_fallbackURLs));
+	old = class_getInstanceMethod(safari_class, @selector(fallbackURLs));
+	new = class_getInstanceMethod(safari_class, @selector(keywurl_fallbackURLs));
 	method_exchangeImplementations(old, new);
+    
+    class_addMethod(safari_class, @selector(webView:contextMenuItemsForElement:defaultMenuItems:),
+                    class_getMethodImplementation(self_class,
+                                                  @selector(keywurl_webView:contextMenuItemsForElement:defaultMenuItems:)),
+                    "@@:@@@");
 	
-	old = class_getInstanceMethod(c, @selector(webView));
-	new = class_getInstanceMethod(c, @selector(_Keywurl_webView));
+	old = class_getInstanceMethod(safari_class, @selector(webView:contextMenuItemsForElement:defaultMenuItems:));
+	new = class_getInstanceMethod(safari_class, @selector(keywurl_webView:contextMenuItemsForElement:defaultMenuItems:));
 	method_exchangeImplementations(old, new);
 }
 #endif
 
 #if KEYWURL_SAFARI_VERSION >= 4
 
-#ifdef __OBJC2__
-- (NSArray*) _Keywurl_fallbackURLs {
-#else
 - (NSArray*) fallbackURLs {
-#endif
     // If Safari has failed to resolve the address into a proper host name, the
     // list of fallback URLs is empty and we can intercept the URL and map it
 #ifdef __OBJC2__
-    NSArray* urls = [self _Keywurl_fallbackURLs];
+    NSArray* urls = [self keywurl_fallbackURLs];
 #else
     NSArray* urls = [super fallbackURLs];
 #endif
@@ -72,7 +76,7 @@
         return [NSArray arrayWithObject: mappedUrl];
     } else {
 #ifdef __OBJC2__
-        return [self _Keywurl_fallbackURLs];
+        return [self keywurl_fallbackURLs];
 #else
         return [super fallbackURLs];
 #endif
@@ -81,15 +85,12 @@
 
 #endif
 
-#ifdef __OBJC2__
-- (id) _Keywurl_webView: (id) sender 
-#else
 - (id) webView: (id) sender 
-#endif
     contextMenuItemsForElement: (id) elementDictionary
     defaultMenuItems: (NSMutableArray*) defaultMenuItems {
     NSString* documentUrl = [self mainFrameURL];
     KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
+    NSLog(@"%@\n", elementDictionary);
     id node = [elementDictionary objectForKey: @"WebElementDOMNode"];
     if (node) {
         [defaultMenuItems addObject: [NSMenuItem separatorItem]];
@@ -98,10 +99,12 @@
             keyEquivalent: @""];
         [item setRepresentedObject: [NSArray arrayWithObjects: documentUrl, node, nil]];
         [item setTarget: plugin];
+        NSLog(@"Before: %@\n", defaultMenuItems);
         [defaultMenuItems addObject: item];
+        NSLog(@"After: %@\n", defaultMenuItems); 
     }
 #ifdef __OBJC2__
-	return [self _Keywurl_webView: sender
+	return [self keywurl_webView: sender
 #else
     return [super webView: sender
 #endif

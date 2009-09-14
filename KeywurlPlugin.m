@@ -19,16 +19,13 @@ static KeywurlPlugin* plugin = nil;
             KEYWURL_MAJORVERSION, KEYWURL_MINORVERSION, KEYWURL_MAINTVERSION);
     #endif
     KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
+    #ifdef __OBJC2__
+    [KeywurlBrowserWindowController keywurl_load];
+    [KeywurlBrowserWebView keywurl_load];
+    #else
     NSClassFromString(@"BrowserWindowController");
-    #ifdef __OBJC2__
-    [BrowserWindowController _Keywurl_load];
-    #else
     [[KeywurlBrowserWindowController class] poseAsClass: [BrowserWindowController class]];
-    #endif
     NSClassFromString(@"BrowserWebView");
-    #ifdef __OBJC2__
-    [BrowserWebView _Keywurl_load];
-    #else
     [[KeywurlBrowserWebView class] poseAsClass: [BrowserWebView class]];
     #endif
     
