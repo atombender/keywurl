@@ -90,7 +90,6 @@
     defaultMenuItems: (NSMutableArray*) defaultMenuItems {
     NSString* documentUrl = [self mainFrameURL];
     KeywurlPlugin* plugin = [KeywurlPlugin sharedInstance];
-    NSLog(@"%@\n", elementDictionary);
     id node = [elementDictionary objectForKey: @"WebElementDOMNode"];
     if (node) {
         [defaultMenuItems addObject: [NSMenuItem separatorItem]];
@@ -99,9 +98,7 @@
             keyEquivalent: @""];
         [item setRepresentedObject: [NSArray arrayWithObjects: documentUrl, node, nil]];
         [item setTarget: plugin];
-        NSLog(@"Before: %@\n", defaultMenuItems);
         [defaultMenuItems addObject: item];
-        NSLog(@"After: %@\n", defaultMenuItems); 
     }
 #ifdef __OBJC2__
 	return [self keywurl_webView: sender
