@@ -24,9 +24,9 @@
     new = class_getInstanceMethod(safari_class, @selector(keywurl_fallbackURLs));
     method_exchangeImplementations(old, new);
 
-    class_addMethod(safari_class, @selector(webView:contextMenuItemsForElement:defaultMenuItems:),
+    class_addMethod(safari_class, @selector(keywurl_webView:contextMenuItemsForElement:defaultMenuItems:),
                     class_getMethodImplementation(self_class,
-                                                  @selector(keywurl_webView:contextMenuItemsForElement:defaultMenuItems:)),
+                                                  @selector(webView:contextMenuItemsForElement:defaultMenuItems:)),
                     "@@:@@@");
 
     old = class_getInstanceMethod(safari_class, @selector(webView:contextMenuItemsForElement:defaultMenuItems:));
