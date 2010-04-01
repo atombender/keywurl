@@ -127,6 +127,8 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9056C74D105D3DF1002041F3 /* Safari4_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari4_0.h; sourceTree = "<group>"; };
+		9056C758105D3EAB002041F3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		FA3406530D81FBF000F0EC2E /* KeywordSaveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeywordSaveController.h; sourceTree = "<group>"; };
 		FA3406540D81FBF000F0EC2E /* KeywordSaveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeywordSaveController.m; sourceTree = "<group>"; };
@@ -262,9 +264,6 @@
 				FA3A4D260D789D2800BD4C53 /* NSPreferenceModule.h */,
 				FA3A4D270D789D2800BD4C53 /* NSPreferences+Keywurl.h */,
 				FA3A4D280D789D2800BD4C53 /* NSPreferences+Keywurl.m */,
-				FA3A4D2B0D789D2800BD4C53 /* Safari.h */,
-				FA3A4D2C0D789D2800BD4C53 /* Safari2_0.h */,
-				FA3A4D2D0D789D2800BD4C53 /* Safari3_0.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -301,6 +300,11 @@
 		32C88E010371C26100C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9056C758105D3EAB002041F3 /* Constants.h */,
+				FA3A4D2B0D789D2800BD4C53 /* Safari.h */,
+				FA3A4D2C0D789D2800BD4C53 /* Safari2_0.h */,
+				FA3A4D2D0D789D2800BD4C53 /* Safari3_0.h */,
+				9056C74D105D3DF1002041F3 /* Safari4_0.h */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -587,6 +591,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=3";
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=3";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = Keywurl;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				WRAPPER_EXTENSION = bundle;
@@ -610,6 +615,7 @@
 					"KEYWURL_SAFARI_VERSION=3",
 				);
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = Keywurl;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				WRAPPER_EXTENSION = bundle;
@@ -671,6 +677,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
+				GCC_VERSION = 4.0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Keywurl;
@@ -691,6 +698,7 @@
 					KEYWURL_TARGET_TIGER,
 					"KEYWURL_SAFARI_VERSION=3",
 				);
+				GCC_VERSION = 4.0;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
 					KEYWURL_TARGET_TIGER,
 					"KEYWURL_SAFARI_VERSION=3",
@@ -735,6 +743,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Keywurl_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=4";
+				GCC_VERSION = 4.0;
 				INFOPLIST_FILE = /Users/alex/Devel/Keywurl/Git/Info.plist;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=4";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
@@ -756,6 +765,7 @@
 					KEYWURL_TARGET_TIGER,
 					"KEYWURL_SAFARI_VERSION=4",
 				);
+				GCC_VERSION = 4.0;
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
 					KEYWURL_TARGET_TIGER,
@@ -771,6 +781,7 @@
 		FAE6DFEE0F55DC2C008D3D58 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) for Safari 4 on Leopard";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -784,6 +795,8 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "KEYWURL_SAFARI_VERSION=4";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH_ACTUAL)";
 				PRODUCT_NAME = Keywurl;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				WRAPPER_EXTENSION = bundle;
@@ -793,6 +806,8 @@
 		FAE6DFEF0F55DC2C008D3D58 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION) for Safari 4 on Leopard";
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_MODEL_TUNING = G5;
@@ -808,6 +823,7 @@
 					"KEYWURL_SAFARI_VERSION=4",
 				);
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = Keywurl;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 				WRAPPER_EXTENSION = bundle;
