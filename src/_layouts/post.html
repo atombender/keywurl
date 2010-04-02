@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<div id="bigpanel" class="bigpanel">
+  <div class="bigintro">
+    <p>
+      <em>Keywurl</em>
+    </p>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="post_content">
+  <div class="post">
+    <h3>{{ page.title }}</h3>
+    <div class="byline">
+      <span class="date">{{ page.date | date_to_string }}</span>
+    </div>
+    <div class="body">
+      {{ content }}
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="main_columns">
+  <div class="left_column">
+    <div class="comments">
+      <script>
+      var idcomments_acct = '5bdaa0bd8992bb8ff43cf9fbf0032990';
+      var idcomments_post_id;
+      var idcomments_post_url;
+      </script>
+      <span id="IDCommentsPostTitle" style="display:none"></span>
+      <script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="footer">
+  <a href="{{ site.url_root }}/atom.xml" class="feed_link">Subscribe to news feed</a>
+  Problems or suggestions? <a href="mailto:alex@purefiction.net">Let me know</a>.
+</div>

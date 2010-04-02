@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Keywurl News</title>
+  <link href="http://alexstaubo.github.com/keywurl/atom.xml" rel="self"/>
+  <link href="http://alexstaubo.github.com/keywurl/"/>
+  <updated>2010-04-02T02:12:24+02:00</updated>
+  <id>http://alexstaubo.github.com/keywurl/</id>
+  <author>
+    <name>Alexander Staubo</name>
+    <email>alex@purefiction.net</email>
+  </author>
+  
+    <entry>
+      <title>Snow Leopard support</title>
+      <link href="http://alexstaubo.github.com/keywurl//2010/04/01/snow-leopard-support.html"/>
+      <updated>2010-04-01T00:00:00+02:00</updated>
+      <id>http://alexstaubo.github.com/keywurl//2010/04/01/snow-leopard-support</id>
+      <content type="html">&lt;p&gt;Keywurl should now finally work on Snow Leopard in 64-bit mode, thanks to the brilliant work of &lt;a href=&quot;http://github.com/nox/keywurl&quot;&gt;Anthony Ramine&lt;/a&gt; and &lt;a href=&quot;http://github.com/vasi/keywurl&quot;&gt;Dave Vasilevsky&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;file://localhost/Users/alex/Devel/Keywurl/Git/Keywurl-1.4-beta-8-Safari-4-Leopard.dmg&quot;&gt;&lt;strong&gt;Download the new release now&lt;/strong&gt;&lt;/a&gt; (for Safari 4 on Leopard and Snow Leopard only)&lt;/p&gt;</content>
+    </entry>
+   
+</feed>
