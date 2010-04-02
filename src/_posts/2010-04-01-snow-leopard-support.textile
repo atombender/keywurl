@@ -3,6 +3,8 @@ layout: post
 title: Snow Leopard support
 ---
 
-Keywurl should now finally work on Snow Leopard in 64-bit mode, thanks to the brilliant work of <a href="http://github.com/nox/keywurl">Anthony Ramine</a> and <a href="http://github.com/vasi/keywurl">Dave Vasilevsky</a>. 
+Keywurl should now finally work on Snow Leopard in 64-bit mode, thanks to the brilliant work of <a href="http://github.com/nox/keywurl">Anthony Ramine</a> and <a href="http://github.com/vasi/keywurl">Dave Vasilevsky</a>.
+
+Note that the latest version of SIMBL, which is bundled with Keywurl, *is required for this version to work on Snow Leopard in 64-bit mode*. If you already have an older version of SIMBL installed you will need to reinstall SIMBL from this package.
 
 "*Download the new release now*":{{ site.url_root }}/Keywurl-1.4-beta-8-Safari-4-Leopard.dmg (for Safari 4 on Leopard and Snow Leopard only)

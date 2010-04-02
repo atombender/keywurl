@@ -3,7 +3,7 @@
   <title>Keywurl News</title>
   <link href="http://alexstaubo.github.com/keywurl/atom.xml" rel="self"/>
   <link href="http://alexstaubo.github.com/keywurl/"/>
-  <updated>2010-04-02T02:13:19+02:00</updated>
+  <updated>2010-04-02T02:57:54+02:00</updated>
   <id>http://alexstaubo.github.com/keywurl/</id>
   <author>
     <name>Alexander Staubo</name>
@@ -16,6 +16,7 @@
       <updated>2010-04-01T00:00:00+02:00</updated>
       <id>http://alexstaubo.github.com/keywurl//2010/04/01/snow-leopard-support</id>
       <content type="html">&lt;p&gt;Keywurl should now finally work on Snow Leopard in 64-bit mode, thanks to the brilliant work of &lt;a href=&quot;http://github.com/nox/keywurl&quot;&gt;Anthony Ramine&lt;/a&gt; and &lt;a href=&quot;http://github.com/vasi/keywurl&quot;&gt;Dave Vasilevsky&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Note that the latest version of &lt;span class=&quot;caps&quot;&gt;SIMBL&lt;/span&gt;, which is bundled with Keywurl, &lt;strong&gt;is required for this version to work on Snow Leopard in 64-bit mode&lt;/strong&gt;. If you already have an older version of &lt;span class=&quot;caps&quot;&gt;SIMBL&lt;/span&gt; installed you will need to reinstall &lt;span class=&quot;caps&quot;&gt;SIMBL&lt;/span&gt; from this package.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://alexstaubo.github.com/keywurl/Keywurl-1.4-beta-8-Safari-4-Leopard.dmg&quot;&gt;&lt;strong&gt;Download the new release now&lt;/strong&gt;&lt;/a&gt; (for Safari 4 on Leopard and Snow Leopard only)&lt;/p&gt;</content>
     </entry>
    
